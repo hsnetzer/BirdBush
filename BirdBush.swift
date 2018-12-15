@@ -206,36 +206,4 @@ class BirdBush: Codable {
         coords.swapAt(2*i, 2*j)
         coords.swapAt(2*i+1, 2*j+1)
     }
-    
-    /// how near could a point be to a given meridian or parallel?
-    /// Returns distance between a point and a line. But, the point is pushed further north
-    /// or south to make sure that the distance is minimal (points are closer to meridians at
-    /// the north pole).
-    private func orthoDist(qx: Double, qy: Double, line: Double, d: Int, r: Double) -> Double {
-        
-        let degreesLat = qy
-        
-        if d == 0 { // lon
-            let lat = degreesLat + r / 111694 // push lat up a lil bit
-            if lat >= 90 { return 0 }
-            
-            // Set up "Constants"
-            let p1 = 111412.84        // longitude calculation term 1
-            let p2 = -93.5            // longitude calculation term 2
-            
-            let latRad = degreesLat.degreesToRadians
-            
-            let lonlen = p1 * cos(latRad) + p2 * cos(3 * latRad)
-            return (line - qx) * lonlen
-        } else if d == 1 { // lat
-            return (line - degreesLat) * 110574
-        } else {
-            return 0
-        }
-    }
-}
-
-extension FloatingPoint {
-    var degreesToRadians: Self { return self * .pi / 180 }
-    var radiansToDegrees: Self { return self * 180 / .pi }
 }

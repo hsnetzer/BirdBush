@@ -33,7 +33,7 @@ class BirdBushTests: XCTestCase {
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         
-        index = BirdBush(locations: points, nodeSize: 10, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
+         index = BirdBush(locations: points, nodeSize: 10, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
     }
 
     override func tearDown() {
@@ -44,7 +44,7 @@ class BirdBushTests: XCTestCase {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
-            let _ = BirdBush(locations: points, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
+             let _ = BirdBush(locations: points, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
             print("Built Tree")
         }
     }

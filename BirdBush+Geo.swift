@@ -23,11 +23,10 @@
 
 import Foundation
 
-struct Earth {
-    static let radius: Double = 6371000 // meters
-}
-
 extension BirdBush {
+    static let earthRadius = 6.371e6 // meters
+    static let rad = Double.pi / 180
+    
     private struct QueueElement: Comparable {
         static func < (lhs: BirdBush.QueueElement, rhs: BirdBush.QueueElement) -> Bool {
             return lhs.dist < rhs.dist
@@ -50,7 +49,7 @@ extension BirdBush {
         var maxHaverSinDist = 1.0, result = [Int]()
         
         if (maxDistance != Double.greatestFiniteMagnitude) {
-            maxHaverSinDist = haverSin(maxDistance / Earth.radius)
+            maxHaverSinDist = haverSin(maxDistance / BirdBush.earthRadius)
         }
         
         // a distance-sorted priority queue that will contain both points and kd-tree nodes
@@ -59,7 +58,7 @@ extension BirdBush {
         // an object that represents the top kd-tree node (the whole Earth)
         var node: QueueElementType? = QueueElementType.node(left: 0, right: ids.count - 1, axis: 0, minLon: -180, maxLon: 180, minLat: -90, maxLat: 90)
         
-        let cosLat = cos(lat.degreesToRadians)
+        let cosLat = cos(lat * BirdBush.rad)
         
         while let noder = node {
             switch noder {
@@ -144,14 +143,14 @@ extension BirdBush {
     private func boxDist(qLon: Double, qLat: Double, cosLat: Double, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double) -> Double {
         // query point is between minimum and maximum longitudes
         if (qLon >= minLon && qLon <= maxLon) {
-            if (qLat < minLat) { return haverSin((qLat - minLat).degreesToRadians) }
-            if (qLat > maxLat) { return haverSin((qLat - maxLat).degreesToRadians) }
+            if (qLat < minLat) { return haverSin((qLat - minLat) * BirdBush.rad) }
+            if (qLat > maxLat) { return haverSin((qLat - maxLat) * BirdBush.rad) }
             return 0
         }
         
         // query point is west or east of the bounding box;
         // calculate the extremum for great circle distance from query point to the closest longitude;
-        let haverSinDLon = min(haverSin((qLon - minLon).degreesToRadians), haverSin((qLon - maxLon).degreesToRadians))
+        let haverSinDLon = min(haverSin((qLon - minLon) * BirdBush.rad), haverSin((qLon - maxLon) * BirdBush.rad))
         let extremumLat = vertexLat(lat: qLat, haverSinDLon: haverSinDLon)
         
         // if extremum is inside the box, return the distance to it
@@ -172,22 +171,22 @@ extension BirdBush {
     }
     
     private func haverSinDistPartial(haverSinDLon: Double, cosLat1: Double, lat1: Double, lat2: Double) -> Double {
-        return cosLat1 * cos(lat2.degreesToRadians) * haverSinDLon + haverSin((lat1 - lat2).degreesToRadians)
+        return cosLat1 * cos(lat2 * BirdBush.rad) * haverSinDLon + haverSin((lat1 - lat2) * BirdBush.rad)
     }
     
     private func haverSinDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double, cosLat1: Double) -> Double {
-        let haverSinDLon = haverSin((lon1 - lon2).degreesToRadians)
+        let haverSinDLon = haverSin((lon1 - lon2) * BirdBush.rad)
         return haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat1, lat1: lat1, lat2: lat2)
     }
     
     func distance(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
-        let h = haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1.degreesToRadians))
-        return 2 * Earth.radius * asin(sqrt(h))
+        let h = haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * BirdBush.rad))
+        return 2 * BirdBush.earthRadius * asin(sqrt(h))
     }
     
     private func vertexLat(lat: Double, haverSinDLon: Double) -> Double {
         let cosDLon = 1 - 2 * haverSinDLon
         if (cosDLon <= 0) { return lat > 0 ? 90 : -90 }
-        return atan(tan(lat.degreesToRadians) / cosDLon).degreesToRadians
+        return atan(tan(lat * BirdBush.rad) / cosDLon) / BirdBush.rad
     }
 }
