@@ -179,7 +179,6 @@ class BirdBush: Codable {
             }
         
             // queue search in halves that intersect the query
-            // this shit is so wrong
             if (axis == 0 ? qx - r <= x : qy - r <= y) {
                 stack.append(left)
                 stack.append(m - 1)
@@ -195,7 +194,7 @@ class BirdBush: Codable {
         return result
     }
     
-    private func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
+    func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
         let dx = (ax - bx)
         let dy = (ay - by)
         return dx * dx + dy * dy
