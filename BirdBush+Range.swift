@@ -24,9 +24,9 @@
 import Foundation
 
 extension BirdBush {
-    func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [Int] {
+    func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
-        var result = [Int]()
+        var result = [U]()
         
         // recursively search for items in range in the kd-sorted arrays
         while (stack.count > 0) {

@@ -24,9 +24,9 @@
 import Foundation
 
 extension BirdBush {
-    func within(qx: Double, qy: Double, r: Double) -> [Int] {
+    func within(qx: Double, qy: Double, r: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
-        var result = [Int]()
+        var result = [U]()
         let r2 = r * r
         
         // recursively search for items within radius in the kd-sorted arrays

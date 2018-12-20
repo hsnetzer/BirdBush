@@ -23,12 +23,12 @@
 
 import Foundation
 
-class BirdBush: Codable {
-    private(set) var ids = [Int]()
+class BirdBush<U: Codable>: Codable {
+    private(set) var ids = [U]()
     private(set) var coords = [Double]()
     private(set) var nodeSize = 64
     
-    init<T>(locations: [T], nodeSize: Int = 64, getID: (_ : T) -> Int, getX: (_ : T) -> Double, getY: (_ : T) -> Double) {
+    init<T>(locations: [T], nodeSize: Int = 64, getID: (_ : T) -> U, getX: (_ : T) -> Double, getY: (_ : T) -> Double) {
         for location in locations {
             ids.append(getID(location))
             coords.append(getX(location))
