@@ -119,7 +119,7 @@ extension BirdBush {
                     if case .point(let id) = peek.type {
                         let candidate = q.pop()!
                         if (candidate.dist > maxHaverSinDist) { return result }
-                        result.append((id, candidate.dist))
+                        result.append((id, geoDist(candidate.dist)))
                         if (result.count == maxResults) { return result }
                     } else {
                         break
@@ -178,6 +178,10 @@ extension BirdBush {
     
     func distance(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
         let h = haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * .pi / 180))
+        return geoDist(h)
+    }
+    
+    private func geoDist(_ h: Double) -> Double {
         return 2 * 6.371e6 * asin(sqrt(h))
     }
     
