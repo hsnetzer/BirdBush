@@ -8,8 +8,8 @@
 import Foundation
 
 extension BirdBush {
-    func nearest(qx: Double, qy: Double) -> U {
-        return nearestWith(qx: qx, qy: qy, left: 0, right: ids.count-1, axis: 0, bestDist: Double.infinity, bestID: ids[0]).0
+    func nearest(qx: Double, qy: Double) -> (U, Double) {
+        return nearestWith(qx: qx, qy: qy, left: 0, right: ids.count-1, axis: 0, bestDist: Double.infinity, bestID: ids[0])
     }
     
     private func nearestWith(qx: Double, qy: Double, left: Int, right: Int, axis: Int, bestDist: Double, bestID: U) -> (U, Double) {
