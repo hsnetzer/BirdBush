@@ -9,10 +9,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
-Birdbush depends on [SwiftPriorityQueue](https://github.com/davecom/SwiftPriorityQueue).
-
 ## Installation
 
 BirdBush is available through [CocoaPods](https://cocoapods.org). To install
