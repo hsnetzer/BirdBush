@@ -11,6 +11,8 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+Birdbush depends on [SwiftPriorityQueue](https://github.com/davecom/SwiftPriorityQueue).
+
 ## Installation
 
 BirdBush is available through [CocoaPods](https://cocoapods.org). To install
@@ -20,10 +22,12 @@ it, simply add the following line to your Podfile:
 pod 'BirdBush'
 ```
 
-## Author
+## Documentation
 
-hsnetzer@gmail.com, hsnetzer@gmail.com
+### Initialization
 
-## License
+### Methods
 
-BirdBush is available under the MIT license. See the LICENSE file for more info.
+## Author & License
+
+Bird Bush is a Swift port of Vladimir Agafonkin's JavaScript libraries kdbush and geokdbush. BirdBush is available under the ISC license. See the LICENSE file for more info.
