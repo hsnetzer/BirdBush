@@ -1,0 +1,6 @@
+framework module BirdBush {
+  umbrella header "BirdBush-umbrella.h"
+
+  export *
+  module * { export * }
+}

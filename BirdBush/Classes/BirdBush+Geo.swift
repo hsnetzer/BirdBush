@@ -22,8 +22,9 @@
 //
 
 import Foundation
+import SwiftPriorityQueue
 
-extension BirdBush {
+public extension BirdBush {
     private struct QueueElement: Comparable {
         static func < (lhs: BirdBush.QueueElement, rhs: BirdBush.QueueElement) -> Bool {
             return lhs.dist < rhs.dist

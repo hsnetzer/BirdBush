@@ -1,0 +1,23 @@
+PODS:
+  - BirdBush (0.1.0):
+    - SwiftPriorityQueue
+  - SwiftPriorityQueue (1.2.1)
+
+DEPENDENCIES:
+  - BirdBush (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - SwiftPriorityQueue
+
+EXTERNAL SOURCES:
+  BirdBush:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  BirdBush: 1897df22e9662b6dda0314dba6b10c9aaedab806
+  SwiftPriorityQueue: 2ce5768829a9ef84d8b8fec5e73546d72ee3d8f6
+
+PODFILE CHECKSUM: b8d57ecab1e7a21de2491b2d0d0746f3a4d68c63
+
+COCOAPODS: 1.5.3

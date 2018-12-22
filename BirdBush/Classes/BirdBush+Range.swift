@@ -1,5 +1,5 @@
 //
-//  BirdBush+Within.swift
+//  BirdBush+Range.swift
 //
 //  Created by Harry Netzer on 12/11/18.
 //
@@ -23,22 +23,23 @@
 
 import Foundation
 
-extension BirdBush {
-    func within(qx: Double, qy: Double, r: Double) -> [U] {
+public extension BirdBush {
+    func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()
-        let r2 = r * r
         
-        // recursively search for items within radius in the kd-sorted arrays
-        while (stack.count >= 3) {
+        // recursively search for items in range in the kd-sorted arrays
+        while (stack.count > 0) {
             let axis = stack.popLast()!
             let right = stack.popLast()!
             let left = stack.popLast()!
             
-            // if we reached "tree node", search linearly
+            // if we reached a "tree node", search linearly
             if (right - left <= nodeSize) {
                 for i in left...right {
-                    if (sqDist(coords[2 * i], coords[2 * i + 1], qx, qy) <= r2) {
+                    let x = coords[2 * i]
+                    let y = coords[2 * i + 1]
+                    if (x >= minX && x <= maxX && y >= minY && y <= maxY) {
                         result.append(ids[i])
                     }
                 }
@@ -51,23 +52,22 @@ extension BirdBush {
             // include the middle item if it's in range
             let x = coords[2 * m]
             let y = coords[2 * m + 1]
-            if (sqDist(x, y, qx, qy) <= r2) {
+            if (x >= minX && x <= maxX && y >= minY && y <= maxY) {
                 result.append(ids[m])
             }
             
             // queue search in halves that intersect the query
-            if (axis == 0 ? qx - r <= x : qy - r <= y) {
+            if (axis == 0 ? minX <= x : minY <= y) {
                 stack.append(left)
                 stack.append(m - 1)
                 stack.append(1 - axis)
             }
-            if (axis == 0 ? qx + r >= x : qy + r >= y) {
+            if (axis == 0 ? maxX >= x : maxY >= y) {
                 stack.append(m + 1)
                 stack.append(right)
                 stack.append(1 - axis)
             }
         }
-        
         return result
     }
 }
