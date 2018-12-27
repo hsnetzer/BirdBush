@@ -63,7 +63,7 @@ public class BirdBush<U: Codable>: Codable {
                 let doublek = Double(k)
                 let n = Double(right - left + 1)
                 let m = Double(k - left + 1)
-                let z = log(Double(n))
+                let z = log(n)
                 let s = 0.5 * exp(2 * z / 3)
                 let sd = 0.5 * sqrt(z * s * (n - s) / n) * (m - n / 2 < 0 ? -1 : 1)
                 let newLeft = max(left, Int(floor(doublek - m * s / n + sd)))

@@ -9,3 +9,5 @@ target 'BirdBush_Example' do
     
   end
 end
+
+ENV['COCOAPODS_DISABLE_STATS'] = "true"

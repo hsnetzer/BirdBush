@@ -60,9 +60,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01996EADB8987DF4BD4CE89452C163F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		01996EADB8987DF4BD4CE89452C163F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		01A4D816A5EDE6A730CB9477B606ED1F /* Pods-BirdBush_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BirdBush_Example.modulemap"; sourceTree = "<group>"; };
-		020B84852856C4354658C47B1C5FD9C3 /* BirdBush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = BirdBush.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		020B84852856C4354658C47B1C5FD9C3 /* BirdBush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BirdBush.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		0523A2ED7E3F5A392C4BFA898B27FEF1 /* BirdBush-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-umbrella.h"; sourceTree = "<group>"; };
 		0E498BCFBA406BCED40EAD4555EBF501 /* BirdBush.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BirdBush.modulemap; sourceTree = "<group>"; };
 		10FF9E64F789DC8C4AB4397F439FD475 /* BirdBush+Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Range.swift"; path = "BirdBush/Classes/BirdBush+Range.swift"; sourceTree = "<group>"; };
@@ -79,26 +79,26 @@
 		459730CC825FA9510211FBA7A537CB5D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B307D9CDBD82F4462B9E20A468A45C7 /* Pods-BirdBush_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Example-frameworks.sh"; sourceTree = "<group>"; };
 		4BA42E9D6251D95BD5E146289452750E /* BirdBush-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BirdBush-dummy.m"; sourceTree = "<group>"; };
-		4C0054B2190A67F6FA0D7FE4A2D95E3D /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Tests.framework; path = "Pods-BirdBush_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5156DBC89A3CC99A14B32993F6A2F23B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4C0054B2190A67F6FA0D7FE4A2D95E3D /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdBush_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5156DBC89A3CC99A14B32993F6A2F23B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		534F865014DCCF8F90298E3654E9FCDB /* BirdBush-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-prefix.pch"; sourceTree = "<group>"; };
 		60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftPriorityQueue.xcconfig; sourceTree = "<group>"; };
 		6A681230EFB69D59F6CDFB650FDE3310 /* Pods-BirdBush_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Tests-umbrella.h"; sourceTree = "<group>"; };
 		6D5F912316215CEB6E986006C9557D12 /* Pods-BirdBush_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8203254509D8D43235826E48FDCE2E4B /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftPriorityQueue.framework; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8203254509D8D43235826E48FDCE2E4B /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8959817A8F0FF6987A8BD8073F73FB6D /* SwiftPriorityQueue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-umbrella.h"; sourceTree = "<group>"; };
 		8D9BA767785381A6B208057052479B9F /* Pods-BirdBush_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Example-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94379FA50AA9C1E89D84FEE86047C6E6 /* Pods-BirdBush_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Tests-dummy.m"; sourceTree = "<group>"; };
 		98AC0BD394F7E0FC9EFED67A2A35379B /* Pods-BirdBush_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9D478D5AA1C3F9B76098D9935FDCAD5A /* BirdBush+NN.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+NN.swift"; path = "BirdBush/Classes/BirdBush+NN.swift"; sourceTree = "<group>"; };
-		A304BB6638362519E94F48E837F19C9E /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BirdBush.framework; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A304BB6638362519E94F48E837F19C9E /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB9E184189DA706CECBABE88E00103AE /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B962739287C99FFEA2D32CB9B47B56B3 /* SwiftPriorityQueue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftPriorityQueue.modulemap; sourceTree = "<group>"; };
 		BA01CF6D68FE5F43B2B90436A5E5A5C8 /* Pods-BirdBush_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Example-dummy.m"; sourceTree = "<group>"; };
 		C1BFD31D14D9DD59493505793540C723 /* Pods-BirdBush_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C7E4CBF3E7FF4C898D5B408E8E04E9DA /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Example.framework; path = "Pods-BirdBush_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7E4CBF3E7FF4C898D5B408E8E04E9DA /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdBush_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA0FB5983CA384CD3B69CAF5D4A51F8A /* Pods-BirdBush_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		D0F035E8DB2A210A0D0EB25A3A9DC00A /* Pods-BirdBush_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Example-umbrella.h"; sourceTree = "<group>"; };
 		D682B0D26BED7C42D883A9A1604208C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 				44BFD9BB6804C7FF353DDED2E3688B5D /* SwiftPriorityQueue.swift */,
 				E9824AD7870D092CD3733CC22E658E13 /* Support Files */,
 			);
-			name = SwiftPriorityQueue;
 			path = SwiftPriorityQueue;
 			sourceTree = "<group>";
 		};
@@ -433,6 +432,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
+				TargetAttributes = {
+					4008DF5FDD9370B57F6AC3912EB7D968 = {
+						LastSwiftMigration = 1010;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -554,68 +558,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		207BDB8C68E10E92CFD5C8C4043CBBA8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftPriorityQueue/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue.modulemap";
-				PRODUCT_MODULE_NAME = SwiftPriorityQueue;
-				PRODUCT_NAME = SwiftPriorityQueue;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		22DFC7BEAB64E14D4B544828C6CD8693 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BirdBush/BirdBush-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BirdBush/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BirdBush/BirdBush.modulemap";
-				PRODUCT_MODULE_NAME = BirdBush;
-				PRODUCT_NAME = BirdBush;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		2325728E9FC6FD79E8DE7F122AA72ECD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 98AC0BD394F7E0FC9EFED67A2A35379B /* Pods-BirdBush_Tests.debug.xcconfig */;
@@ -649,7 +591,7 @@
 			};
 			name = Debug;
 		};
-		288E5198CFCAE733169C26EEF04B2317 /* Release */ = {
+		408B732AFA8FC810676AE1262E6A0877 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */;
 			buildSettings = {
@@ -673,13 +615,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		50646285DD9FD95AF390BDA3FB1948EA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -747,6 +688,38 @@
 			};
 			name = Debug;
 		};
+		55606CF60EAF9EA0E968E17ADFD664F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftPriorityQueue/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue.modulemap";
+				PRODUCT_MODULE_NAME = SwiftPriorityQueue;
+				PRODUCT_NAME = SwiftPriorityQueue;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		58DCB2BA7C34E84C00C38CEF18A96D11 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -802,8 +775,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -876,6 +848,38 @@
 			};
 			name = Debug;
 		};
+		7CD5CD9BF89D6603706C7F02D75D31B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BirdBush/BirdBush-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BirdBush/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BirdBush/BirdBush.modulemap";
+				PRODUCT_MODULE_NAME = BirdBush;
+				PRODUCT_NAME = BirdBush;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		81FCEAB78244F6B32EBBE146A23EBD9B /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E774FE83EE15D9D783CDB6AB016FB16D /* Pods-BirdBush_Tests.release.xcconfig */;
@@ -910,7 +914,7 @@
 			};
 			name = Release;
 		};
-		C514D84D06E123F3DDF5B4EEEE94F8E9 /* Release */ = {
+		BC658164DA324AAE994279626AF2178A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */;
 			buildSettings = {
@@ -934,13 +938,12 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -948,8 +951,8 @@
 		039DB21470A5CEED88EC0F1F2D0001C9 /* Build configuration list for PBXNativeTarget "BirdBush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				22DFC7BEAB64E14D4B544828C6CD8693 /* Debug */,
-				C514D84D06E123F3DDF5B4EEEE94F8E9 /* Release */,
+				BC658164DA324AAE994279626AF2178A /* Debug */,
+				7CD5CD9BF89D6603706C7F02D75D31B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -975,8 +978,8 @@
 		7501FE57122BE70D9AC9E97ADD0D02F9 /* Build configuration list for PBXNativeTarget "SwiftPriorityQueue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				207BDB8C68E10E92CFD5C8C4043CBBA8 /* Debug */,
-				288E5198CFCAE733169C26EEF04B2317 /* Release */,
+				408B732AFA8FC810676AE1262E6A0877 /* Debug */,
+				55606CF60EAF9EA0E968E17ADFD664F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

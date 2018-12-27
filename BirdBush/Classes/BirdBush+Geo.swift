@@ -177,12 +177,11 @@ public extension BirdBush {
         return haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat1, lat1: lat1, lat2: lat2)
     }
     
-    func distance(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
-        let h = haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * .pi / 180))
-        return geoDist(h)
+    func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
+        return haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * .pi / 180))
     }
     
-    private func geoDist(_ h: Double) -> Double {
+    func geoDist(_ h: Double) -> Double {
         return 2 * 6.371e6 * asin(sqrt(h))
     }
     
