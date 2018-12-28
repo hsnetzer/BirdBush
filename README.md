@@ -28,7 +28,7 @@ var bigArray = [[Double]]()
   for i in 1...10000 {
     bigArray.append([Double(i), Double.random(in: 0...100), Double.random(in: 0...100)])
   }
-bigIndex = BirdBush<Int>(locations: bigArray, nodeSize: 64, getID: { return Int($0[0]) }, getX: { return $0[1] }, getY: { return $0[2] })
+bigIndex = BirdBush<Double>(locations: bigArray, nodeSize: 64, getID: { return $0[0] }, getX: { return $0[1] }, getY: { return $0[2] })
 ```  
 
 ### Methods
