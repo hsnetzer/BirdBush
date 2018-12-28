@@ -25,9 +25,9 @@ pod 'BirdBush', :git => 'https://github.com/hsnetzer/BirdBush'
 With Array-type input locations:
 ```swift
 var bigArray = [[Double]]()
-  for i in 1...10000 {
-    bigArray.append([Double(i), Double.random(in: 0...100), Double.random(in: 0...100)])
-  }
+for i in 1...10000 {
+  bigArray.append([Double(i), Double.random(in: 0...100), Double.random(in: 0...100)])
+}
 bigIndex = BirdBush<Double>(locations: bigArray, nodeSize: 32, getID: { return $0[0] }, getX: { return $0[1] }, getY: { return $0[2] })
 ```  
 
