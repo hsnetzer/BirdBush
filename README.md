@@ -22,7 +22,7 @@ pod 'BirdBush', :git => 'https://github.com/hsnetzer/BirdBush'
 
 ### Initialization
 
-With Array<Double> input locations:
+With Array-type input locations:
 ```swift
 var bigArray = [[Double]]()
   for i in 1...10000 {
