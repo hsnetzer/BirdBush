@@ -77,7 +77,7 @@ public extension BirdBush {
                     
                     // add middle point to the queue
                     let item = ids[m]
-                    let dist = haverSinDist(lon1: midLon, lat1: midLat, lon2: lon, lat2: lat, cosLat1: cosLat)
+                    let dist = haverSinDist(lon1: lon, lat1: lat, lon2: midLon, lat2: midLat, cosLat1: cosLat)
                     q.push(QueueElement(dist: dist, type: QueueElementType.point(id: item)))
                     
                     let nextAxis = 1 - axis
