@@ -43,6 +43,7 @@ public extension BirdBush {
         case node(left: Int, right: Int, axis: Int, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double)
     }
     
+    // Returns an array of the closest points from a given location in order of increasing distance.
     func around(lon: Double, lat: Double, maxResults: Int = Int.max, maxDistance: Double = Double.greatestFiniteMagnitude) -> [(U, Double)] {
         var maxHaverSinDist = 1.0, result = [(U, Double)]()
         
