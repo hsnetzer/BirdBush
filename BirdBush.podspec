@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BirdBush'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A static kd tree for geographical purposes'
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'ISC', :file => 'LICENSE' }
   s.author           = { 'hsnetzer@gmail.com' => 'hsnetzer@gmail.com' }
-  s.source           = { :git => 'https://github.com/hsnetzer/bird-bush.git', :tag => '0.1.0' }
+  s.source           = { :git => 'https://github.com/hsnetzer/bird-bush.git', :tag => '0.2.0' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
