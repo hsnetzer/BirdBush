@@ -317,7 +317,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BirdBush/BirdBush.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftPriorityQueue/SwiftPriorityQueue.framework",
 			);
@@ -330,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

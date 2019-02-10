@@ -7,355 +7,388 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		102F919A93FFAA94947EC6F73D2FD72F /* BirdBush.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EF82474DE006018784F6272B68CD77 /* BirdBush.swift */; };
-		123169E516AFBAB01DF95ACF11144F5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */; };
-		1D9C5EA3AD2271AD66F9B4CEF117C0F1 /* SwiftPriorityQueue-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8959817A8F0FF6987A8BD8073F73FB6D /* SwiftPriorityQueue-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		211E86EF839AAE50026FC676399ED52E /* BirdBush+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FF9E64F789DC8C4AB4397F439FD475 /* BirdBush+Range.swift */; };
-		2414FB6F2465AB492B5FE3F1FC1D4618 /* Pods-BirdBush_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 94379FA50AA9C1E89D84FEE86047C6E6 /* Pods-BirdBush_Tests-dummy.m */; };
-		339A00BB989A98AEE38B34C94A88F0AB /* BirdBush+Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA0030BE25787FDD490749C4E5C1BCD /* BirdBush+Geo.swift */; };
-		4D92E4217080E5FECEAF9DAE153296BB /* BirdBush+NN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D478D5AA1C3F9B76098D9935FDCAD5A /* BirdBush+NN.swift */; };
-		5DE08328B825F90A78D8258B4A56EAF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */; };
-		68D496C5B9D4F11BCD935180355B11D4 /* BirdBush-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0523A2ED7E3F5A392C4BFA898B27FEF1 /* BirdBush-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A14AD2864E2E3BFADCD217391389D96 /* SwiftPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44BFD9BB6804C7FF353DDED2E3688B5D /* SwiftPriorityQueue.swift */; };
-		83EDE69183DBC51ED18875CEED5D723B /* Pods-BirdBush_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA01CF6D68FE5F43B2B90436A5E5A5C8 /* Pods-BirdBush_Example-dummy.m */; };
-		9974B131B591275E49E03A46886D19FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */; };
-		A18F31473B0A2A4C2A65021E48D94A69 /* Pods-BirdBush_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A681230EFB69D59F6CDFB650FDE3310 /* Pods-BirdBush_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AFB920E58FE33ECB709310FBE9DC2952 /* BirdBush+Within.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D90F3013377A694260278B04407536 /* BirdBush+Within.swift */; };
-		B980240DE216ACA9E5A2BD26CB3D721F /* SwiftPriorityQueue-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 270567656A58A7D6F3353C81DB4DF57D /* SwiftPriorityQueue-dummy.m */; };
-		C68135C34385B0477009CBE6885FC6B1 /* BirdBush-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BA42E9D6251D95BD5E146289452750E /* BirdBush-dummy.m */; };
-		C7D797B264F6795D5EC4C45A30E2A6E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */; };
-		DB0B157DA4C34DE875A0987CFF2B3FE1 /* SwiftPriorityQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5B9C395637400653F54641008DD797 /* SwiftPriorityQueue.framework */; };
-		F16D8D6C26CC812C411B2CB31A0B9CF4 /* Pods-BirdBush_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D0F035E8DB2A210A0D0EB25A3A9DC00A /* Pods-BirdBush_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0455F1C8EDD60B633CD23A199E2A446B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */; };
+		10285F456BB99592D63139A171CC0588 /* BirdBush+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942EFC913AF6EFED835BACD08D072905 /* BirdBush+Range.swift */; };
+		1923522613E4228D4F17E83BD8DE9F22 /* SwiftPriorityQueue-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A55188CB52F181C468C924C1DA5F780 /* SwiftPriorityQueue-dummy.m */; };
+		1A72220846559AAA0BB2869E0669EC42 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */; };
+		2BF66C84369F3504557C81FF7100B6C4 /* SwiftPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42CA618793A8510035D1DBD6EB3882F /* SwiftPriorityQueue.swift */; };
+		382B6A40BDCA263FD8CFD157E9173EB1 /* Pods-BirdBush_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DDF3404D21128145C084A57BEFFC2240 /* Pods-BirdBush_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41C9CC5903EBB08AA01E7397E30FB1F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */; };
+		532BA381C15F3577B0B783C0B3D7C6D0 /* BirdBush-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F8DE65C3BD9B09CB766987339BDDB7C0 /* BirdBush-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5704452B0282A82E071DC71B6BBD2A86 /* BirdBush+NN.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67986ECDAA508796E0874E8F70C0E6 /* BirdBush+NN.swift */; };
+		70B8F57159F344140022AA2A2EDE3654 /* SwiftPriorityQueue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F9EBEE507974B9F76943A245886E1F7 /* SwiftPriorityQueue.framework */; };
+		811369A5CDBB2463426E771E5E6C72C3 /* SwiftPriorityQueue-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63A8D883BF28867FDB14C3122B313B44 /* SwiftPriorityQueue-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BD5094643E864CF0934BA826E80C988 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */; };
+		954BD9E1B84A688D94276C804C916552 /* BirdBush+Geo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D442C5A52AED713FBB8FC25CD7978 /* BirdBush+Geo.swift */; };
+		999B3BEB484C4657CDDDD94C6E056473 /* BirdBush.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595F74A685E81C1351DB14CB691EFBA /* BirdBush.swift */; };
+		CDFC10B9B4F272096BCC310CE4407849 /* Pods-BirdBush_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EE89E698288EBFA77D3B785387F79547 /* Pods-BirdBush_Example-dummy.m */; };
+		D55A962CBCB318DDFCF77DD1C79FAFF1 /* BirdBush-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5945D4073CB130A9DAD32FFFB78C50C3 /* BirdBush-dummy.m */; };
+		EBC79027B4E05206829C9A8C2220E969 /* Pods-BirdBush_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 76DD1825066C8BAC2D845EA31547774F /* Pods-BirdBush_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1F522C056C2D5FAF8049DC6B772D740 /* BirdBush+Within.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6830422AA4B548131DBE5874A62A242B /* BirdBush+Within.swift */; };
+		FB074E3D0BEF34BEBED85056B4C7B654 /* Pods-BirdBush_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 247CCFDB537D60ED49984B6A9E27C4B6 /* Pods-BirdBush_Tests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		A2352299A56452EDDEACD0DD88742B0C /* PBXContainerItemProxy */ = {
+		130013F55B38002C2D94B2D71DFFEF90 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4008DF5FDD9370B57F6AC3912EB7D968;
+			remoteGlobalIDString = 95DD46672BB01E19814D93D8090B3AE7;
 			remoteInfo = BirdBush;
 		};
-		A768D1596DB52059110252B82C50EDD0 /* PBXContainerItemProxy */ = {
+		7720AC656077E6EEFCCA79772FDA6014 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DAA652FF60A56E11C3E4E890B44DB48B;
+			remoteGlobalIDString = B9EC2211559EBAD7AD41E9EE0DE49EED;
 			remoteInfo = "Pods-BirdBush_Example";
 		};
-		CC302420D278345EC74EB5F8FDE6E157 /* PBXContainerItemProxy */ = {
+		80A35022123DC6980BBEBD910A2C9E89 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 174C71E6B078D71AC2662A547163016B;
+			remoteGlobalIDString = A64C41EA2BCC776057217E7B4B91A2DB;
 			remoteInfo = SwiftPriorityQueue;
 		};
-		DCBF5EDCE908F0FE39F5B10A9BAA265C /* PBXContainerItemProxy */ = {
+		955A6BB9DA6C78EFA3DABB7FA90C1E55 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 174C71E6B078D71AC2662A547163016B;
+			remoteGlobalIDString = A64C41EA2BCC776057217E7B4B91A2DB;
 			remoteInfo = SwiftPriorityQueue;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01996EADB8987DF4BD4CE89452C163F7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		01A4D816A5EDE6A730CB9477B606ED1F /* Pods-BirdBush_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BirdBush_Example.modulemap"; sourceTree = "<group>"; };
-		020B84852856C4354658C47B1C5FD9C3 /* BirdBush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = BirdBush.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		0523A2ED7E3F5A392C4BFA898B27FEF1 /* BirdBush-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-umbrella.h"; sourceTree = "<group>"; };
-		0E498BCFBA406BCED40EAD4555EBF501 /* BirdBush.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BirdBush.modulemap; sourceTree = "<group>"; };
-		10FF9E64F789DC8C4AB4397F439FD475 /* BirdBush+Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Range.swift"; path = "BirdBush/Classes/BirdBush+Range.swift"; sourceTree = "<group>"; };
-		1107555C3FEA48430E2CA674AEA4CB0A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15646754125E7BBE505365C9115A5BEF /* Pods-BirdBush_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		22C89120EA10127C9543BC8154CAEB1E /* Pods-BirdBush_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Tests-resources.sh"; sourceTree = "<group>"; };
-		270567656A58A7D6F3353C81DB4DF57D /* SwiftPriorityQueue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftPriorityQueue-dummy.m"; sourceTree = "<group>"; };
-		28BB36A8BAF5E1FA4FECD0C6AE7CB312 /* Pods-BirdBush_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		28D90F3013377A694260278B04407536 /* BirdBush+Within.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Within.swift"; path = "BirdBush/Classes/BirdBush+Within.swift"; sourceTree = "<group>"; };
-		3A5B9C395637400653F54641008DD797 /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		406B54E2CA3987C8CED8E5DD02D5CA70 /* Pods-BirdBush_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BirdBush_Tests.modulemap"; sourceTree = "<group>"; };
-		44BFD9BB6804C7FF353DDED2E3688B5D /* SwiftPriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftPriorityQueue.swift; path = Sources/SwiftPriorityQueue/SwiftPriorityQueue.swift; sourceTree = "<group>"; };
-		44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BirdBush.xcconfig; sourceTree = "<group>"; };
-		459730CC825FA9510211FBA7A537CB5D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B307D9CDBD82F4462B9E20A468A45C7 /* Pods-BirdBush_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Example-frameworks.sh"; sourceTree = "<group>"; };
-		4BA42E9D6251D95BD5E146289452750E /* BirdBush-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BirdBush-dummy.m"; sourceTree = "<group>"; };
-		4C0054B2190A67F6FA0D7FE4A2D95E3D /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdBush_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5156DBC89A3CC99A14B32993F6A2F23B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		534F865014DCCF8F90298E3654E9FCDB /* BirdBush-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-prefix.pch"; sourceTree = "<group>"; };
-		60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftPriorityQueue.xcconfig; sourceTree = "<group>"; };
-		6A681230EFB69D59F6CDFB650FDE3310 /* Pods-BirdBush_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Tests-umbrella.h"; sourceTree = "<group>"; };
-		6D5F912316215CEB6E986006C9557D12 /* Pods-BirdBush_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		8203254509D8D43235826E48FDCE2E4B /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8959817A8F0FF6987A8BD8073F73FB6D /* SwiftPriorityQueue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-umbrella.h"; sourceTree = "<group>"; };
-		8D9BA767785381A6B208057052479B9F /* Pods-BirdBush_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Example-resources.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94379FA50AA9C1E89D84FEE86047C6E6 /* Pods-BirdBush_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Tests-dummy.m"; sourceTree = "<group>"; };
-		98AC0BD394F7E0FC9EFED67A2A35379B /* Pods-BirdBush_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		9D478D5AA1C3F9B76098D9935FDCAD5A /* BirdBush+NN.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+NN.swift"; path = "BirdBush/Classes/BirdBush+NN.swift"; sourceTree = "<group>"; };
-		A304BB6638362519E94F48E837F19C9E /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB9E184189DA706CECBABE88E00103AE /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B962739287C99FFEA2D32CB9B47B56B3 /* SwiftPriorityQueue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftPriorityQueue.modulemap; sourceTree = "<group>"; };
-		BA01CF6D68FE5F43B2B90436A5E5A5C8 /* Pods-BirdBush_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Example-dummy.m"; sourceTree = "<group>"; };
-		C1BFD31D14D9DD59493505793540C723 /* Pods-BirdBush_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C7E4CBF3E7FF4C898D5B408E8E04E9DA /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdBush_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA0FB5983CA384CD3B69CAF5D4A51F8A /* Pods-BirdBush_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D0F035E8DB2A210A0D0EB25A3A9DC00A /* Pods-BirdBush_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Example-umbrella.h"; sourceTree = "<group>"; };
-		D682B0D26BED7C42D883A9A1604208C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3EF82474DE006018784F6272B68CD77 /* BirdBush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BirdBush.swift; path = BirdBush/Classes/BirdBush.swift; sourceTree = "<group>"; };
-		E774FE83EE15D9D783CDB6AB016FB16D /* Pods-BirdBush_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EBB305DE0B93D1CE65EF8CD996E3BF84 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FA0167F92F9B8AD2A38195292D3331BC /* SwiftPriorityQueue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-prefix.pch"; sourceTree = "<group>"; };
-		FAA0030BE25787FDD490749C4E5C1BCD /* BirdBush+Geo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Geo.swift"; path = "BirdBush/Classes/BirdBush+Geo.swift"; sourceTree = "<group>"; };
-		FE302C9149684D9CF599B8F021814944 /* Pods-BirdBush_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		0867C7B3C40D1A577628AC3E133EB655 /* SwiftPriorityQueue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftPriorityQueue.modulemap; sourceTree = "<group>"; };
+		0CABCE30BBC08FECD96472DB65C1788F /* Pods-BirdBush_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		0DE9D8D845F93FFD3037A23EC3513D26 /* Pods-BirdBush_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		1158F87720EBDDEA6AA86676F56A0C8F /* BirdBush-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "BirdBush-Info.plist"; sourceTree = "<group>"; };
+		17378665B5E0F64319A8537E83CDE3F6 /* Pods-BirdBush_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		1BC3CBEA69B5662666145DD4529D791C /* Pods-BirdBush_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-Info.plist"; sourceTree = "<group>"; };
+		247CCFDB537D60ED49984B6A9E27C4B6 /* Pods-BirdBush_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Tests-dummy.m"; sourceTree = "<group>"; };
+		2DEFE7A7BF3F7B3AA1CB1D8D04714D54 /* Pods-BirdBush_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		36ECF8E4ACB1EFA5F0A1E0CA9C2A425D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		36ED0ED5040479B8671F6445B0F2DC5C /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftPriorityQueue.framework; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F9EBEE507974B9F76943A245886E1F7 /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48E9B01B5A3BC09928E412EA11403A55 /* Pods-BirdBush_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		54EE16536A9418605693BBC117D4E3FC /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
+		56573D0315EE67B77929E7F9CA7D3837 /* Pods-BirdBush_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BirdBush_Example.modulemap"; sourceTree = "<group>"; };
+		5945D4073CB130A9DAD32FFFB78C50C3 /* BirdBush-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BirdBush-dummy.m"; sourceTree = "<group>"; };
+		5BCFAD16FF15F3353B8AF054A90A0749 /* BirdBush.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BirdBush.modulemap; sourceTree = "<group>"; };
+		5E67986ECDAA508796E0874E8F70C0E6 /* BirdBush+NN.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+NN.swift"; path = "BirdBush/Classes/BirdBush+NN.swift"; sourceTree = "<group>"; };
+		603EA4D611F5923D5480EA2CA4B32098 /* SwiftPriorityQueue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftPriorityQueue.xcconfig; sourceTree = "<group>"; };
+		63A8D883BF28867FDB14C3122B313B44 /* SwiftPriorityQueue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-umbrella.h"; sourceTree = "<group>"; };
+		6830422AA4B548131DBE5874A62A242B /* BirdBush+Within.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Within.swift"; path = "BirdBush/Classes/BirdBush+Within.swift"; sourceTree = "<group>"; };
+		6FA69B9C68BAF8EC15E25B956E725AC9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		7505B7E0AACCD202E71C9F78A7488F0C /* Pods-BirdBush_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Example-frameworks.sh"; sourceTree = "<group>"; };
+		76DD1825066C8BAC2D845EA31547774F /* Pods-BirdBush_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Example-umbrella.h"; sourceTree = "<group>"; };
+		79FFC1E150D18F4994DC7A924E6538A7 /* Pods-BirdBush_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BirdBush_Tests.modulemap"; sourceTree = "<group>"; };
+		81F16C0A84F32FA794D91378CD1EB652 /* SwiftPriorityQueue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-prefix.pch"; sourceTree = "<group>"; };
+		9025ADDF6D71718EEA127744C3375607 /* BirdBush-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-prefix.pch"; sourceTree = "<group>"; };
+		92F5D73A6C4ACF77583F70F1008B0E92 /* BirdBush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BirdBush.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94040E8D0941565EFB68E69A6B784992 /* SwiftPriorityQueue-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftPriorityQueue-Info.plist"; sourceTree = "<group>"; };
+		942ADC0CFAB474FCB92C14CEE1671773 /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Example.framework; path = "Pods-BirdBush_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		942EFC913AF6EFED835BACD08D072905 /* BirdBush+Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Range.swift"; path = "BirdBush/Classes/BirdBush+Range.swift"; sourceTree = "<group>"; };
+		9A55188CB52F181C468C924C1DA5F780 /* SwiftPriorityQueue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftPriorityQueue-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EF12894B13379BAAB9E2999D415491B /* Pods-BirdBush_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9F4D442C5A52AED713FBB8FC25CD7978 /* BirdBush+Geo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Geo.swift"; path = "BirdBush/Classes/BirdBush+Geo.swift"; sourceTree = "<group>"; };
+		A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A7B5E3BE8FDFE6ED16F27D4574FE675C /* BirdBush.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BirdBush.xcconfig; sourceTree = "<group>"; };
+		A7BFE1282F8A12662A4B21D4DB4C6E2F /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Tests.framework; path = "Pods-BirdBush_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C42CA618793A8510035D1DBD6EB3882F /* SwiftPriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftPriorityQueue.swift; path = Sources/SwiftPriorityQueue/SwiftPriorityQueue.swift; sourceTree = "<group>"; };
+		C729E7D1B58F8A6C542E455F2E8AD808 /* Pods-BirdBush_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D1B2F18AA085D8591AF01D098683B08A /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BirdBush.framework; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDF3404D21128145C084A57BEFFC2240 /* Pods-BirdBush_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E595F74A685E81C1351DB14CB691EFBA /* BirdBush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BirdBush.swift; path = BirdBush/Classes/BirdBush.swift; sourceTree = "<group>"; };
+		EE89E698288EBFA77D3B785387F79547 /* Pods-BirdBush_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Example-dummy.m"; sourceTree = "<group>"; };
+		F6B9844579F5E028F0322BDC179B02BD /* Pods-BirdBush_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Tests-Info.plist"; sourceTree = "<group>"; };
+		F8DE65C3BD9B09CB766987339BDDB7C0 /* BirdBush-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1BA9B2602752953CCA32203C74D1EDA6 /* Frameworks */ = {
+		4B53FC5D74101DE9EE35D0AFC4D38498 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9974B131B591275E49E03A46886D19FE /* Foundation.framework in Frameworks */,
+				41C9CC5903EBB08AA01E7397E30FB1F5 /* Foundation.framework in Frameworks */,
+				70B8F57159F344140022AA2A2EDE3654 /* SwiftPriorityQueue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4FC9AFDEB9C6E4A0D248170DBF817504 /* Frameworks */ = {
+		4D9799DC0E79D65C31120F9F80941436 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DE08328B825F90A78D8258B4A56EAF8 /* Foundation.framework in Frameworks */,
-				DB0B157DA4C34DE875A0987CFF2B3FE1 /* SwiftPriorityQueue.framework in Frameworks */,
+				0455F1C8EDD60B633CD23A199E2A446B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D5652E09E1A7D7058CE99A11BFF9216D /* Frameworks */ = {
+		8C8ADB9F66D98B7E10FB173224ECD6ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				123169E516AFBAB01DF95ACF11144F5B /* Foundation.framework in Frameworks */,
+				1A72220846559AAA0BB2869E0669EC42 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F08C5566F4FAE650D7EFC0622BA23D0D /* Frameworks */ = {
+		9987E6E805FD35DF96AE7219B2D17249 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7D797B264F6795D5EC4C45A30E2A6E9 /* Foundation.framework in Frameworks */,
+				8BD5094643E864CF0934BA826E80C988 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14895211593DB30653ECF3EF8767ACBB /* Development Pods */ = {
+		1181B52378572B33B55A15FE481509CF /* Pods-BirdBush_Example */ = {
 			isa = PBXGroup;
 			children = (
-				56A2810032CC2147A2F9DF2E09542C46 /* BirdBush */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		3BC6BF79D3C3A635AF098148715295D6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				6E168C20B8F0AA136683695EDBE0DDF1 /* SwiftPriorityQueue */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		46C0F81BDCE4DE1AB586D3BA89919A78 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				020B84852856C4354658C47B1C5FD9C3 /* BirdBush.podspec */,
-				01996EADB8987DF4BD4CE89452C163F7 /* LICENSE */,
-				5156DBC89A3CC99A14B32993F6A2F23B /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		4C3CBBA94860E4436A1F80C452D9827D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6DC72180C7ED5103BC45752CF9FA60CF /* Pods-BirdBush_Example */,
-				B576BC507EB4451FB0657A752219260A /* Pods-BirdBush_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		56A2810032CC2147A2F9DF2E09542C46 /* BirdBush */ = {
-			isa = PBXGroup;
-			children = (
-				E3EF82474DE006018784F6272B68CD77 /* BirdBush.swift */,
-				FAA0030BE25787FDD490749C4E5C1BCD /* BirdBush+Geo.swift */,
-				9D478D5AA1C3F9B76098D9935FDCAD5A /* BirdBush+NN.swift */,
-				10FF9E64F789DC8C4AB4397F439FD475 /* BirdBush+Range.swift */,
-				28D90F3013377A694260278B04407536 /* BirdBush+Within.swift */,
-				46C0F81BDCE4DE1AB586D3BA89919A78 /* Pod */,
-				C01EB8028DCC7E248C512CFE8208B715 /* Support Files */,
-			);
-			name = BirdBush;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		6DC72180C7ED5103BC45752CF9FA60CF /* Pods-BirdBush_Example */ = {
-			isa = PBXGroup;
-			children = (
-				D682B0D26BED7C42D883A9A1604208C8 /* Info.plist */,
-				01A4D816A5EDE6A730CB9477B606ED1F /* Pods-BirdBush_Example.modulemap */,
-				28BB36A8BAF5E1FA4FECD0C6AE7CB312 /* Pods-BirdBush_Example-acknowledgements.markdown */,
-				C1BFD31D14D9DD59493505793540C723 /* Pods-BirdBush_Example-acknowledgements.plist */,
-				BA01CF6D68FE5F43B2B90436A5E5A5C8 /* Pods-BirdBush_Example-dummy.m */,
-				4B307D9CDBD82F4462B9E20A468A45C7 /* Pods-BirdBush_Example-frameworks.sh */,
-				8D9BA767785381A6B208057052479B9F /* Pods-BirdBush_Example-resources.sh */,
-				D0F035E8DB2A210A0D0EB25A3A9DC00A /* Pods-BirdBush_Example-umbrella.h */,
-				15646754125E7BBE505365C9115A5BEF /* Pods-BirdBush_Example.debug.xcconfig */,
-				AB9E184189DA706CECBABE88E00103AE /* Pods-BirdBush_Example.release.xcconfig */,
+				56573D0315EE67B77929E7F9CA7D3837 /* Pods-BirdBush_Example.modulemap */,
+				9EF12894B13379BAAB9E2999D415491B /* Pods-BirdBush_Example-acknowledgements.markdown */,
+				48E9B01B5A3BC09928E412EA11403A55 /* Pods-BirdBush_Example-acknowledgements.plist */,
+				EE89E698288EBFA77D3B785387F79547 /* Pods-BirdBush_Example-dummy.m */,
+				7505B7E0AACCD202E71C9F78A7488F0C /* Pods-BirdBush_Example-frameworks.sh */,
+				1BC3CBEA69B5662666145DD4529D791C /* Pods-BirdBush_Example-Info.plist */,
+				76DD1825066C8BAC2D845EA31547774F /* Pods-BirdBush_Example-umbrella.h */,
+				2DEFE7A7BF3F7B3AA1CB1D8D04714D54 /* Pods-BirdBush_Example.debug.xcconfig */,
+				54EE16536A9418605693BBC117D4E3FC /* Pods-BirdBush_Example.release.xcconfig */,
 			);
 			name = "Pods-BirdBush_Example";
 			path = "Target Support Files/Pods-BirdBush_Example";
 			sourceTree = "<group>";
 		};
-		6E168C20B8F0AA136683695EDBE0DDF1 /* SwiftPriorityQueue */ = {
+		138944ED8F2C3886C056344028CACB9F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				44BFD9BB6804C7FF353DDED2E3688B5D /* SwiftPriorityQueue.swift */,
-				E9824AD7870D092CD3733CC22E658E13 /* Support Files */,
+				A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */,
 			);
-			path = SwiftPriorityQueue;
+			name = iOS;
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		1F3F31279AB9CD95BFF2A7A5AFD9C62E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				14895211593DB30653ECF3EF8767ACBB /* Development Pods */,
-				D860088577D687AABDA9F911D4C967A7 /* Frameworks */,
-				3BC6BF79D3C3A635AF098148715295D6 /* Pods */,
-				DCF7AE5EF97B827F14BA89E69066C153 /* Products */,
-				4C3CBBA94860E4436A1F80C452D9827D /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		B576BC507EB4451FB0657A752219260A /* Pods-BirdBush_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				EBB305DE0B93D1CE65EF8CD996E3BF84 /* Info.plist */,
-				406B54E2CA3987C8CED8E5DD02D5CA70 /* Pods-BirdBush_Tests.modulemap */,
-				CA0FB5983CA384CD3B69CAF5D4A51F8A /* Pods-BirdBush_Tests-acknowledgements.markdown */,
-				6D5F912316215CEB6E986006C9557D12 /* Pods-BirdBush_Tests-acknowledgements.plist */,
-				94379FA50AA9C1E89D84FEE86047C6E6 /* Pods-BirdBush_Tests-dummy.m */,
-				FE302C9149684D9CF599B8F021814944 /* Pods-BirdBush_Tests-frameworks.sh */,
-				22C89120EA10127C9543BC8154CAEB1E /* Pods-BirdBush_Tests-resources.sh */,
-				6A681230EFB69D59F6CDFB650FDE3310 /* Pods-BirdBush_Tests-umbrella.h */,
-				98AC0BD394F7E0FC9EFED67A2A35379B /* Pods-BirdBush_Tests.debug.xcconfig */,
-				E774FE83EE15D9D783CDB6AB016FB16D /* Pods-BirdBush_Tests.release.xcconfig */,
-			);
-			name = "Pods-BirdBush_Tests";
-			path = "Target Support Files/Pods-BirdBush_Tests";
-			sourceTree = "<group>";
-		};
-		C01EB8028DCC7E248C512CFE8208B715 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				0E498BCFBA406BCED40EAD4555EBF501 /* BirdBush.modulemap */,
-				44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */,
-				4BA42E9D6251D95BD5E146289452750E /* BirdBush-dummy.m */,
-				534F865014DCCF8F90298E3654E9FCDB /* BirdBush-prefix.pch */,
-				0523A2ED7E3F5A392C4BFA898B27FEF1 /* BirdBush-umbrella.h */,
-				1107555C3FEA48430E2CA674AEA4CB0A /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/BirdBush";
-			sourceTree = "<group>";
-		};
-		D860088577D687AABDA9F911D4C967A7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3A5B9C395637400653F54641008DD797 /* SwiftPriorityQueue.framework */,
-				F998359481D969EAB109B39A2CDFC4AD /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DCF7AE5EF97B827F14BA89E69066C153 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A304BB6638362519E94F48E837F19C9E /* BirdBush.framework */,
-				C7E4CBF3E7FF4C898D5B408E8E04E9DA /* Pods_BirdBush_Example.framework */,
-				4C0054B2190A67F6FA0D7FE4A2D95E3D /* Pods_BirdBush_Tests.framework */,
-				8203254509D8D43235826E48FDCE2E4B /* SwiftPriorityQueue.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		E9824AD7870D092CD3733CC22E658E13 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				459730CC825FA9510211FBA7A537CB5D /* Info.plist */,
-				B962739287C99FFEA2D32CB9B47B56B3 /* SwiftPriorityQueue.modulemap */,
-				612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */,
-				270567656A58A7D6F3353C81DB4DF57D /* SwiftPriorityQueue-dummy.m */,
-				FA0167F92F9B8AD2A38195292D3331BC /* SwiftPriorityQueue-prefix.pch */,
-				8959817A8F0FF6987A8BD8073F73FB6D /* SwiftPriorityQueue-umbrella.h */,
+				0867C7B3C40D1A577628AC3E133EB655 /* SwiftPriorityQueue.modulemap */,
+				603EA4D611F5923D5480EA2CA4B32098 /* SwiftPriorityQueue.xcconfig */,
+				9A55188CB52F181C468C924C1DA5F780 /* SwiftPriorityQueue-dummy.m */,
+				94040E8D0941565EFB68E69A6B784992 /* SwiftPriorityQueue-Info.plist */,
+				81F16C0A84F32FA794D91378CD1EB652 /* SwiftPriorityQueue-prefix.pch */,
+				63A8D883BF28867FDB14C3122B313B44 /* SwiftPriorityQueue-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SwiftPriorityQueue";
 			sourceTree = "<group>";
 		};
-		F998359481D969EAB109B39A2CDFC4AD /* iOS */ = {
+		480D9815C9149BF8F913B129BA5E4C17 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				60C333883BEEF94D01BBEAF1AF99864D /* Foundation.framework */,
+				1181B52378572B33B55A15FE481509CF /* Pods-BirdBush_Example */,
+				9012259DB6460CF94614F7586365B50A /* Pods-BirdBush_Tests */,
 			);
-			name = iOS;
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9012259DB6460CF94614F7586365B50A /* Pods-BirdBush_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				79FFC1E150D18F4994DC7A924E6538A7 /* Pods-BirdBush_Tests.modulemap */,
+				0DE9D8D845F93FFD3037A23EC3513D26 /* Pods-BirdBush_Tests-acknowledgements.markdown */,
+				0CABCE30BBC08FECD96472DB65C1788F /* Pods-BirdBush_Tests-acknowledgements.plist */,
+				247CCFDB537D60ED49984B6A9E27C4B6 /* Pods-BirdBush_Tests-dummy.m */,
+				F6B9844579F5E028F0322BDC179B02BD /* Pods-BirdBush_Tests-Info.plist */,
+				DDF3404D21128145C084A57BEFFC2240 /* Pods-BirdBush_Tests-umbrella.h */,
+				17378665B5E0F64319A8537E83CDE3F6 /* Pods-BirdBush_Tests.debug.xcconfig */,
+				C729E7D1B58F8A6C542E455F2E8AD808 /* Pods-BirdBush_Tests.release.xcconfig */,
+			);
+			name = "Pods-BirdBush_Tests";
+			path = "Target Support Files/Pods-BirdBush_Tests";
+			sourceTree = "<group>";
+		};
+		9D1462B08ACE495F8F6FACCFA0E69EF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F9EBEE507974B9F76943A245886E1F7 /* SwiftPriorityQueue.framework */,
+				138944ED8F2C3886C056344028CACB9F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B26C0796A7013835274D00344D5C0D68 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1B2F18AA085D8591AF01D098683B08A /* BirdBush.framework */,
+				942ADC0CFAB474FCB92C14CEE1671773 /* Pods_BirdBush_Example.framework */,
+				A7BFE1282F8A12662A4B21D4DB4C6E2F /* Pods_BirdBush_Tests.framework */,
+				36ED0ED5040479B8671F6445B0F2DC5C /* SwiftPriorityQueue.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C840E92C0CDA2B8AEB6AE39AEEBF6869 /* SwiftPriorityQueue */ = {
+			isa = PBXGroup;
+			children = (
+				C42CA618793A8510035D1DBD6EB3882F /* SwiftPriorityQueue.swift */,
+				1F3F31279AB9CD95BFF2A7A5AFD9C62E /* Support Files */,
+			);
+			name = SwiftPriorityQueue;
+			path = SwiftPriorityQueue;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				F331051FCB08FC2E1FD4131216683F4B /* Development Pods */,
+				9D1462B08ACE495F8F6FACCFA0E69EF3 /* Frameworks */,
+				DE125A947579E84EFF61569FD05422F4 /* Pods */,
+				B26C0796A7013835274D00344D5C0D68 /* Products */,
+				480D9815C9149BF8F913B129BA5E4C17 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D107B8222570771A00DE7EA823DC3164 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5BCFAD16FF15F3353B8AF054A90A0749 /* BirdBush.modulemap */,
+				A7B5E3BE8FDFE6ED16F27D4574FE675C /* BirdBush.xcconfig */,
+				5945D4073CB130A9DAD32FFFB78C50C3 /* BirdBush-dummy.m */,
+				1158F87720EBDDEA6AA86676F56A0C8F /* BirdBush-Info.plist */,
+				9025ADDF6D71718EEA127744C3375607 /* BirdBush-prefix.pch */,
+				F8DE65C3BD9B09CB766987339BDDB7C0 /* BirdBush-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/BirdBush";
+			sourceTree = "<group>";
+		};
+		DE125A947579E84EFF61569FD05422F4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C840E92C0CDA2B8AEB6AE39AEEBF6869 /* SwiftPriorityQueue */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EA8A93E3E794F73CF1F1C9A90EBF82BF /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				92F5D73A6C4ACF77583F70F1008B0E92 /* BirdBush.podspec */,
+				36ECF8E4ACB1EFA5F0A1E0CA9C2A425D /* LICENSE */,
+				6FA69B9C68BAF8EC15E25B956E725AC9 /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F331051FCB08FC2E1FD4131216683F4B /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAC77FEC179831A2CCB1C99C0F3E2127 /* BirdBush */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		FAC77FEC179831A2CCB1C99C0F3E2127 /* BirdBush */ = {
+			isa = PBXGroup;
+			children = (
+				E595F74A685E81C1351DB14CB691EFBA /* BirdBush.swift */,
+				9F4D442C5A52AED713FBB8FC25CD7978 /* BirdBush+Geo.swift */,
+				5E67986ECDAA508796E0874E8F70C0E6 /* BirdBush+NN.swift */,
+				942EFC913AF6EFED835BACD08D072905 /* BirdBush+Range.swift */,
+				6830422AA4B548131DBE5874A62A242B /* BirdBush+Within.swift */,
+				EA8A93E3E794F73CF1F1C9A90EBF82BF /* Pod */,
+				D107B8222570771A00DE7EA823DC3164 /* Support Files */,
+			);
+			name = BirdBush;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		04485170D9D4CA0D4A15FECE5EBD0F4D /* Headers */ = {
+		050CAD171CB06B99B4B3C0B1B54A1575 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D9C5EA3AD2271AD66F9B4CEF117C0F1 /* SwiftPriorityQueue-umbrella.h in Headers */,
+				532BA381C15F3577B0B783C0B3D7C6D0 /* BirdBush-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ADEB500331D0EA5EE19442FD226C0493 /* Headers */ = {
+		B66215F05C3F2A70F2A38CDF4D050BE0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A18F31473B0A2A4C2A65021E48D94A69 /* Pods-BirdBush_Tests-umbrella.h in Headers */,
+				EBC79027B4E05206829C9A8C2220E969 /* Pods-BirdBush_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B891B4FBD2143E09E192B956240F3847 /* Headers */ = {
+		B87DFDFFED05AE5FC84815E55CD154B0 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68D496C5B9D4F11BCD935180355B11D4 /* BirdBush-umbrella.h in Headers */,
+				382B6A40BDCA263FD8CFD157E9173EB1 /* Pods-BirdBush_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C805AD352119A4CECD05D9E93435600A /* Headers */ = {
+		E8831EA0B5F32EFB080CD3C2C9E2E36E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F16D8D6C26CC812C411B2CB31A0B9CF4 /* Pods-BirdBush_Example-umbrella.h in Headers */,
+				811369A5CDBB2463426E771E5E6C72C3 /* SwiftPriorityQueue-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		174C71E6B078D71AC2662A547163016B /* SwiftPriorityQueue */ = {
+		7BCF412E71A6A540BAF96A202454E0A6 /* Pods-BirdBush_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7501FE57122BE70D9AC9E97ADD0D02F9 /* Build configuration list for PBXNativeTarget "SwiftPriorityQueue" */;
+			buildConfigurationList = 6B8422F0C5A85BDC4FD08AEDF12BD68F /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Tests" */;
 			buildPhases = (
-				04485170D9D4CA0D4A15FECE5EBD0F4D /* Headers */,
-				2112FCACFD844B97250022B21839C03C /* Sources */,
-				F08C5566F4FAE650D7EFC0622BA23D0D /* Frameworks */,
-				2630F0A34F87608FA52AE90239A479F9 /* Resources */,
+				B87DFDFFED05AE5FC84815E55CD154B0 /* Headers */,
+				A67FAA6013B122BEBDDDAABF1887A563 /* Sources */,
+				9987E6E805FD35DF96AE7219B2D17249 /* Frameworks */,
+				F18F6459E228274B2CF25DDE6A610867 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7A21FB14B41A26A5AF6AEA6F3DB4DA40 /* PBXTargetDependency */,
+			);
+			name = "Pods-BirdBush_Tests";
+			productName = "Pods-BirdBush_Tests";
+			productReference = A7BFE1282F8A12662A4B21D4DB4C6E2F /* Pods_BirdBush_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		95DD46672BB01E19814D93D8090B3AE7 /* BirdBush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98CBDAC89EAF382EE22E1B5A20B2998C /* Build configuration list for PBXNativeTarget "BirdBush" */;
+			buildPhases = (
+				050CAD171CB06B99B4B3C0B1B54A1575 /* Headers */,
+				A99CDCFAB4A6D5B32D189BBFF3F0003E /* Sources */,
+				4B53FC5D74101DE9EE35D0AFC4D38498 /* Frameworks */,
+				C30B4FDE2555CB4EE4229DAE06516527 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E66084F7663D42995CB693D2DAB0287E /* PBXTargetDependency */,
+			);
+			name = BirdBush;
+			productName = BirdBush;
+			productReference = D1B2F18AA085D8591AF01D098683B08A /* BirdBush.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A64C41EA2BCC776057217E7B4B91A2DB /* SwiftPriorityQueue */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 285B58CD280C2DFD90ACE946B9622911 /* Build configuration list for PBXNativeTarget "SwiftPriorityQueue" */;
+			buildPhases = (
+				E8831EA0B5F32EFB080CD3C2C9E2E36E /* Headers */,
+				6EEFD31071DD9CB832711D0ED6338BB3 /* Sources */,
+				8C8ADB9F66D98B7E10FB173224ECD6ED /* Frameworks */,
+				BAD6E8A32B714FF555B99348E9C783F9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -363,124 +396,81 @@
 			);
 			name = SwiftPriorityQueue;
 			productName = SwiftPriorityQueue;
-			productReference = 8203254509D8D43235826E48FDCE2E4B /* SwiftPriorityQueue.framework */;
+			productReference = 36ED0ED5040479B8671F6445B0F2DC5C /* SwiftPriorityQueue.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		4008DF5FDD9370B57F6AC3912EB7D968 /* BirdBush */ = {
+		B9EC2211559EBAD7AD41E9EE0DE49EED /* Pods-BirdBush_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 039DB21470A5CEED88EC0F1F2D0001C9 /* Build configuration list for PBXNativeTarget "BirdBush" */;
+			buildConfigurationList = 91C39F3FB35335CD16FFD55947357526 /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Example" */;
 			buildPhases = (
-				B891B4FBD2143E09E192B956240F3847 /* Headers */,
-				6CE7E59973DC7B0CFE61C82C383CC2EF /* Sources */,
-				4FC9AFDEB9C6E4A0D248170DBF817504 /* Frameworks */,
-				605880A391D3BCE074EBE3169BDC69CA /* Resources */,
+				B66215F05C3F2A70F2A38CDF4D050BE0 /* Headers */,
+				F8D40944A725DAF4242B294D521B4E5B /* Sources */,
+				4D9799DC0E79D65C31120F9F80941436 /* Frameworks */,
+				352CD29EAB72F0B55BF6C6FDD36300BA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				22F1B67222D7632DAE181985A5516C10 /* PBXTargetDependency */,
-			);
-			name = BirdBush;
-			productName = BirdBush;
-			productReference = A304BB6638362519E94F48E837F19C9E /* BirdBush.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		7C572AD54C2DE21B34D3BFFD17AA6E0E /* Pods-BirdBush_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 838C2A8D4C5972F29C9046D7AA45DA49 /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Tests" */;
-			buildPhases = (
-				ADEB500331D0EA5EE19442FD226C0493 /* Headers */,
-				80755D1831B4E57B4CCB8B6C66472E84 /* Sources */,
-				1BA9B2602752953CCA32203C74D1EDA6 /* Frameworks */,
-				C93601CB1A2DEE6E9AE5A968846791F6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FC2A7FC75AB81C2628B5E8F746CA4800 /* PBXTargetDependency */,
-			);
-			name = "Pods-BirdBush_Tests";
-			productName = "Pods-BirdBush_Tests";
-			productReference = 4C0054B2190A67F6FA0D7FE4A2D95E3D /* Pods_BirdBush_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		DAA652FF60A56E11C3E4E890B44DB48B /* Pods-BirdBush_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0EAD122E06DAD34F00ED4FF2658B780A /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Example" */;
-			buildPhases = (
-				C805AD352119A4CECD05D9E93435600A /* Headers */,
-				D4FCFBFCBAE14246D55DEAE2FEE46957 /* Sources */,
-				D5652E09E1A7D7058CE99A11BFF9216D /* Frameworks */,
-				B33689EA40181A25DFE58B04C6954636 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				009EB11DFA1378705A31638E9F4186B3 /* PBXTargetDependency */,
-				54538C639A6CB89667BAE8CFA5570F5B /* PBXTargetDependency */,
+				21E04EB1BBB2869768D3ECF98693E5C8 /* PBXTargetDependency */,
+				4D5B0E4344A579ECDCEB192D2C6B4D03 /* PBXTargetDependency */,
 			);
 			name = "Pods-BirdBush_Example";
 			productName = "Pods-BirdBush_Example";
-			productReference = C7E4CBF3E7FF4C898D5B408E8E04E9DA /* Pods_BirdBush_Example.framework */;
+			productReference = 942ADC0CFAB474FCB92C14CEE1671773 /* Pods_BirdBush_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
 				LastUpgradeCheck = 0930;
-				TargetAttributes = {
-					4008DF5FDD9370B57F6AC3912EB7D968 = {
-						LastSwiftMigration = 1010;
-					};
-				};
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = DCF7AE5EF97B827F14BA89E69066C153 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = B26C0796A7013835274D00344D5C0D68 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4008DF5FDD9370B57F6AC3912EB7D968 /* BirdBush */,
-				DAA652FF60A56E11C3E4E890B44DB48B /* Pods-BirdBush_Example */,
-				7C572AD54C2DE21B34D3BFFD17AA6E0E /* Pods-BirdBush_Tests */,
-				174C71E6B078D71AC2662A547163016B /* SwiftPriorityQueue */,
+				95DD46672BB01E19814D93D8090B3AE7 /* BirdBush */,
+				B9EC2211559EBAD7AD41E9EE0DE49EED /* Pods-BirdBush_Example */,
+				7BCF412E71A6A540BAF96A202454E0A6 /* Pods-BirdBush_Tests */,
+				A64C41EA2BCC776057217E7B4B91A2DB /* SwiftPriorityQueue */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2630F0A34F87608FA52AE90239A479F9 /* Resources */ = {
+		352CD29EAB72F0B55BF6C6FDD36300BA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		605880A391D3BCE074EBE3169BDC69CA /* Resources */ = {
+		BAD6E8A32B714FF555B99348E9C783F9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B33689EA40181A25DFE58B04C6954636 /* Resources */ = {
+		C30B4FDE2555CB4EE4229DAE06516527 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C93601CB1A2DEE6E9AE5A968846791F6 /* Resources */ = {
+		F18F6459E228274B2CF25DDE6A610867 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -490,110 +480,77 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2112FCACFD844B97250022B21839C03C /* Sources */ = {
+		6EEFD31071DD9CB832711D0ED6338BB3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B980240DE216ACA9E5A2BD26CB3D721F /* SwiftPriorityQueue-dummy.m in Sources */,
-				6A14AD2864E2E3BFADCD217391389D96 /* SwiftPriorityQueue.swift in Sources */,
+				1923522613E4228D4F17E83BD8DE9F22 /* SwiftPriorityQueue-dummy.m in Sources */,
+				2BF66C84369F3504557C81FF7100B6C4 /* SwiftPriorityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6CE7E59973DC7B0CFE61C82C383CC2EF /* Sources */ = {
+		A67FAA6013B122BEBDDDAABF1887A563 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339A00BB989A98AEE38B34C94A88F0AB /* BirdBush+Geo.swift in Sources */,
-				4D92E4217080E5FECEAF9DAE153296BB /* BirdBush+NN.swift in Sources */,
-				211E86EF839AAE50026FC676399ED52E /* BirdBush+Range.swift in Sources */,
-				AFB920E58FE33ECB709310FBE9DC2952 /* BirdBush+Within.swift in Sources */,
-				C68135C34385B0477009CBE6885FC6B1 /* BirdBush-dummy.m in Sources */,
-				102F919A93FFAA94947EC6F73D2FD72F /* BirdBush.swift in Sources */,
+				FB074E3D0BEF34BEBED85056B4C7B654 /* Pods-BirdBush_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80755D1831B4E57B4CCB8B6C66472E84 /* Sources */ = {
+		A99CDCFAB4A6D5B32D189BBFF3F0003E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2414FB6F2465AB492B5FE3F1FC1D4618 /* Pods-BirdBush_Tests-dummy.m in Sources */,
+				954BD9E1B84A688D94276C804C916552 /* BirdBush+Geo.swift in Sources */,
+				5704452B0282A82E071DC71B6BBD2A86 /* BirdBush+NN.swift in Sources */,
+				10285F456BB99592D63139A171CC0588 /* BirdBush+Range.swift in Sources */,
+				F1F522C056C2D5FAF8049DC6B772D740 /* BirdBush+Within.swift in Sources */,
+				D55A962CBCB318DDFCF77DD1C79FAFF1 /* BirdBush-dummy.m in Sources */,
+				999B3BEB484C4657CDDDD94C6E056473 /* BirdBush.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4FCFBFCBAE14246D55DEAE2FEE46957 /* Sources */ = {
+		F8D40944A725DAF4242B294D521B4E5B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83EDE69183DBC51ED18875CEED5D723B /* Pods-BirdBush_Example-dummy.m in Sources */,
+				CDFC10B9B4F272096BCC310CE4407849 /* Pods-BirdBush_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		009EB11DFA1378705A31638E9F4186B3 /* PBXTargetDependency */ = {
+		21E04EB1BBB2869768D3ECF98693E5C8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BirdBush;
-			target = 4008DF5FDD9370B57F6AC3912EB7D968 /* BirdBush */;
-			targetProxy = A2352299A56452EDDEACD0DD88742B0C /* PBXContainerItemProxy */;
+			target = 95DD46672BB01E19814D93D8090B3AE7 /* BirdBush */;
+			targetProxy = 130013F55B38002C2D94B2D71DFFEF90 /* PBXContainerItemProxy */;
 		};
-		22F1B67222D7632DAE181985A5516C10 /* PBXTargetDependency */ = {
+		4D5B0E4344A579ECDCEB192D2C6B4D03 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftPriorityQueue;
-			target = 174C71E6B078D71AC2662A547163016B /* SwiftPriorityQueue */;
-			targetProxy = DCBF5EDCE908F0FE39F5B10A9BAA265C /* PBXContainerItemProxy */;
+			target = A64C41EA2BCC776057217E7B4B91A2DB /* SwiftPriorityQueue */;
+			targetProxy = 80A35022123DC6980BBEBD910A2C9E89 /* PBXContainerItemProxy */;
 		};
-		54538C639A6CB89667BAE8CFA5570F5B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwiftPriorityQueue;
-			target = 174C71E6B078D71AC2662A547163016B /* SwiftPriorityQueue */;
-			targetProxy = CC302420D278345EC74EB5F8FDE6E157 /* PBXContainerItemProxy */;
-		};
-		FC2A7FC75AB81C2628B5E8F746CA4800 /* PBXTargetDependency */ = {
+		7A21FB14B41A26A5AF6AEA6F3DB4DA40 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-BirdBush_Example";
-			target = DAA652FF60A56E11C3E4E890B44DB48B /* Pods-BirdBush_Example */;
-			targetProxy = A768D1596DB52059110252B82C50EDD0 /* PBXContainerItemProxy */;
+			target = B9EC2211559EBAD7AD41E9EE0DE49EED /* Pods-BirdBush_Example */;
+			targetProxy = 7720AC656077E6EEFCCA79772FDA6014 /* PBXContainerItemProxy */;
+		};
+		E66084F7663D42995CB693D2DAB0287E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftPriorityQueue;
+			target = A64C41EA2BCC776057217E7B4B91A2DB /* SwiftPriorityQueue */;
+			targetProxy = 955A6BB9DA6C78EFA3DABB7FA90C1E55 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2325728E9FC6FD79E8DE7F122AA72ECD /* Debug */ = {
+		04D70AC3AB2C7BF7DE9114C698D3FB50 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98AC0BD394F7E0FC9EFED67A2A35379B /* Pods-BirdBush_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		408B732AFA8FC810676AE1262E6A0877 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */;
+			baseConfigurationReference = 603EA4D611F5923D5480EA2CA4B32098 /* SwiftPriorityQueue.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -605,7 +562,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftPriorityQueue/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -622,7 +579,140 @@
 			};
 			name = Debug;
 		};
-		50646285DD9FD95AF390BDA3FB1948EA /* Debug */ = {
+		085371A5BE651FCC4265406D4BA4BC5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DEFE7A7BF3F7B3AA1CB1D8D04714D54 /* Pods-BirdBush_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3D6E10D2A1926A1CB10C2F6043539EE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54EE16536A9418605693BBC117D4E3FC /* Pods-BirdBush_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		65BAE38FFBF85BEBE2E0728C48F3BFA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C729E7D1B58F8A6C542E455F2E8AD808 /* Pods-BirdBush_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5239CF071F836D23AF6C9A999353E05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 603EA4D611F5923D5480EA2CA4B32098 /* SwiftPriorityQueue.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue.modulemap";
+				PRODUCT_MODULE_NAME = SwiftPriorityQueue;
+				PRODUCT_NAME = SwiftPriorityQueue;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -654,8 +744,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -688,9 +776,42 @@
 			};
 			name = Debug;
 		};
-		55606CF60EAF9EA0E968E17ADFD664F7 /* Release */ = {
+		AEBC09FB30073FD4C3D2F540A669C422 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 612FA6F86D13D2158A4E17135AEF3CBF /* SwiftPriorityQueue.xcconfig */;
+			baseConfigurationReference = 17378665B5E0F64319A8537E83CDE3F6 /* Pods-BirdBush_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E203635D9B7199D12292ACFC9F3776CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7B5E3BE8FDFE6ED16F27D4574FE675C /* BirdBush.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -701,18 +822,49 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftPriorityQueue/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/BirdBush/BirdBush-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BirdBush/BirdBush-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftPriorityQueue/SwiftPriorityQueue.modulemap";
-				PRODUCT_MODULE_NAME = SwiftPriorityQueue;
-				PRODUCT_NAME = SwiftPriorityQueue;
+				MODULEMAP_FILE = "Target Support Files/BirdBush/BirdBush.modulemap";
+				PRODUCT_MODULE_NAME = BirdBush;
+				PRODUCT_NAME = BirdBush;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.2.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		ED81C926E11EA7B2AA4F7446F06CCCE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7B5E3BE8FDFE6ED16F27D4574FE675C /* BirdBush.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BirdBush/BirdBush-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BirdBush/BirdBush-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BirdBush/BirdBush.modulemap";
+				PRODUCT_MODULE_NAME = BirdBush;
+				PRODUCT_NAME = BirdBush;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2.1;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -720,7 +872,7 @@
 			};
 			name = Release;
 		};
-		58DCB2BA7C34E84C00C38CEF18A96D11 /* Release */ = {
+		F232B5ECA11A71BFA199A229B323F454 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -752,8 +904,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -775,225 +925,62 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		5A84E902CC2D03A179C36C067EA36820 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = AB9E184189DA706CECBABE88E00103AE /* Pods-BirdBush_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		792A9F68A3A5D7DA4AE2BD2D426423CE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15646754125E7BBE505365C9115A5BEF /* Pods-BirdBush_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7CD5CD9BF89D6603706C7F02D75D31B7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BirdBush/BirdBush-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BirdBush/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BirdBush/BirdBush.modulemap";
-				PRODUCT_MODULE_NAME = BirdBush;
-				PRODUCT_NAME = BirdBush;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		81FCEAB78244F6B32EBBE146A23EBD9B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E774FE83EE15D9D783CDB6AB016FB16D /* Pods-BirdBush_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BirdBush_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BC658164DA324AAE994279626AF2178A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44EFFBD783F6839761C5C25551B4AD90 /* BirdBush.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BirdBush/BirdBush-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BirdBush/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BirdBush/BirdBush.modulemap";
-				PRODUCT_MODULE_NAME = BirdBush;
-				PRODUCT_NAME = BirdBush;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		039DB21470A5CEED88EC0F1F2D0001C9 /* Build configuration list for PBXNativeTarget "BirdBush" */ = {
+		285B58CD280C2DFD90ACE946B9622911 /* Build configuration list for PBXNativeTarget "SwiftPriorityQueue" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC658164DA324AAE994279626AF2178A /* Debug */,
-				7CD5CD9BF89D6603706C7F02D75D31B7 /* Release */,
+				04D70AC3AB2C7BF7DE9114C698D3FB50 /* Debug */,
+				A5239CF071F836D23AF6C9A999353E05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0EAD122E06DAD34F00ED4FF2658B780A /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Example" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				792A9F68A3A5D7DA4AE2BD2D426423CE /* Debug */,
-				5A84E902CC2D03A179C36C067EA36820 /* Release */,
+				AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */,
+				F232B5ECA11A71BFA199A229B323F454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		6B8422F0C5A85BDC4FD08AEDF12BD68F /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				50646285DD9FD95AF390BDA3FB1948EA /* Debug */,
-				58DCB2BA7C34E84C00C38CEF18A96D11 /* Release */,
+				AEBC09FB30073FD4C3D2F540A669C422 /* Debug */,
+				65BAE38FFBF85BEBE2E0728C48F3BFA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7501FE57122BE70D9AC9E97ADD0D02F9 /* Build configuration list for PBXNativeTarget "SwiftPriorityQueue" */ = {
+		91C39F3FB35335CD16FFD55947357526 /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				408B732AFA8FC810676AE1262E6A0877 /* Debug */,
-				55606CF60EAF9EA0E968E17ADFD664F7 /* Release */,
+				085371A5BE651FCC4265406D4BA4BC5F /* Debug */,
+				3D6E10D2A1926A1CB10C2F6043539EE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		838C2A8D4C5972F29C9046D7AA45DA49 /* Build configuration list for PBXNativeTarget "Pods-BirdBush_Tests" */ = {
+		98CBDAC89EAF382EE22E1B5A20B2998C /* Build configuration list for PBXNativeTarget "BirdBush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2325728E9FC6FD79E8DE7F122AA72ECD /* Debug */,
-				81FCEAB78244F6B32EBBE146A23EBD9B /* Release */,
+				E203635D9B7199D12292ACFC9F3776CB /* Debug */,
+				ED81C926E11EA7B2AA4F7446F06CCCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
