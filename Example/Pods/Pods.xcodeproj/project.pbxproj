@@ -60,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0804FE0308E987A3206621480239DBFE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		0867C7B3C40D1A577628AC3E133EB655 /* SwiftPriorityQueue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftPriorityQueue.modulemap; sourceTree = "<group>"; };
 		0CABCE30BBC08FECD96472DB65C1788F /* Pods-BirdBush_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0DE9D8D845F93FFD3037A23EC3513D26 /* Pods-BirdBush_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -68,8 +69,8 @@
 		1BC3CBEA69B5662666145DD4529D791C /* Pods-BirdBush_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-Info.plist"; sourceTree = "<group>"; };
 		247CCFDB537D60ED49984B6A9E27C4B6 /* Pods-BirdBush_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Tests-dummy.m"; sourceTree = "<group>"; };
 		2DEFE7A7BF3F7B3AA1CB1D8D04714D54 /* Pods-BirdBush_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		36ECF8E4ACB1EFA5F0A1E0CA9C2A425D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		36ED0ED5040479B8671F6445B0F2DC5C /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftPriorityQueue.framework; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		398D93420CFCF5EBE9CFB27AF6A60C07 /* birdbush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = birdbush.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F9EBEE507974B9F76943A245886E1F7 /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E9B01B5A3BC09928E412EA11403A55 /* Pods-BirdBush_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		54EE16536A9418605693BBC117D4E3FC /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,13 +81,11 @@
 		603EA4D611F5923D5480EA2CA4B32098 /* SwiftPriorityQueue.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftPriorityQueue.xcconfig; sourceTree = "<group>"; };
 		63A8D883BF28867FDB14C3122B313B44 /* SwiftPriorityQueue-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-umbrella.h"; sourceTree = "<group>"; };
 		6830422AA4B548131DBE5874A62A242B /* BirdBush+Within.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Within.swift"; path = "BirdBush/Classes/BirdBush+Within.swift"; sourceTree = "<group>"; };
-		6FA69B9C68BAF8EC15E25B956E725AC9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		7505B7E0AACCD202E71C9F78A7488F0C /* Pods-BirdBush_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BirdBush_Example-frameworks.sh"; sourceTree = "<group>"; };
 		76DD1825066C8BAC2D845EA31547774F /* Pods-BirdBush_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Example-umbrella.h"; sourceTree = "<group>"; };
 		79FFC1E150D18F4994DC7A924E6538A7 /* Pods-BirdBush_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BirdBush_Tests.modulemap"; sourceTree = "<group>"; };
 		81F16C0A84F32FA794D91378CD1EB652 /* SwiftPriorityQueue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-prefix.pch"; sourceTree = "<group>"; };
 		9025ADDF6D71718EEA127744C3375607 /* BirdBush-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-prefix.pch"; sourceTree = "<group>"; };
-		92F5D73A6C4ACF77583F70F1008B0E92 /* BirdBush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = BirdBush.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94040E8D0941565EFB68E69A6B784992 /* SwiftPriorityQueue-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftPriorityQueue-Info.plist"; sourceTree = "<group>"; };
 		942ADC0CFAB474FCB92C14CEE1671773 /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Example.framework; path = "Pods-BirdBush_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		942EFC913AF6EFED835BACD08D072905 /* BirdBush+Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Range.swift"; path = "BirdBush/Classes/BirdBush+Range.swift"; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		A7B5E3BE8FDFE6ED16F27D4574FE675C /* BirdBush.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BirdBush.xcconfig; sourceTree = "<group>"; };
 		A7BFE1282F8A12662A4B21D4DB4C6E2F /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Tests.framework; path = "Pods-BirdBush_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42CA618793A8510035D1DBD6EB3882F /* SwiftPriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftPriorityQueue.swift; path = Sources/SwiftPriorityQueue/SwiftPriorityQueue.swift; sourceTree = "<group>"; };
+		C5D3288865895825E5EC4E51B6565F4C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		C729E7D1B58F8A6C542E455F2E8AD808 /* Pods-BirdBush_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		D1B2F18AA085D8591AF01D098683B08A /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BirdBush.framework; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF3404D21128145C084A57BEFFC2240 /* Pods-BirdBush_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -238,6 +238,16 @@
 			path = SwiftPriorityQueue;
 			sourceTree = "<group>";
 		};
+		C93849B8B9B299F5640927652EFA2ADD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				398D93420CFCF5EBE9CFB27AF6A60C07 /* birdbush.podspec */,
+				C5D3288865895825E5EC4E51B6565F4C /* LICENSE */,
+				0804FE0308E987A3206621480239DBFE /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -272,16 +282,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		EA8A93E3E794F73CF1F1C9A90EBF82BF /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				92F5D73A6C4ACF77583F70F1008B0E92 /* BirdBush.podspec */,
-				36ECF8E4ACB1EFA5F0A1E0CA9C2A425D /* LICENSE */,
-				6FA69B9C68BAF8EC15E25B956E725AC9 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		F331051FCB08FC2E1FD4131216683F4B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,7 +298,7 @@
 				5E67986ECDAA508796E0874E8F70C0E6 /* BirdBush+NN.swift */,
 				942EFC913AF6EFED835BACD08D072905 /* BirdBush+Range.swift */,
 				6830422AA4B548131DBE5874A62A242B /* BirdBush+Within.swift */,
-				EA8A93E3E794F73CF1F1C9A90EBF82BF /* Pod */,
+				C93849B8B9B299F5640927652EFA2ADD /* Pod */,
 				D107B8222570771A00DE7EA823DC3164 /* Support Files */,
 			);
 			name = BirdBush;
