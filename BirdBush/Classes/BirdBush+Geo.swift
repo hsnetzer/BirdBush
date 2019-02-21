@@ -46,6 +46,7 @@ public extension BirdBush {
     // Returns an array of the closest points from a given location in order of increasing distance.
     func around(lon: Double, lat: Double, maxResults: Int = Int.max, maxDistance: Double = Double.greatestFiniteMagnitude) -> [(U, Double)] {
         var maxHaverSinDist = 1.0, result = [(U, Double)]()
+        guard ids.count > 0 else { return result }
         
         if (maxDistance != Double.greatestFiniteMagnitude) {
             maxHaverSinDist = haverSin(maxDistance / 6.371e6)

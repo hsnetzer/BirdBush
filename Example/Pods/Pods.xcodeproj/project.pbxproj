@@ -60,7 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0804FE0308E987A3206621480239DBFE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		0804FE0308E987A3206621480239DBFE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0867C7B3C40D1A577628AC3E133EB655 /* SwiftPriorityQueue.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftPriorityQueue.modulemap; sourceTree = "<group>"; };
 		0CABCE30BBC08FECD96472DB65C1788F /* Pods-BirdBush_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		0DE9D8D845F93FFD3037A23EC3513D26 /* Pods-BirdBush_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -69,8 +69,8 @@
 		1BC3CBEA69B5662666145DD4529D791C /* Pods-BirdBush_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-Info.plist"; sourceTree = "<group>"; };
 		247CCFDB537D60ED49984B6A9E27C4B6 /* Pods-BirdBush_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Tests-dummy.m"; sourceTree = "<group>"; };
 		2DEFE7A7BF3F7B3AA1CB1D8D04714D54 /* Pods-BirdBush_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		36ED0ED5040479B8671F6445B0F2DC5C /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftPriorityQueue.framework; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		398D93420CFCF5EBE9CFB27AF6A60C07 /* birdbush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = birdbush.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		36ED0ED5040479B8671F6445B0F2DC5C /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		398D93420CFCF5EBE9CFB27AF6A60C07 /* birdbush.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = birdbush.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3F9EBEE507974B9F76943A245886E1F7 /* SwiftPriorityQueue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftPriorityQueue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48E9B01B5A3BC09928E412EA11403A55 /* Pods-BirdBush_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BirdBush_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		54EE16536A9418605693BBC117D4E3FC /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,19 +87,19 @@
 		81F16C0A84F32FA794D91378CD1EB652 /* SwiftPriorityQueue-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftPriorityQueue-prefix.pch"; sourceTree = "<group>"; };
 		9025ADDF6D71718EEA127744C3375607 /* BirdBush-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BirdBush-prefix.pch"; sourceTree = "<group>"; };
 		94040E8D0941565EFB68E69A6B784992 /* SwiftPriorityQueue-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftPriorityQueue-Info.plist"; sourceTree = "<group>"; };
-		942ADC0CFAB474FCB92C14CEE1671773 /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Example.framework; path = "Pods-BirdBush_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		942ADC0CFAB474FCB92C14CEE1671773 /* Pods_BirdBush_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdBush_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		942EFC913AF6EFED835BACD08D072905 /* BirdBush+Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Range.swift"; path = "BirdBush/Classes/BirdBush+Range.swift"; sourceTree = "<group>"; };
 		9A55188CB52F181C468C924C1DA5F780 /* SwiftPriorityQueue-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftPriorityQueue-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EF12894B13379BAAB9E2999D415491B /* Pods-BirdBush_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BirdBush_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9F4D442C5A52AED713FBB8FC25CD7978 /* BirdBush+Geo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BirdBush+Geo.swift"; path = "BirdBush/Classes/BirdBush+Geo.swift"; sourceTree = "<group>"; };
 		A5771B6991B1B466B6E58176EE79F495 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		A7B5E3BE8FDFE6ED16F27D4574FE675C /* BirdBush.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BirdBush.xcconfig; sourceTree = "<group>"; };
-		A7BFE1282F8A12662A4B21D4DB4C6E2F /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BirdBush_Tests.framework; path = "Pods-BirdBush_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7BFE1282F8A12662A4B21D4DB4C6E2F /* Pods_BirdBush_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BirdBush_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42CA618793A8510035D1DBD6EB3882F /* SwiftPriorityQueue.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftPriorityQueue.swift; path = Sources/SwiftPriorityQueue/SwiftPriorityQueue.swift; sourceTree = "<group>"; };
-		C5D3288865895825E5EC4E51B6565F4C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C5D3288865895825E5EC4E51B6565F4C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C729E7D1B58F8A6C542E455F2E8AD808 /* Pods-BirdBush_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BirdBush_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D1B2F18AA085D8591AF01D098683B08A /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BirdBush.framework; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1B2F18AA085D8591AF01D098683B08A /* BirdBush.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BirdBush.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF3404D21128145C084A57BEFFC2240 /* Pods-BirdBush_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BirdBush_Tests-umbrella.h"; sourceTree = "<group>"; };
 		E595F74A685E81C1351DB14CB691EFBA /* BirdBush.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BirdBush.swift; path = BirdBush/Classes/BirdBush.swift; sourceTree = "<group>"; };
 		EE89E698288EBFA77D3B785387F79547 /* Pods-BirdBush_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BirdBush_Example-dummy.m"; sourceTree = "<group>"; };
@@ -234,7 +234,6 @@
 				C42CA618793A8510035D1DBD6EB3882F /* SwiftPriorityQueue.swift */,
 				1F3F31279AB9CD95BFF2A7A5AFD9C62E /* Support Files */,
 			);
-			name = SwiftPriorityQueue;
 			path = SwiftPriorityQueue;
 			sourceTree = "<group>";
 		};
@@ -925,8 +924,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
