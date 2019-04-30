@@ -5,14 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
 [![Platform](https://img.shields.io/cocoapods/p/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
 
+Swift implementation of a k-d binary space partitioning tree. The data is stored in a pair of arrays, making serialization very straightforward. Besides the classic k-d tree queries, BirdBush also implements a geographical nearest neighbor search based on mourner's geokdbush. 
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Installation
 
-BirdBush is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+BirdBush is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'BirdBush', :git => 'https://github.com/hsnetzer/BirdBush'
@@ -22,13 +23,13 @@ pod 'BirdBush', :git => 'https://github.com/hsnetzer/BirdBush'
 
 ### Initialization
 
-With Array-type input locations:
+Generating with locations inputted as an array of Array<Double>s of the form [id, x coord, y coord]:
 ```swift
 var bigArray = [[Double]]()
 for i in 1...10000 {
   bigArray.append([Double(i), Double.random(in: 0...100), Double.random(in: 0...100)])
 }
-let bigIndex = BirdBush<Double>(locations: bigArray, nodeSize: 32, getID: { return $0[0] }, getX: { return $0[1] }, getY: { return $0[2] })
+let bigIndex = BirdBush<Double>(locations: bigArray, getID: { return $0[0] }, getX: { return $0[1] }, getY: { return $0[2] })
 ```  
 
 ### Methods
