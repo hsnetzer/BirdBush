@@ -23,7 +23,7 @@ pod 'BirdBush', :git => 'https://github.com/hsnetzer/BirdBush'
 
 ### Initialization
 
-Generating with locations inputted as an array of Array<Double>s of the form [id, x coord, y coord]:
+Generating with locations inputted as an array of Double arrays of the form [id, x coord, y coord]:
 ```swift
 var bigArray = [[Double]]()
 for i in 1...10000 {
