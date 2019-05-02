@@ -8,6 +8,7 @@
 import Foundation
 
 public extension BirdBush {
+    // returns tuple of nn id and squared distance
     func nearest(qx: Double, qy: Double) -> (U, Double) {
         return nearestWith(qx: qx, qy: qy, left: 0, right: ids.count-1, axis: 0, bestDist: Double.infinity, bestID: ids[0])
     }

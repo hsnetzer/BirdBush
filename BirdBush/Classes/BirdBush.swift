@@ -101,8 +101,8 @@ public class BirdBush<U: Codable>: Codable {
     }
     
     func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
-        let dx = (ax - bx)
-        let dy = (ay - by)
+        let dx = ax - bx
+        let dy = ay - by
         return dx * dx + dy * dy
     }
     

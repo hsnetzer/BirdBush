@@ -35,10 +35,10 @@ public extension BirdBush {
         }
         
         let dist: Double
-        let type: QueueElementType
+        let payload: QueuePayload
     }
     
-    private enum QueueElementType {
+    private enum QueuePayload {
         case point(id: U)
         case node(left: Int, right: Int, axis: Int, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double)
     }
@@ -49,14 +49,14 @@ public extension BirdBush {
         guard ids.count > 0 else { return result }
         
         if (maxDistance != Double.greatestFiniteMagnitude) {
-            maxHaverSinDist = haverSin(maxDistance / 6.371e6)
+            maxHaverSinDist = hav(maxDistance / 6.371e6)
         }
         
         // a distance-sorted priority queue that will contain both points and kd-tree nodes
         var q = PriorityQueue<QueueElement>(ascending: true)
         
         // an object that represents the top kd-tree node (the whole Earth)
-        var node: QueueElementType? = QueueElementType.node(left: 0, right: ids.count - 1, axis: 0, minLon: -180, maxLon: 180, minLat: -90, maxLat: 90)
+        var node: QueuePayload? = QueuePayload.node(left: 0, right: ids.count - 1, axis: 0, minLon: -180, maxLon: 180, minLat: -90, maxLat: 90)
         
         let cosLat = cos(lat * .pi / 180)
         
@@ -69,7 +69,7 @@ public extension BirdBush {
                     for i in left...right {
                         let item = ids[i]
                         let dist = haverSinDist(lon1: lon, lat1: lat, lon2: coords[2 * i], lat2: coords[2 * i + 1], cosLat1: cosLat)
-                        q.push(QueueElement(dist: dist, type: QueueElementType.point(id: item)))
+                        q.push(QueueElement(dist: dist, payload: QueuePayload.point(id: item)))
                     }
                 } else { // not a leaf node (has child nodes)
                     
@@ -80,7 +80,7 @@ public extension BirdBush {
                     // add middle point to the queue
                     let item = ids[m]
                     let dist = haverSinDist(lon1: lon, lat1: lat, lon2: midLon, lat2: midLat, cosLat1: cosLat)
-                    q.push(QueueElement(dist: dist, type: QueueElementType.point(id: item)))
+                    q.push(QueueElement(dist: dist, payload: QueuePayload.point(id: item)))
                     
                     let nextAxis = 1 - axis
                     
@@ -93,7 +93,7 @@ public extension BirdBush {
                     let rightDist = boxDist(qLon: lon, qLat: lat, cosLat: cosLat, minLon: nextMinLon, maxLon: maxLon, minLat: nextMinLat, maxLat: maxLat)
                     
                     // first half of the node
-                    let leftNode = QueueElementType.node(left: left,
+                    let leftNode = QueuePayload.node(left: left,
                                                          right: m - 1,
                                                          axis: nextAxis,
                                                          minLon: minLon,
@@ -101,7 +101,7 @@ public extension BirdBush {
                                                          minLat: minLat,
                                                          maxLat: nextMaxLat)
                     // second half of the node
-                    let rightNode = QueueElementType.node(left: m + 1,
+                    let rightNode = QueuePayload.node(left: m + 1,
                                                           right: right,
                                                           axis: nextAxis,
                                                           minLon: nextMinLon,
@@ -111,18 +111,18 @@ public extension BirdBush {
                     
                     
                     // add child nodes to the queue
-                    q.push(QueueElement(dist: leftDist, type: leftNode))
-                    q.push(QueueElement(dist: rightDist, type: rightNode))
+                    q.push(QueueElement(dist: leftDist, payload: leftNode))
+                    q.push(QueueElement(dist: rightDist, payload: rightNode))
                 }
                 
                 // fetch closest points from the queue; they're guaranteed to be closer
                 // than all remaining points (both individual and those in kd-tree nodes),
                 // since each node's distance is a lower bound of distances to its children
                 while let peek = q.peek() {
-                    if case .point(let id) = peek.type {
+                    if case .point(let id) = peek.payload {
                         let candidate = q.pop()!
                         if (candidate.dist > maxHaverSinDist) { return result }
-                        result.append((id, geoDist(candidate.dist)))
+                        result.append((id, candidate.dist))
                         if (result.count == maxResults) { return result }
                     } else {
                         break
@@ -130,7 +130,7 @@ public extension BirdBush {
                 }
                 
                 // the next closest kd-tree node
-                node = q.pop()?.type
+                node = q.pop()?.payload
             default:
                 print("error not a node")
                 break
@@ -141,16 +141,16 @@ public extension BirdBush {
     
     // lower bound for distance from a location to points inside a bounding box
     private func boxDist(qLon: Double, qLat: Double, cosLat: Double, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double) -> Double {
-        // query point is between minimum and maximum longitudes
+        // query point is between minimum and maximum longitudes of the box
         if (qLon >= minLon && qLon <= maxLon) {
-            if (qLat < minLat) { return haverSin((qLat - minLat) * .pi / 180) }
-            if (qLat > maxLat) { return haverSin((qLat - maxLat) * .pi / 180) }
+            if (qLat < minLat) { return hav((qLat - minLat) * .pi / 180) }
+            if (qLat > maxLat) { return hav((qLat - maxLat) * .pi / 180) }
             return 0
         }
         
         // query point is west or east of the bounding box;
         // calculate the extremum for great circle distance from query point to the closest longitude;
-        let haverSinDLon = min(haverSin((qLon - minLon) * .pi / 180), haverSin((qLon - maxLon) * .pi / 180))
+        let haverSinDLon = min(hav((qLon - minLon) * .pi / 180), hav((qLon - maxLon) * .pi / 180))
         let extremumLat = vertexLat(lat: qLat, haverSinDLon: haverSinDLon)
         
         // if extremum is inside the box, return the distance to it
@@ -158,33 +158,31 @@ public extension BirdBush {
             return haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat, lat1: qLat, lat2: extremumLat)
         }
         
-        // otherwise return the distan e to one of the bbox corners (whichever is closest)
+        // otherwise return the distance to one of the bbox corners (whichever is closest)
         return min(
             haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat, lat1: qLat, lat2: minLat),
             haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat, lat1: qLat, lat2: maxLat)
         )
     }
     
-    private func haverSin(_ theta: Double) -> Double {
-        let s = sin(theta / 2)
+    // range: [0, 1]. hav(θ) = hav(-θ)
+    private func hav(_ θ: Double) -> Double {
+        let s = sin(θ / 2)
         return s * s
     }
     
     private func haverSinDistPartial(haverSinDLon: Double, cosLat1: Double, lat1: Double, lat2: Double) -> Double {
-        return cosLat1 * cos(lat2 * .pi / 180) * haverSinDLon + haverSin((lat1 - lat2) * .pi / 180)
+        return cosLat1 * cos(lat2 * .pi / 180) * haverSinDLon + hav((lat1 - lat2) * .pi / 180)
     }
     
     private func haverSinDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double, cosLat1: Double) -> Double {
-        let haverSinDLon = haverSin((lon1 - lon2) * .pi / 180)
+        let haverSinDLon = hav((lon1 - lon2) * .pi / 180)
         return haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat1, lat1: lat1, lat2: lat2)
     }
     
-    func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
-        return haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * .pi / 180))
-    }
-    
-    func geoDist(_ h: Double) -> Double {
-        return 2 * 6.371e6 * asin(sqrt(h))
+    // returns the central angle from a partial haversine dist. domain: [0, 1] range: [0, π]
+    func centralAngle(_ h: Double) -> Double {
+        return 2 * asin(sqrt(h))
     }
     
     private func vertexLat(lat: Double, haverSinDLon: Double) -> Double {

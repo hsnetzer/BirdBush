@@ -151,13 +151,13 @@ class BirdBushTests: XCTestCase {
         var bestDist = 12.742e6
         var bestPoint = index.ids[0]
         for i in 0..<index.ids.count {
-            let thisDist = index.cmpDist(lon1: qx, lat1: qy, lon2: index.coords[2*i], lat2: index.coords[2*i+1])
+            let thisDist = cmpDist(lon1: qx, lat1: qy, lon2: index.coords[2*i], lat2: index.coords[2*i+1])
             if thisDist < bestDist {
                 bestDist = thisDist
                 bestPoint = index.ids[i]
             }
         }
-        return (bestPoint, index.geoDist(bestDist))
+        return (bestPoint, geoDist(bestDist))
     }
     
     func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
@@ -167,3 +167,29 @@ class BirdBushTests: XCTestCase {
     }
 }
 
+extension BirdBushTests {
+    // for testing
+    func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
+        return haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * .pi / 180))
+    }
+    
+    // range: [0, 1]. hav(θ) = hav(-θ)
+    func hav(_ θ: Double) -> Double {
+        let s = sin(θ / 2)
+        return s * s
+    }
+    
+    func haverSinDistPartial(haverSinDLon: Double, cosLat1: Double, lat1: Double, lat2: Double) -> Double {
+        return cosLat1 * cos(lat2 * .pi / 180) * haverSinDLon + hav((lat1 - lat2) * .pi / 180)
+    }
+    
+    func haverSinDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double, cosLat1: Double) -> Double {
+        let haverSinDLon = hav((lon1 - lon2) * .pi / 180)
+        return haverSinDistPartial(haverSinDLon: haverSinDLon, cosLat1: cosLat1, lat1: lat1, lat2: lat2)
+    }
+    
+    // public for testing
+    func geoDist(_ h: Double) -> Double {
+        return 2 * 6.371e6 * asin(sqrt(h))
+    }
+}
