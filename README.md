@@ -1,6 +1,6 @@
 # BirdBush
 
-[![CI Status](https://img.shields.io/travis/hsnetzer@gmail.com/BirdBush.svg?style=flat)](https://travis-ci.org/hsnetzer@gmail.com/BirdBush)
+[![CI Status](https://img.shields.io/travis/hsnetzer/BirdBush.svg?style=flat)](https://travis-ci.org/hsnetzer/BirdBush)
 [![Version](https://img.shields.io/cocoapods/v/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
 [![License](https://img.shields.io/cocoapods/l/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
 [![Platform](https://img.shields.io/cocoapods/p/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
