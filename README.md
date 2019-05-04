@@ -34,14 +34,33 @@ let bigIndex = BirdBush<Double>(locations: bigArray, getID: { return $0[0] }, ge
 
 ### Methods
 
-#### around(lon: Double, lat: Double, maxResults: Int, maxDistance: Double)
+#### around(lon: Double, lat: Double, maxResults: Int, maxDistance: Double) -> [(U, Double)]
 
-Returns an array of the closest points from a given location in order of increasing distance. Return type is `(U, Double)]` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized. The second value in the tuples is a stand in for distance - to convert it to the central angle use `centralAngle(_ h: Double)`. 
+Returns the closest points to a given geographical location in order of increasing distance. Return type is `[(U, Double)]` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized. The second value is a stand in for distance - to convert it to the radian central angle use `centralAngle(_ h: Double)`. To convert central angle to distance, multiply by radius in units of your choosing. 
 
 - `lon`: query point longitude.
 - `lat`: query point latitude.
 - `maxResults`: (optional) maximum number of points to return (`Int.max` by default).
-- `maxDistance`: (optional) maximum distance in kilometers to search within (`Infinity` by default).
+- `maxDistance`: (optional) maximum distance in kilometers to search within (`Double.greatestFiniteMagnitude` by default).
+
+#### nearest(qx: Double, qy: Double) -> (U, Double)
+
+Returns the closest point to query coordinates. Return type is `(U, Double)` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized. The second value is the squared euclidean distance between the points. 
+
+- `qx`: query point x coord.
+- `qy`: query point y coord.
+
+#### range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U]
+
+Returns the points within a given box. Return type is `[U]` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized.
+
+#### within(qx: Double, qy: Double, r: Double) -> [U]
+
+Returns all points within given distance from query point. Return type is `[U]` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized. 
+
+- `qx`: query point x coord.
+- `qy`: query point y coord.
+- `r`: maximum distance.
 
 ## Author & License
 

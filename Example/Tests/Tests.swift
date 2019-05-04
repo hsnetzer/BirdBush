@@ -26,7 +26,7 @@ import BirdBush
 
 class BirdBushTests: XCTestCase {
     var index: BirdBush<Int>?
-    var bigIndex: BirdBush<Int>?
+    var bigIndex: BirdBush<Double>?
     var citiesIndex: BirdBush<String>?
     let points = [[0,54,1],[1,97,21],[2,65,35],[3,33,54],[4,95,39],[5,54,3],[6,53,54],[7,84,72],[8,33,34],[9,43,15],[10,52,83],[11,81,23],[12,1,61],[13,38,74],[14,11,91],[15,24,56],[16,90,31],[17,25,57],[18,46,61],[19,29,69],[20,49,60],[21,4,98],[22,71,15],[23,60,25],[24,38,84],[25,52,38],[26,94,51],[27,13,25],[28,77,73],[29,88,87],[30,6,27],[31,58,22],[32,53,28],[33,27,91],[34,96,98],[35,93,14],[36,22,93],[37,45,94],[38,18,28],[39,35,15],[40,19,81],[41,20,81],[42,67,53],[43,43,3],[44,47,66],[45,48,34],[46,46,12],[47,32,38],[48,43,12],[49,39,94],[50,88,62],[51,66,14],[52,84,30],[53,72,81],[54,41,92],[55,26,4],[56,6,76],[57,47,21],[58,57,70],[59,71,82],[60,50,68],[61,96,18],[62,40,31],[63,78,53],[64,71,90],[65,32,14],[66,55,6],[67,32,88],[68,62,32],[69,21,67],[70,73,81],[71,44,64],[72,29,50],[73,70,5],[74,6,22],[75,68,3],[76,11,23],[77,20,42],[78,21,73],[79,63,86],[80,9,40],[81,99,2],[82,99,76],[83,56,77],[84,83,6],[85,21,72],[86,78,30],[87,75,53],[88,41,11],[89,95,20],[90,30,38],[91,96,82],[92,65,48],[93,33,18],[94,87,28],[95,10,10],[96,40,34],[97,10,20],[98,47,29],[99,46,78]]
     let ids = [97, 74, 95, 30, 77, 38, 76, 27, 80, 55, 72, 90, 88, 48, 43, 46, 65, 39, 62, 93, 9, 96, 47, 8, 3, 12, 15, 14, 21, 41, 36, 40, 69, 56, 85, 78, 17, 71, 44, 19, 18, 13, 99, 24, 67, 33, 37, 49, 54, 57, 98, 45, 23, 31, 66, 68, 0, 32, 5, 51, 75, 73, 84, 35, 81, 22, 61, 89, 1, 11, 86, 52, 94, 16, 2, 6, 25, 92, 42, 20, 60, 58, 83, 79, 64, 10, 59, 53, 26, 87, 4, 63, 50, 7, 28, 82, 70, 29, 34, 91]
@@ -37,6 +37,7 @@ class BirdBushTests: XCTestCase {
         let lon: Double
     }
     var cities = Array<City>()
+    var bigArray = Array<Array<Double>>()
     
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -58,11 +59,10 @@ class BirdBushTests: XCTestCase {
         }
         citiesIndex = BirdBush<String>(locations: cities, getID: { return $0.name }, getX: { return $0.lon }, getY: { return $0.lat })
         
-        var bigArray = [[Double]]()
         for i in 1...10000 {
             bigArray.append([Double(i), Double.random(in: 0...100), Double.random(in: 0...100)])
         }
-        bigIndex = BirdBush<Int>(locations: bigArray, nodeSize: 64, getID: { return Int($0[0]) }, getX: { return $0[1] }, getY: { return $0[2] })
+        bigIndex = BirdBush<Double>(locations: bigArray, nodeSize: 64, getID: { return $0[0] }, getX: { return $0[1] }, getY: { return $0[2] })
         
         index = BirdBush<Int>(locations: points, nodeSize: 10, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
     }
@@ -99,7 +99,7 @@ class BirdBushTests: XCTestCase {
             for _ in 1...100 {
                 let randLon = Double.random(in: -180...180)
                 let randLat = Double.random(in: -90...90)
-                let _ = bruteGeoNN(qx: randLon, qy: randLat, index: citiesIndex!)
+                let _ = bruteGeoNN(qx: randLon, qy: randLat, index: cities, getX: { return $0.lon }, getY: { return $0.lat })
             }
         }
     }
@@ -113,48 +113,48 @@ class BirdBushTests: XCTestCase {
     }
     
     func testBigIndexRandomPointNN() {
-        for _ in 1...10000 {
+        for _ in 1...1000 {
             let randX = Double.random(in: 0...100)
             let randY = Double.random(in: 0...100)
             let nn = bigIndex!.nearest(qx: randX, qy: randY)
-            XCTAssertEqual(nn.0, bruteNN(qx: randX, qy: randY, index: bigIndex!).0)
+            XCTAssertEqual(nn.0, bruteNN(qx: randX, qy: randY, index: bigArray, getX: { return $0[1] }, getY: { return $0[2] }).0.first! )
         }
     }
     
     func testCitiesGeoNN() {
-        for i in 1...1000 {
+        for _ in 1...1000 {
             let randLon = Double.random(in: -180...180)
             let randLat = Double.random(in: -90...90)
-            print("\(i) randLat: \(randLat), randlon: \(randLon)")
             let nn = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 1).first
-            let brute = bruteGeoNN(qx: randLon, qy: randLat, index: citiesIndex!)
-            print("tree dist: \(nn!.1) for \(nn!.0)")
-            print("brute dist: \(brute.1) for \(brute.0)")
-            XCTAssertEqual(nn!.0, brute.0)
+            let brute = bruteGeoNN(qx: randLon, qy: randLat, index: cities, getX: { return $0.lon }, getY: { return $0.lat })
+//            print("randLat: \(randLat), randlon: \(randLon)")
+//            print("tree dist: \(nn!.1) for \(nn!.0)")
+//            print("brute dist: \(brute.1) for \(brute.0)")
+            XCTAssertEqual(nn!.0, brute.0.name)
         }
     }
     
-    func bruteNN<T>(qx: Double, qy: Double, index: BirdBush<T>) -> (T, Double) {
+    func bruteNN<T>(qx: Double, qy: Double, index: Array<T>, getX: (_ : T) -> Double, getY: (_ : T) -> Double) -> (T, Double) {
         var bestDist = Double.greatestFiniteMagnitude
-        var bestPoint = index.ids[0]
-        for i in 0..<index.ids.count {
-            let thisDist = sqDist(index.coords[2*i], index.coords[2*i+1], qx, qy)
+        var bestPoint = index.first!
+        for element in index {
+            let thisDist = sqDist(getX(element), getY(element), qx, qy)
             if thisDist < bestDist {
                 bestDist = thisDist
-                bestPoint = index.ids[i]
+                bestPoint = element
             }
         }
         return (bestPoint, bestDist)
     }
-    
-    func bruteGeoNN<T>(qx: Double, qy: Double, index: BirdBush<T>) -> (T, Double) {
-        var bestDist = 12.742e6
-        var bestPoint = index.ids[0]
-        for i in 0..<index.ids.count {
-            let thisDist = cmpDist(lon1: qx, lat1: qy, lon2: index.coords[2*i], lat2: index.coords[2*i+1])
+
+    func bruteGeoNN<T>(qx: Double, qy: Double, index: Array<T>, getX: (_ : T) -> Double, getY: (_ : T) -> Double) -> (T, Double) {
+        var bestDist = 12.742e6 // half circumference
+        var bestPoint = index.first!
+        for element in index {
+            let thisDist = cmpDist(lon1: qx, lat1: qy, lon2: getX(element), lat2: getY(element))
             if thisDist < bestDist {
                 bestDist = thisDist
-                bestPoint = index.ids[i]
+                bestPoint = element
             }
         }
         return (bestPoint, geoDist(bestDist))

@@ -24,9 +24,9 @@
 import Foundation
 
 public class BirdBush<U: Codable>: Codable {
-    public private(set) var ids = [U]()
-    public private(set) var coords = [Double]()
-    public private(set) var nodeSize = 64
+    var ids = [U]()
+    var coords = [Double]()
+    let nodeSize: Int
     
     public init<T>(locations: [T], nodeSize: Int = 64, getID: (_ : T) -> U, getX: (_ : T) -> Double, getY: (_ : T) -> Double) {
         for location in locations {
@@ -38,7 +38,7 @@ public class BirdBush<U: Codable>: Codable {
         sortKD(left: 0, right: ids.count - 1, axis: 0)
     }
     
-    private func sortKD(left: Int, right: Int, axis: Int) {
+    func sortKD(left: Int, right: Int, axis: Int) {
         if (right - left <= nodeSize) { return }
     
         let m = (left + right) >> 1 // middle index
@@ -54,7 +54,7 @@ public class BirdBush<U: Codable>: Codable {
     
     // custom Floyd-Rivest selection algorithm: sort ids and coords so that
     // [left..k-1] items are smaller than k-th item (on either x or y axis)
-    private func select(k: Int, left: Int, right: Int, axis: Int) {
+    func select(k: Int, left: Int, right: Int, axis: Int) {
         var right = right
         var left = left
         
@@ -106,7 +106,7 @@ public class BirdBush<U: Codable>: Codable {
         return dx * dx + dy * dy
     }
     
-    private func swapItem(_ i: Int, _ j: Int) {
+    func swapItem(_ i: Int, _ j: Int) {
         ids.swapAt(i, j)
         coords.swapAt(2*i, 2*j)
         coords.swapAt(2*i+1, 2*j+1)
