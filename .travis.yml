@@ -1,1 +1,20 @@
-language: objective-c
+# references:
+# * http://www.objc.io/issue-6/travis-ci.html
+# * https://github.com/supermarin/xcpretty#usage
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      sudo: required
+      before_install:
+        - git clone https://github.com/IBM-Swift/Package-Builder.git
+      script: ./Package-Builder/build-package.sh -projectDir $TRAVIS_BUILD_DIR
+    - os: osx
+      osx_image: xcode10.2
+      sudo: required
+      language: objective-c
+      podfile: Example/Podfile
+      env: TEST_DESTINATION="OS=12.2,name=iPhone X"
+      script:
+        - set -o pipefail && xcodebuild test -workspace Example/BirdBush.xcworkspace -scheme BirdBush-Example -destination "$TEST_DESTINATION" | xcpretty
