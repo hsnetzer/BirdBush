@@ -32,7 +32,7 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'BirdBush/Classes/**/*'
   s.dependency 'SwiftPriorityQueue'
-  s.swift_version = '4.2.1'
+  s.swift_version = '5.0'
   
   # s.resource_bundles = {
   #   'BirdBush' => ['BirdBush/Assets/*.png']
@@ -40,5 +40,4 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "95DD46672BB01E19814D93D8090B3AE7"
+               BuildableName = "BirdBush.framework"
                BlueprintName = "BirdBush"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "BirdBush.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
