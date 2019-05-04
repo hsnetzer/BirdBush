@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BirdBush'
-  s.version          = '0.5.0'
+  s.version          = '0.6.0'
   s.summary          = 'A static kd tree for geographical purposes'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ Swift implementation of a k-d binary space partitioning tree. The data is stored
   s.source           = { :git => 'https://github.com/hsnetzer/bird-bush.git', :tag => '0.5.0' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'BirdBush/Classes/**/*'
   s.dependency 'SwiftPriorityQueue'
