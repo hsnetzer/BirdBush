@@ -16,7 +16,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 BirdBush is available through [CocoaPods](https://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'BirdBush', :git => 'https://github.com/hsnetzer/BirdBush'
+pod 'BirdBush'
 ```
 
 ## Documentation
