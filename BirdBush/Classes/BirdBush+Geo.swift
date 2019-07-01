@@ -94,20 +94,20 @@ public extension BirdBush {
                     
                     // first half of the node
                     let leftNode = QueuePayload.node(left: left,
-                                                         right: m - 1,
-                                                         axis: nextAxis,
-                                                         minLon: minLon,
-                                                         maxLon: nextMaxLon,
-                                                         minLat: minLat,
-                                                         maxLat: nextMaxLat)
+                                                     right: m - 1,
+                                                     axis: nextAxis,
+                                                     minLon: minLon,
+                                                     maxLon: nextMaxLon,
+                                                     minLat: minLat,
+                                                     maxLat: nextMaxLat)
                     // second half of the node
                     let rightNode = QueuePayload.node(left: m + 1,
-                                                          right: right,
-                                                          axis: nextAxis,
-                                                          minLon: nextMinLon,
-                                                          maxLon: maxLon,
-                                                          minLat: nextMinLat,
-                                                          maxLat: maxLat)
+                                                      right: right,
+                                                      axis: nextAxis,
+                                                      minLon: nextMinLon,
+                                                      maxLon: maxLon,
+                                                      minLat: nextMinLat,
+                                                      maxLat: maxLat)
                     
                     
                     // add child nodes to the queue

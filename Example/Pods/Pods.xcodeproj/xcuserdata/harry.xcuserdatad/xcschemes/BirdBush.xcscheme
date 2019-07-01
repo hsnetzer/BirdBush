@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "95DD46672BB01E19814D93D8090B3AE7"
+               BlueprintIdentifier = "96635AA46BE5083EA4349FD890D6DE27"
                BuildableName = "BirdBush.framework"
                BlueprintName = "BirdBush"
                ReferencedContainer = "container:Pods.xcodeproj">
