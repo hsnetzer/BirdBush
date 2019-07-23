@@ -23,7 +23,7 @@
 
 import Foundation
 
-public class BirdBush<U: Codable>: Codable {
+public class BirdBush<U>: Codable where U: Codable {
     var ids = [U]()
     var coords = [Double]()
     let nodeSize: Int

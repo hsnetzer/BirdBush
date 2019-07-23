@@ -134,6 +134,26 @@ class BirdBushTests: XCTestCase {
         }
     }
     
+    // as an aside, this test fails for BirdBush<Double> because of loss of precision in encoding a Double
+    func testCodable() {
+        guard let index = index else {
+            XCTFail()
+            return
+        }
+        guard let coded = try? JSONEncoder().encode(index) else {
+            XCTFail()
+            return
+        }
+        guard let bush = try? JSONDecoder().decode(BirdBush<Int>.self, from: coded) else {
+            XCTFail()
+            return
+        }
+        self.index = bush
+        testIndexRangeSearch()
+        testIndexRadiusSearch()
+        
+    }
+    
     func bruteNN<T>(qx: Double, qy: Double, index: Array<T>, getX: (_ : T) -> Double, getY: (_ : T) -> Double) -> (T, Double) {
         var bestDist = Double.greatestFiniteMagnitude
         var bestPoint = index.first!
@@ -167,7 +187,7 @@ class BirdBushTests: XCTestCase {
     }
 }
 
-extension BirdBushTests {
+extension BirdBushTests { // known geographical distance functions
     // for testing
     func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
         return haverSinDist(lon1: lon1, lat1: lat1, lon2: lon2, lat2: lat2, cosLat1: cos(lat1 * .pi / 180))
