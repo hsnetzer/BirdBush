@@ -134,7 +134,6 @@ class BirdBushTests: XCTestCase {
         }
     }
     
-    // as an aside, this test fails for BirdBush<Double> because of loss of precision in encoding a Double
     func testCodable() {
         guard let index = index else {
             XCTFail()
@@ -152,6 +151,22 @@ class BirdBushTests: XCTestCase {
         testIndexRangeSearch()
         testIndexRadiusSearch()
         
+    }
+    
+    func nonCodableBush() {
+        struct Hi {
+            let id: Double
+            let lat: Double
+            let lon: Double
+        }
+        
+        let arr = [Hi(id: 55, lat: 55, lon: 60)]
+        
+        let _ = BirdBush<Double>(locations: arr, getID: { return $0.id }, getX: { return $0.lon }, getY: { return $0.lat })
+        // next lines give compiler error
+//        guard let code = try? JSONEncoder().encode(xyz) else {
+//            return
+//        }
     }
     
     func bruteNN<T>(qx: Double, qy: Double, index: Array<T>, getX: (_ : T) -> Double, getY: (_ : T) -> Double) -> (T, Double) {

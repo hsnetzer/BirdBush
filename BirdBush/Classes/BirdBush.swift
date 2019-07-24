@@ -23,7 +23,7 @@
 
 import Foundation
 
-public class BirdBush<U>: Codable where U: Codable {
+public final class BirdBush<U> {
     var ids = [U]()
     var coords = [Double]()
     let nodeSize: Int
@@ -112,3 +112,5 @@ public class BirdBush<U>: Codable where U: Codable {
         coords.swapAt(2*i+1, 2*j+1)
     }
 }
+
+extension BirdBush: Codable where U: Codable { }
