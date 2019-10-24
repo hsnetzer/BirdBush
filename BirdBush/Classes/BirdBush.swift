@@ -21,8 +21,6 @@
 //  THIS SOFTWARE.
 //
 
-import Foundation
-
 public final class BirdBush<U> {
     var ids = [U]()
     var coords = [Double]()
@@ -100,13 +98,14 @@ public final class BirdBush<U> {
         }
     }
     
+    // Used to find NN, 
     func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
         let dx = ax - bx
         let dy = ay - by
         return dx * dx + dy * dy
     }
     
-    func swapItem(_ i: Int, _ j: Int) {
+    private func swapItem(_ i: Int, _ j: Int) {
         ids.swapAt(i, j)
         coords.swapAt(2*i, 2*j)
         coords.swapAt(2*i+1, 2*j+1)

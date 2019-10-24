@@ -21,8 +21,6 @@
 //  THIS SOFTWARE.
 //
 
-import Foundation
-
 public extension BirdBush {
     func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]

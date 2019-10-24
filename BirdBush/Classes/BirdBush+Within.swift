@@ -21,10 +21,8 @@
 //  THIS SOFTWARE.
 //
 
-import Foundation
-
-public extension BirdBush {
-    func within(qx: Double, qy: Double, r: Double) -> [U] {
+extension BirdBush {
+    public func within(qx: Double, qy: Double, r: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()
         let r2 = r * r
