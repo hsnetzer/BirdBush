@@ -22,6 +22,15 @@
 //
 
 extension BirdBush {
+    /// Finds the nearest neighbor to a given point.
+    ///
+    /// - Parameter qx: The x coordinate of the query point.
+    /// - Parameter qy: The y coordinate of the query point.
+    ///
+    /// - Returns: A `(U, Double)` where the first element is the ID of the nearest neighbor
+    /// and the second element is the Euclidean distance to the query point.
+    ///
+    /// - Complexity: O(log *n*), where *n* is the number of points in the tree.
     public func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()

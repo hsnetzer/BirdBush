@@ -6,7 +6,15 @@
 //
 
 extension BirdBush {
-    // returns tuple of nn id and squared distance
+    /// Finds the nearest neighbor to a given point.
+    ///
+    /// - Parameter qx: The x coordinate of the query point.
+    /// - Parameter qy: The y coordinate of the query point.
+    ///
+    /// - Returns: A `(U, Double)` where the first element is the ID of the nearest neighbor
+    /// and the second element is the Euclidean distance to the query point.
+    ///
+    /// - Complexity: O(log *n*), where *n* is the number of points in the tree.
     public func nearest(qx: Double, qy: Double) -> (U, Double) {
         return nearestWith(qx: qx,
                            qy: qy,

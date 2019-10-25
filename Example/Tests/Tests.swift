@@ -146,14 +146,13 @@ class BirdBushTests: XCTestCase {
     func test03IndexRangeSearch() {
         XCTAssertEqual(
             index?.range(minX: 20, minY: 30, maxX: 50, maxY: 70),
-            [60, 20, 45, 3, 17, 71, 44, 19, 18, 15, 69, 90, 62,
-             96, 47, 8, 77, 72])
+            [60, 20, 45, 3, 17, 71, 44, 19, 18, 15, 69, 90, 62, 96, 47, 8, 77, 72]
+        )
     }
 
     func test04IndexRadiusSearch() {
         XCTAssertEqual(index?.within(qx: 50, qy: 50, r: 20),
-                       [60, 6, 25, 92, 42, 20, 45, 3, 71,
-                        44, 18, 96])
+                       [60, 6, 25, 92, 42, 20, 45, 3, 71, 44, 18, 96])
     }
 
     func test05BigIndexRandomPointNN() {
@@ -163,12 +162,12 @@ class BirdBushTests: XCTestCase {
             let nearest = bigIndex!.nearest(qx: randX, qy: randY)
             XCTAssertEqual(
                 nearest.0,
-                bruteNN(
-                    queryX: randX,
-                    queryY: randY,
-                    index: bigArray,
-                    getX: { return $0[1] },
-                    getY: { return $0[2] }).0.first!)
+                bruteNN(queryX: randX,
+                        queryY: randY,
+                        index: bigArray,
+                        getX: { return $0[1] },
+                        getY: { return $0[2] }).0.first!
+            )
         }
     }
 
@@ -177,20 +176,19 @@ class BirdBushTests: XCTestCase {
         for _ in 1...1000 {
             let randLon = Double.random(in: -180...180)
             let randLat = Double.random(in: -90...90)
-            let nearest = citiesIndex?.around(
-                lon: randLon,
-                lat: randLat,
-                maxResults: 1).first
-            let brute = bruteGeoNN(
-                queryX: randLon,
-                queryY: randLat,
-                index: cities,
-                getX: { return $0.lon },
-                getY: { return $0.lat })
+            let nearest = citiesIndex?.around(lon: randLon,
+                                              lat: randLat,
+                                              maxResults: 1).first
+            let brute = bruteGeoNN(queryX: randLon,
+                                   queryY: randLat,
+                                   index: cities,
+                                   getX: { return $0.lon },
+                                   getY: { return $0.lat })
 //            print("randLat: \(randLat), randlon: \(randLon)")
 //            print("tree dist: \(nn!.1) for \(nn!.0)")
 //            print("brute dist: \(brute.1) for \(brute.0)")
             XCTAssertEqual(nearest!.0, brute.0.name)
+            XCTAssertEqual(nearest!.1, brute.1)
         }
     }
 
@@ -226,8 +224,14 @@ class BirdBushTests: XCTestCase {
                 let cityGeo = cities.first(where: { $0.name == nnGeo })!
                 let cityNon = cities.first(where: { $0.name == nearest })!
 
-                let distGeo = centralAngle(cmpDist(lon1: cityGeo.lon, lat1: cityGeo.lat, lon2: randLon, lat2: randLat))
-                let distNN = centralAngle(cmpDist(lon1: cityNon.lon, lat1: cityNon.lat, lon2: randLon, lat2: randLat))
+                let distGeo = centralAngle(cmpDist(lon1: cityGeo.lon,
+                                                   lat1: cityGeo.lat,
+                                                   lon2: randLon,
+                                                   lat2: randLat))
+                let distNN = centralAngle(cmpDist(lon1: cityNon.lon,
+                                                  lat1: cityNon.lat,
+                                                  lon2: randLon,
+                                                  lat2: randLat))
                 stdDev += abs(distGeo - distNN)
                 count += 1
             }
@@ -286,7 +290,7 @@ class BirdBushTests: XCTestCase {
                 bestPoint = element
             }
         }
-        return (bestPoint, centralAngle(bestDist))
+        return (bestPoint, bestDist)
     }
 
     func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {

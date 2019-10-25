@@ -26,6 +26,14 @@ public final class BirdBush<U> {
     var coords = [Double]()
     let nodeSize: Int
 
+    /// Builds a k-d tree from an array of `T`. The data split into a pair of arrays, one of the `Double`
+    /// coordinates and one of the `U` IDs. Sorting is done using the Floyd-Rivest selection algorithm.
+    ///
+    /// - Parameter locations: The points to build the k-d tree.
+    /// - Parameter nodeSize: The number of elements at which the k-d tree will cease indexing.
+    /// - Parameter getID: A function to get the id from a point.
+    /// - Parameter getX: A function to get the x coordinate from a point.
+    /// - Parameter getY: A function to get the y coordinate from a point.
     public init<T>(locations: [T], nodeSize: Int = 64, getID: (T) -> U, getX: (T) -> Double, getY: (T) -> Double) {
         for location in locations {
             ids.append(getID(location))

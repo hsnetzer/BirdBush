@@ -22,6 +22,16 @@
 //
 
 extension BirdBush {
+    /// Finds all points within a given disance of the query point.
+    ///
+    /// - Parameter qx: The x coordinate of the query point.
+    /// - Parameter qy: The y coordinate of the query point.
+    /// - Parameter r: The maximum distance to search within.
+    ///
+    /// - Returns: An array of the IDs of all points whose Euclidean distance
+    /// from the query point is less than or equal to `r`.
+    ///
+    /// - Complexity: O(log *n*), where *n* is the number of points in the tree.
     public func within(qx: Double, qy: Double, r: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()

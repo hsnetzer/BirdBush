@@ -42,7 +42,17 @@ extension BirdBush {
         case node(left: Int, right: Int, axis: Int, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double)
     }
 
-    // Returns an array of the closest points from a given location in order of increasing distance.
+    /**
+     Finds the nearest neighors to a point on the earth's surface.
+
+     - Parameters:
+        - lon: The longitude of the query point.
+        - lat: The latitude of the query point.
+        - maxResults: The maximum number of neighbors to return.
+        - maxDistance: The maximum distance of neighbors to return.
+
+     - Returns: An array of `(U, Double)` representing the ids and distances of the nearest neighbors, in ascending order of distance.
+    */
     public func around(lon: Double, lat: Double, maxResults: Int = Int.max, maxDistance: Double = Double.greatestFiniteMagnitude) -> [(U, Double)] {
         var maxHaverSinDist = 1.0, result = [(U, Double)]()
         guard ids.count > 0 else { return result }
@@ -216,8 +226,11 @@ extension BirdBush {
                                    lat1: lat1, lat2: lat2)
     }
 
-    // returns the central angle from a partial haversine dist. domain: [0, 1] range: [0, π]
-    // monotonically increasing
+    /**
+     Calculate the central angle in radians of a given haversine. The mathematical domain of this function is [0, 1] and the range is [0, π]. This function increases monotonically.
+
+     - parameter hav: The haversine to calculate the central angle from.
+    */
     public func centralAngle(_ hav: Double) -> Double {
         return 2 * asin(sqrt(hav))
     }
