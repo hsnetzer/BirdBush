@@ -105,10 +105,10 @@ public final class BirdBush<U> {
         return diffX * diffX + diffY * diffY
     }
 
-    private func swapItem(_ indexA: Int, _ indexB: Int) {
-        ids.swapAt(indexA, indexB)
-        coords.swapAt(2*indexA, 2*indexB)
-        coords.swapAt(2*indexA+1, 2*indexB+1)
+    private func swapItem(_ i: Int, _ j: Int) {
+        ids.swapAt(i, j)
+        coords.swapAt(2*i, 2*j)
+        coords.swapAt(2*i+1, 2*j+1)
     }
 }
 

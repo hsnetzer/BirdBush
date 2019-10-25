@@ -55,12 +55,12 @@ extension BirdBush {
             }
 
             // queue search in halves that intersect the query
-            if (axis == 0 ? minX <= xCoord : minY <= yCoord) {
+            if axis == 0 ? minX <= xCoord : minY <= yCoord {
                 stack.append(left)
                 stack.append(mid - 1)
                 stack.append(1 - axis)
             }
-            if (axis == 0 ? maxX >= xCoord : maxY >= yCoord) {
+            if axis == 0 ? maxX >= xCoord : maxY >= yCoord {
                 stack.append(mid + 1)
                 stack.append(right)
                 stack.append(1 - axis)

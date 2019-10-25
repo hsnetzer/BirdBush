@@ -179,21 +179,20 @@ extension BirdBush {
 
         // if extremum is inside the box, return the distance to it
         if extremumLat > minLat && extremumLat < maxLat {
-            return haverSinDistPartial(
-                haverSinDLon: haverSinDLon,
-                cosLat1: cosLat,
-                lat1: qLat,
-                lat2: extremumLat)
+            return haverSinDistPartial(haverSinDLon: haverSinDLon,
+                                       cosLat1: cosLat,
+                                       lat1: qLat,
+                                       lat2: extremumLat)
         }
 
         // otherwise return the distance to one of the bbox corners (whichever is closest)
         return min(
             haverSinDistPartial(haverSinDLon: haverSinDLon,
-                                         cosLat1: cosLat,
-                                         lat1: qLat, lat2: minLat),
+                                cosLat1: cosLat,
+                                lat1: qLat, lat2: minLat),
             haverSinDistPartial(haverSinDLon: haverSinDLon,
-                                         cosLat1: cosLat,
-                                         lat1: qLat, lat2: maxLat)
+                                cosLat1: cosLat,
+                                lat1: qLat, lat2: maxLat)
         )
     }
 
