@@ -28,15 +28,15 @@ extension BirdBush {
         let r2 = r * r
         
         // recursively search for items within radius in the kd-sorted arrays
-        while (stack.count >= 3) {
+        while stack.count >= 3 {
             let axis = stack.popLast()!
             let right = stack.popLast()!
             let left = stack.popLast()!
             
             // if we reached "tree node", search linearly
-            if (right - left <= nodeSize) {
+            if right - left <= nodeSize {
                 for i in left...right {
-                    if (sqDist(coords[2 * i], coords[2 * i + 1], qx, qy) <= r2) {
+                    if BirdBush.sqDist(coords[2 * i], coords[2 * i + 1], qx, qy) <= r2 {
                         result.append(ids[i])
                     }
                 }
@@ -49,7 +49,7 @@ extension BirdBush {
             // include the middle item if it's in range
             let x = coords[2 * m]
             let y = coords[2 * m + 1]
-            if (sqDist(x, y, qx, qy) <= r2) {
+            if BirdBush.sqDist(x, y, qx, qy) <= r2 {
                 result.append(ids[m])
             }
             

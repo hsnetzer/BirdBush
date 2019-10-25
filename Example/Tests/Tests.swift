@@ -35,30 +35,40 @@ class BirdBushTests: XCTestCase {
         let name: String
         let lat: Double
         let lon: Double
-        
+
         init(dic: [String: Any]) {
             name = dic["name"] as! String
             lat = dic["lat"] as! Double
             lon = dic["lon"] as! Double
         }
     }
-    var cities = Array<City>()
-    var bigArray = Array<Array<Double>>() // Keep for comparison to brute test
-    
+    var cities = [City]()
+    var bigArray = [[Double]]() // Keep for comparison to brute test
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        for i in 1...10000 {
-            bigArray.append([Double(i), Double.random(in: 0...100), Double.random(in: 0...100)])
+        for count in 1...10000 {
+            bigArray.append([Double(count), Double.random(in: 0...100), Double.random(in: 0...100)])
         }
-        bigIndex = BirdBush<Double>(locations: bigArray, nodeSize: 64, getID: { return $0[0] }, getX: { return $0[1] }, getY: { return $0[2] })
-        
-        index = BirdBush<Int>(locations: points, nodeSize: 10, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
+        bigIndex = BirdBush<Double>(
+            locations: bigArray,
+            nodeSize: 64,
+            getID: { return $0[0] },
+            getX: { return $0[1] },
+            getY: { return $0[2] })
+
+        index = BirdBush<Int>(
+            locations: points,
+            nodeSize: 10,
+            getID: { return $0[0] },
+            getX: { return Double($0[1]) },
+            getY: { return Double($0[2]) })
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-    
+
     func buildCitiesIndex() {
         let testBundle = Bundle(for: type(of: self))
         let file = testBundle.url(forResource: "all-the-cities", withExtension: "json")
@@ -67,18 +77,26 @@ class BirdBushTests: XCTestCase {
         guard let jsonResponse = try? JSONSerialization.jsonObject(with:
             data, options: []) as? [[String: Any]] else { return }
         cities = jsonResponse.map(City.init)
-        citiesIndex = BirdBush<String>(locations: cities, getID: { return $0.name }, getX: { return $0.lon }, getY: { return $0.lat })
+        citiesIndex = BirdBush<String>(
+            locations: cities,
+            getID: { return $0.name },
+            getX: { return $0.lon },
+            getY: { return $0.lat })
     }
-    
+
     func testBuildPerformance() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
-            let _ = BirdBush<Int>(locations: points, getID: { return $0[0] }, getX: { return Double($0[1]) }, getY: { return Double($0[2]) })
+            _ = BirdBush<Int>(
+                locations: points,
+                getID: { return $0[0] },
+                getX: { return Double($0[1]) },
+                getY: { return Double($0[2]) })
             print("Built Tree")
         }
     }
-    
+
     func testSmartGeoPerformance() {
         // This is an example of a performance test case.
         self.measure {
@@ -86,11 +104,11 @@ class BirdBushTests: XCTestCase {
             for _ in 1...100 {
                 let randLon = Double.random(in: -180...180)
                 let randLat = Double.random(in: -90...90)
-                let _ = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 1)
+                _ = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 1)
             }
         }
     }
-    
+
     func testBruteGeoPerformance() {
         // This is an example of a performance test case.
         self.measure {
@@ -98,45 +116,70 @@ class BirdBushTests: XCTestCase {
             for _ in 1...100 {
                 let randLon = Double.random(in: -180...180)
                 let randLat = Double.random(in: -90...90)
-                let _ = bruteGeoNN(qx: randLon, qy: randLat, index: cities, getX: { return $0.lon }, getY: { return $0.lat })
+                _ = bruteGeoNN(
+                    queryX: randLon,
+                    queryY: randLat,
+                    index: cities,
+                    getX: { return $0.lon },
+                    getY: { return $0.lat })
             }
         }
     }
-    
+
     func testIndexRangeSearch() {
-        XCTAssertEqual(index?.range(minX: 20, minY: 30, maxX: 50, maxY: 70), [60,20,45,3,17,71,44,19,18,15,69,90,62,96,47,8,77,72])
+        XCTAssertEqual(
+            index?.range(minX: 20, minY: 30, maxX: 50, maxY: 70),
+            [60, 20, 45, 3, 17, 71, 44, 19, 18, 15, 69, 90, 62,
+             96, 47, 8, 77, 72])
     }
-    
+
     func testIndexRadiusSearch() {
-        XCTAssertEqual(index?.within(qx: 50, qy: 50, r: 20), [60,6,25,92,42,20,45,3,71,44,18,96])
+        XCTAssertEqual(index?.within(qx: 50, qy: 50, r: 20),
+                       [60, 6, 25, 92, 42, 20, 45, 3, 71,
+                        44, 18, 96])
     }
-    
+
     func testBigIndexRandomPointNN() {
         for _ in 1...1000 {
             let randX = Double.random(in: 0...100)
             let randY = Double.random(in: 0...100)
-            let nn = bigIndex!.nearest(qx: randX, qy: randY)
-            XCTAssertEqual(nn.0, bruteNN(qx: randX, qy: randY, index: bigArray, getX: { return $0[1] }, getY: { return $0[2] }).0.first! )
+            let nearest = bigIndex!.nearest(qx: randX, qy: randY)
+            XCTAssertEqual(
+                nearest.0,
+                bruteNN(
+                    queryX: randX,
+                    queryY: randY,
+                    index: bigArray,
+                    getX: { return $0[1] },
+                    getY: { return $0[2] }).0.first!)
         }
     }
-    
+
     func testCitiesGeoNN() {
         for _ in 1...1000 {
             let randLon = Double.random(in: -180...180)
             let randLat = Double.random(in: -90...90)
-            let nn = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 1).first
-            let brute = bruteGeoNN(qx: randLon, qy: randLat, index: cities, getX: { return $0.lon }, getY: { return $0.lat })
+            let nearest = citiesIndex?.around(
+                lon: randLon,
+                lat: randLat,
+                maxResults: 1).first
+            let brute = bruteGeoNN(
+                queryX: randLon,
+                queryY: randLat,
+                index: cities,
+                getX: { return $0.lon },
+                getY: { return $0.lat })
 //            print("randLat: \(randLat), randlon: \(randLon)")
 //            print("tree dist: \(nn!.1) for \(nn!.0)")
 //            print("brute dist: \(brute.1) for \(brute.0)")
-            XCTAssertEqual(nn!.0, brute.0.name)
+            XCTAssertEqual(nearest!.0, brute.0.name)
         }
     }
-    
+
     func testGeoVsNon() {
         buildCitiesIndex()
         guard let citiesIndex = citiesIndex else {
-            XCTFail()
+            XCTFail("No cities index")
             return
         }
         let wiggle = 0.1
@@ -151,59 +194,53 @@ class BirdBushTests: XCTestCase {
 //            print("Longitude of \(random.name): \(random.lon)")
             let randLat = random.lat + Double.random(in: -wiggle...wiggle)
             let randLon = random.lon + Double.random(in: -wiggle...wiggle)
-            
+
             guard let nnGeo = citiesIndex.around(lon: randLon, lat: randLat, maxResults: 1).first?.0 else {
                 continue
             }
-            let nn = citiesIndex.nearest(qx: randLon, qy: randLat).0
-            
-            if nnGeo != nn {
-                XCTAssertEqual(nnGeo, nn)
+            let nearest = citiesIndex.nearest(qx: randLon, qy: randLat).0
+
+            if nnGeo != nearest {
+                XCTAssertEqual(nnGeo, nearest)
                 let cityGeo = cities.first(where: { $0.name == nnGeo })!
-                let cityNon = cities.first(where: { $0.name == nn })!
-                
-                print("Geo dist: \(haverSinDist(lon1: cityGeo.lon, lat1: cityGeo.lat, lon2: randLon, lat2: randLat)), nn dist: \(cmpDist(lon1: cityNon.lon, lat1: cityNon.lat, lon2: randLon, lat2: randLat))")
+                let cityNon = cities.first(where: { $0.name == nearest })!
+
+                print("Geo dist: \(cmpDist(lon1: cityGeo.lon, lat1: cityGeo.lat, lon2: randLon, lat2: randLat)), nn dist: \(cmpDist(lon1: cityNon.lon, lat1: cityNon.lat, lon2: randLon, lat2: randLat))")
             }
         }
     }
-    
+
     func testCodable() {
         guard let index = index else {
-            XCTFail()
+            XCTFail("No index")
             return
         }
         guard let coded = try? JSONEncoder().encode(index) else {
-            XCTFail()
+            XCTFail("Could not encode")
             return
         }
         guard let bush = try? JSONDecoder().decode(BirdBush<Int>.self, from: coded) else {
-            XCTFail()
+            XCTFail("Could not decode")
             return
         }
         self.index = bush
         testIndexRangeSearch()
         testIndexRadiusSearch()
-        
     }
-    
-    func nonCodableBush() {
-        struct Hi {
-            let id: Double
-            let lat: Double
-            let lon: Double
-        }
-        
-        let arr = [Hi(id: 55, lat: 55, lon: 60)]
-        
-        let _ = BirdBush<Double>(locations: arr, getID: { return $0.id }, getX: { return $0.lon }, getY: { return $0.lat })
-//        guard let code = try? JSONEncoder().encode(xyz) else { return } // Buildtime err
-    }
-    
-    func bruteNN<T>(qx: Double, qy: Double, index: Array<T>, getX: (_ : T) -> Double, getY: (_ : T) -> Double) -> (T, Double) {
+
+//    func nonCodableBush() {
+//        let code = try? JSONEncoder().encode(BirdBush<Any>(
+//            locations: [1.0],
+//            getID: { return $0 },
+//            getX: { return $0 },
+//            getY: { return $0 })) // Buildtime err
+//    }
+
+    func bruteNN<T>(queryX: Double, queryY: Double, index: [T], getX: (T) -> Double, getY: (T) -> Double) -> (T, Double) {
         var bestDist = Double.greatestFiniteMagnitude
         var bestPoint = index.first!
         for element in index {
-            let thisDist = sqDist(getX(element), getY(element), qx, qy)
+            let thisDist = BirdBush<Any>.sqDist(getX(element), getY(element), queryX, queryY)
             if thisDist < bestDist {
                 bestDist = thisDist
                 bestPoint = element
@@ -212,33 +249,25 @@ class BirdBushTests: XCTestCase {
         return (bestPoint, bestDist)
     }
 
-    func bruteGeoNN<T>(qx: Double, qy: Double, index: Array<T>, getX: (_ : T) -> Double, getY: (_ : T) -> Double) -> (T, Double) {
+    func bruteGeoNN<T>(queryX: Double, queryY: Double, index: [T], getX: (T) -> Double, getY: (T) -> Double) -> (T, Double) {
         var bestDist = 12.742e6 // half circumference
         var bestPoint = index.first!
         for element in index {
-            let thisDist = cmpDist(lon1: qx, lat1: qy, lon2: getX(element), lat2: getY(element))
+            let thisDist = cmpDist(lon1: queryX, lat1: queryY, lon2: getX(element), lat2: getY(element))
             if thisDist < bestDist {
                 bestDist = thisDist
                 bestPoint = element
             }
         }
-        return (bestPoint, geoDist(bestDist))
+        return (bestPoint, bigIndex!.centralAngle(bestDist))
     }
-}
 
-extension BirdBushTests {
     func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
-        return 0
-    }
-    
-    // public for testing
-    func geoDist(_ h: Double) -> Double {
-        return 2 * 6.371e6 * asin(sqrt(h))
-    }
-    
-    func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
-        let dx = (ax - bx)
-        let dy = (ay - by)
-        return dx * dx + dy * dy
+        return BirdBush<Any>.haverSinDist(
+            lon1: lon1,
+            lat1: lat1,
+            lon2: lon2,
+            lat2: lat2,
+            cosLat1: cos(lat1 * .pi / 180))
     }
 }

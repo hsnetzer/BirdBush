@@ -7,18 +7,24 @@
 
 extension BirdBush {
     // returns tuple of nn id and squared distance
-    func nearest(qx: Double, qy: Double) -> (U, Double) {
-        return nearestWith(qx: qx, qy: qy, left: 0, right: ids.count-1, axis: 0, bestDist: Double.infinity, bestID: ids[0])
+    public func nearest(qx: Double, qy: Double) -> (U, Double) {
+        return nearestWith(qx: qx,
+                           qy: qy,
+                           left: 0,
+                           right: ids.count-1,
+                           axis: 0,
+                           bestDist: Double.infinity,
+                           bestID: ids[0])
     }
     
     private func nearestWith(qx: Double, qy: Double, left: Int, right: Int, axis: Int, bestDist: Double, bestID: U) -> (U, Double) {
         var newBest = bestID
         var newBestDist = bestDist
         
-        if (right - left <= nodeSize) {
+        if right - left <= nodeSize {
             for i in left...right {
-                let thisDist = sqDist(coords[2 * i], coords[2 * i + 1], qx, qy)
-                if (thisDist < newBestDist) {
+                let thisDist = BirdBush.sqDist(coords[2 * i], coords[2 * i + 1], qx, qy)
+                if thisDist < newBestDist {
                     newBest = ids[i]
                     newBestDist = thisDist
                 }
@@ -43,7 +49,7 @@ extension BirdBush {
         }
         
         if newBestDist > dimDiff * dimDiff {
-            let mSqDist = sqDist(x, y, qx, qy)
+            let mSqDist = BirdBush.sqDist(x, y, qx, qy)
             if mSqDist < newBestDist {
                 newBest = ids[m]
                 newBestDist = mSqDist

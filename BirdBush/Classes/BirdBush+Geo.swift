@@ -25,11 +25,11 @@ import SwiftPriorityQueue
 
 extension BirdBush {
     private struct QueueElement: Comparable {
-        static func < (lhs: BirdBush.QueueElement, rhs: BirdBush.QueueElement) -> Bool {
+        static func < (lhs: QueueElement, rhs: QueueElement) -> Bool {
             return lhs.dist < rhs.dist
         }
         
-        static func == (lhs: BirdBush.QueueElement, rhs: BirdBush.QueueElement) -> Bool {
+        static func == (lhs: QueueElement, rhs: QueueElement) -> Bool {
             return lhs.dist == rhs.dist
         }
         
@@ -43,11 +43,11 @@ extension BirdBush {
     }
     
     // Returns an array of the closest points from a given location in order of increasing distance.
-    func around(lon: Double, lat: Double, maxResults: Int = Int.max, maxDistance: Double = Double.greatestFiniteMagnitude) -> [(U, Double)] {
+    public func around(lon: Double, lat: Double, maxResults: Int = Int.max, maxDistance: Double = Double.greatestFiniteMagnitude) -> [(U, Double)] {
         var maxHaverSinDist = 1.0, result = [(U, Double)]()
         guard ids.count > 0 else { return result }
         
-        if (maxDistance != Double.greatestFiniteMagnitude) {
+        if maxDistance != Double.greatestFiniteMagnitude {
             maxHaverSinDist = BirdBush.hav(maxDistance / 6.371e6)
         }
         
@@ -68,7 +68,7 @@ extension BirdBush {
         while let noder = node {
             switch noder {
             case let .node(left, right, axis, minLon, maxLon, minLat, maxLat):
-                if (right - left <= nodeSize) { // leaf node
+                if right - left <= nodeSize { // leaf node
                     
                     // add all points of the leaf node to the queue
                     for i in left...right {
@@ -166,22 +166,22 @@ extension BirdBush {
     // lower bound for distance from a location to points inside a bounding box
     private static func boxDist(qLon: Double, qLat: Double, cosLat: Double, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double) -> Double {
         // query point is between minimum and maximum longitudes of the box
-        if (qLon >= minLon && qLon <= maxLon) {
-            if (qLat < minLat) { return BirdBush.hav((qLat - minLat) * .pi / 180) }
-            if (qLat > maxLat) { return BirdBush.hav((qLat - maxLat) * .pi / 180) }
+        if qLon >= minLon && qLon <= maxLon {
+            if qLat < minLat { return hav((qLat - minLat) * .pi / 180) }
+            if qLat > maxLat { return hav((qLat - maxLat) * .pi / 180) }
             return 0
         }
         
         // query point is west or east of the bounding box;
         // calculate the extremum for great circle distance from query point to the closest longitude;
         let haverSinDLon = min(
-            BirdBush.hav((qLon - minLon) * .pi / 180),
-            BirdBush.hav((qLon - maxLon) * .pi / 180))
-        let extremumLat = BirdBush.vertexLat(lat: qLat, haverSinDLon: haverSinDLon)
+            hav((qLon - minLon) * .pi / 180),
+            hav((qLon - maxLon) * .pi / 180))
+        let extremumLat = vertexLat(lat: qLat, haverSinDLon: haverSinDLon)
         
         // if extremum is inside the box, return the distance to it
-        if (extremumLat > minLat && extremumLat < maxLat) {
-            return BirdBush.haverSinDistPartial(
+        if extremumLat > minLat && extremumLat < maxLat {
+            return haverSinDistPartial(
                 haverSinDLon: haverSinDLon,
                 cosLat1: cosLat,
                 lat1: qLat,
@@ -190,10 +190,10 @@ extension BirdBush {
         
         // otherwise return the distance to one of the bbox corners (whichever is closest)
         return min(
-            BirdBush.haverSinDistPartial(haverSinDLon: haverSinDLon,
+            haverSinDistPartial(haverSinDLon: haverSinDLon,
                                          cosLat1: cosLat,
                                          lat1: qLat, lat2: minLat),
-            BirdBush.haverSinDistPartial(haverSinDLon: haverSinDLon,
+            haverSinDistPartial(haverSinDLon: haverSinDLon,
                                          cosLat1: cosLat,
                                          lat1: qLat, lat2: maxLat)
         )
@@ -206,7 +206,10 @@ extension BirdBush {
     }
     
     private static func haverSinDistPartial(haverSinDLon: Double, cosLat1: Double, lat1: Double, lat2: Double) -> Double {
-        return cosLat1 * cos(lat2 * .pi / 180) * haverSinDLon + hav((lat1 - lat2) * .pi / 180)
+        return cosLat1
+            * cos(lat2 * .pi / 180)
+            * haverSinDLon
+            + hav((lat1 - lat2) * .pi / 180)
     }
     
     static func haverSinDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double, cosLat1: Double) -> Double {
@@ -218,7 +221,7 @@ extension BirdBush {
     
     // returns the central angle from a partial haversine dist. domain: [0, 1] range: [0, π]
     // monotonically increasing
-    public static func centralAngle(_ h: Double) -> Double {
+    public func centralAngle(_ h: Double) -> Double {
         return 2 * asin(sqrt(h))
     }
     

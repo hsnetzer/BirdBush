@@ -21,8 +21,8 @@
 //  THIS SOFTWARE.
 //
 
-public extension BirdBush {
-    func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
+extension BirdBush {
+    public func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()
         
@@ -33,11 +33,11 @@ public extension BirdBush {
             let left = stack.popLast()!
             
             // if we reached a "tree node", search linearly
-            if (right - left <= nodeSize) {
+            if right - left <= nodeSize {
                 for i in left...right {
                     let x = coords[2 * i]
                     let y = coords[2 * i + 1]
-                    if (x >= minX && x <= maxX && y >= minY && y <= maxY) {
+                    if x >= minX && x <= maxX && y >= minY && y <= maxY {
                         result.append(ids[i])
                     }
                 }
@@ -50,7 +50,7 @@ public extension BirdBush {
             // include the middle item if it's in range
             let x = coords[2 * m]
             let y = coords[2 * m + 1]
-            if (x >= minX && x <= maxX && y >= minY && y <= maxY) {
+            if x >= minX && x <= maxX && y >= minY && y <= maxY {
                 result.append(ids[m])
             }
             
