@@ -25,7 +25,7 @@ public final class BirdBush<U> {
     var ids = [U]()
     var coords = [Double]()
     let nodeSize: Int
-    
+
     public init<T>(locations: [T], nodeSize: Int = 64, getID: (T) -> U, getX: (T) -> Double, getY: (T) -> Double) {
         for location in locations {
             ids.append(getID(location))
@@ -38,24 +38,24 @@ public final class BirdBush<U> {
     
     private func sortKD(left: Int, right: Int, axis: Int) {
         if right - left <= nodeSize { return }
-    
-        let m = (left + right) >> 1 // middle index
+
+        let mid = (left + right) >> 1 // middle index
     
         // sort ids and coords around the middle index so that the halves lie
         // either left/right or top/bottom correspondingly (taking turns)
-        select(k: m, left: left, right: right, axis: axis)
-        
+        select(k: mid, left: left, right: right, axis: axis)
+
         // recursively kd-sort first half and second half on the opposite axis
-        sortKD(left: left, right: m - 1, axis: 1 - axis)
-        sortKD(left: m + 1, right: right, axis: 1 - axis)
+        sortKD(left: left, right: mid - 1, axis: 1 - axis)
+        sortKD(left: mid + 1, right: right, axis: 1 - axis)
     }
-    
+
     // custom Floyd-Rivest selection algorithm: sort ids and coords so that
     // [left..k-1] items are smaller than k-th item (on either x or y axis)
     private func select(k: Int, left: Int, right: Int, axis: Int) {
         var right = right
         var left = left
-        
+
         while right > left {
             if right - left > 600 {
                 let doublek = Double(k)
@@ -68,16 +68,16 @@ public final class BirdBush<U> {
                 let newRight = min(right, Int(floor(doublek + (n - m) * s / n + sd)))
                 select(k: k, left: newLeft, right: newRight, axis: axis)
             }
-            
+
             let t = coords[2 * k + axis]
             var i = left
             var j = right
-            
+
             swapItem(left, k)
             if coords[2 * right + axis] > t {
                 swapItem(left, right)
             }
-            
+
             while i < j {
                 swapItem(i, j)
                 i += 1
@@ -85,30 +85,30 @@ public final class BirdBush<U> {
                 while coords[2 * i + axis] < t { i += 1 }
                 while coords[2 * j + axis] > t { j -= 1 }
             }
-            
+
             if coords[2 * left + axis] == t {
                 swapItem(left, j)
             } else {
                 j += 1
                 swapItem(j, right)
             }
-            
+
             if j <= k { left = j + 1 }
             if k <= j { right = j - 1 }
         }
     }
-    
+
     // Used to find NN, within
-    static func sqDist(_ ax: Double, _ ay: Double, _ bx: Double, _ by: Double) -> Double {
-        let dx = ax - bx
-        let dy = ay - by
-        return dx * dx + dy * dy
+    static func sqDist(_ firstX: Double, _ firstY: Double, _ secondX: Double, _ secondY: Double) -> Double {
+        let diffX = firstX - secondX
+        let diffY = firstY - secondY
+        return diffX * diffX + diffY * diffY
     }
-    
-    private func swapItem(_ i: Int, _ j: Int) {
-        ids.swapAt(i, j)
-        coords.swapAt(2*i, 2*j)
-        coords.swapAt(2*i+1, 2*j+1)
+
+    private func swapItem(_ indexA: Int, _ indexB: Int) {
+        ids.swapAt(indexA, indexB)
+        coords.swapAt(2*indexA, 2*indexB)
+        coords.swapAt(2*indexA+1, 2*indexB+1)
     }
 }
 
