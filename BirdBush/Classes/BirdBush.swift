@@ -35,12 +35,12 @@ public final class BirdBush<U> {
         self.nodeSize = nodeSize
         sortKD(left: 0, right: ids.count - 1, axis: 0)
     }
-    
+
     private func sortKD(left: Int, right: Int, axis: Int) {
         if right - left <= nodeSize { return }
 
         let mid = (left + right) >> 1 // middle index
-    
+
         // sort ids and coords around the middle index so that the halves lie
         // either left/right or top/bottom correspondingly (taking turns)
         select(k: mid, left: left, right: right, axis: axis)

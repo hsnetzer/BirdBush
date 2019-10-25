@@ -26,46 +26,49 @@ extension BirdBush {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()
         let r2 = r * r
-        
+
         // recursively search for items within radius in the kd-sorted arrays
         while stack.count >= 3 {
             let axis = stack.popLast()!
             let right = stack.popLast()!
             let left = stack.popLast()!
-            
+
             // if we reached "tree node", search linearly
             if right - left <= nodeSize {
-                for i in left...right {
-                    if BirdBush.sqDist(coords[2 * i], coords[2 * i + 1], qx, qy) <= r2 {
-                        result.append(ids[i])
+                for index in left...right {
+                    let dist = BirdBush.sqDist(coords[2 * index],
+                                               coords[2 * index + 1],
+                                               qx, qy)
+                    if dist <= r2 {
+                        result.append(ids[index])
                     }
                 }
                 continue
             }
-            
+
             // otherwise find the middle index
-            let m = (left + right) >> 1
-            
+            let mid = (left + right) >> 1
+
             // include the middle item if it's in range
-            let x = coords[2 * m]
-            let y = coords[2 * m + 1]
-            if BirdBush.sqDist(x, y, qx, qy) <= r2 {
-                result.append(ids[m])
+            let xCoord = coords[2 * mid]
+            let yCoord = coords[2 * mid + 1]
+            if BirdBush.sqDist(xCoord, yCoord, qx, qy) <= r2 {
+                result.append(ids[mid])
             }
-            
+
             // queue search in halves that intersect the query
-            if (axis == 0 ? qx - r <= x : qy - r <= y) {
+            if (axis == 0 ? qx - r <= xCoord : qy - r <= yCoord) {
                 stack.append(left)
-                stack.append(m - 1)
+                stack.append(mid - 1)
                 stack.append(1 - axis)
             }
-            if (axis == 0 ? qx + r >= x : qy + r >= y) {
-                stack.append(m + 1)
+            if (axis == 0 ? qx + r >= xCoord : qy + r >= yCoord) {
+                stack.append(mid + 1)
                 stack.append(right)
                 stack.append(1 - axis)
             }
         }
-        
+
         return result
     }
 }

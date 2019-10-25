@@ -25,43 +25,43 @@ extension BirdBush {
     public func range(minX: Double, minY: Double, maxX: Double, maxY: Double) -> [U] {
         var stack = [0, ids.count - 1, 0]
         var result = [U]()
-        
+
         // recursively search for items in range in the kd-sorted arrays
-        while (stack.count > 0) {
+        while stack.count > 0 {
             let axis = stack.popLast()!
             let right = stack.popLast()!
             let left = stack.popLast()!
-            
+
             // if we reached a "tree node", search linearly
             if right - left <= nodeSize {
-                for i in left...right {
-                    let x = coords[2 * i]
-                    let y = coords[2 * i + 1]
-                    if x >= minX && x <= maxX && y >= minY && y <= maxY {
-                        result.append(ids[i])
+                for index in left...right {
+                    let xCoord = coords[2 * index]
+                    let yCoord = coords[2 * index + 1]
+                    if xCoord >= minX && xCoord <= maxX && yCoord >= minY && yCoord <= maxY {
+                        result.append(ids[index])
                     }
                 }
                 continue
             }
-            
+
             // otherwise find the middle index
-            let m = (left + right) >> 1
-            
+            let mid = (left + right) >> 1
+
             // include the middle item if it's in range
-            let x = coords[2 * m]
-            let y = coords[2 * m + 1]
-            if x >= minX && x <= maxX && y >= minY && y <= maxY {
-                result.append(ids[m])
+            let xCoord = coords[2 * mid]
+            let yCoord = coords[2 * mid + 1]
+            if xCoord >= minX && xCoord <= maxX && yCoord >= minY && yCoord <= maxY {
+                result.append(ids[mid])
             }
-            
+
             // queue search in halves that intersect the query
-            if (axis == 0 ? minX <= x : minY <= y) {
+            if (axis == 0 ? minX <= xCoord : minY <= yCoord) {
                 stack.append(left)
-                stack.append(m - 1)
+                stack.append(mid - 1)
                 stack.append(1 - axis)
             }
-            if (axis == 0 ? maxX >= x : maxY >= y) {
-                stack.append(m + 1)
+            if (axis == 0 ? maxX >= xCoord : maxY >= yCoord) {
+                stack.append(mid + 1)
                 stack.append(right)
                 stack.append(1 - axis)
             }
