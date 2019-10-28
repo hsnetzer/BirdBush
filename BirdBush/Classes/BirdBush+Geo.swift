@@ -53,11 +53,11 @@ extension BirdBush {
 
      - Returns: An array of `(U, Double)` representing the ids and distances of the nearest neighbors, in ascending order of distance.
     */
-    public func around(lon: Double, lat: Double, maxResults: Int = Int.max, maxDistance: Double = Double.greatestFiniteMagnitude) -> [(U, Double)] {
+    public func around(lon: Double, lat: Double, maxResults: Int = .max, maxDistance: Double = .greatestFiniteMagnitude) -> [(U, Double)] {
         var maxHaverSinDist = 1.0, result = [(U, Double)]()
         guard ids.count > 0 else { return result }
 
-        if maxDistance != Double.greatestFiniteMagnitude {
+        if maxDistance != .greatestFiniteMagnitude {
             maxHaverSinDist = BirdBush.hav(maxDistance / 6.371e6)
         }
 
@@ -65,13 +65,13 @@ extension BirdBush {
         var queue = PriorityQueue<QueueElement>(ascending: true)
 
         // an object that represents the top kd-tree node (the whole Earth)
-        var node: QueuePayload? = QueuePayload.node(left: 0,
-                                                    right: ids.count - 1,
-                                                    axis: 0,
-                                                    minLon: -180,
-                                                    maxLon: 180,
-                                                    minLat: -90,
-                                                    maxLat: 90)
+        var node: QueuePayload? = .node(left: 0,
+                                        right: ids.count - 1,
+                                        axis: 0,
+                                        minLon: -180,
+                                        maxLon: 180,
+                                        minLat: -90,
+                                        maxLat: 90)
 
         let cosLat = cos(lat * .pi / 180)
 
@@ -87,7 +87,7 @@ extension BirdBush {
                                                          lon2: coords[2 * index],
                                                          lat2: coords[2 * index + 1],
                                                          cosLat1: cosLat)
-                        queue.push(QueueElement(dist: dist, payload: QueuePayload.point(id: item)))
+                        queue.push(QueueElement(dist: dist, payload: .point(id: item)))
                     }
                 } else { // not a leaf node (has child nodes)
 
@@ -102,7 +102,7 @@ extension BirdBush {
                                                      lon2: midLon,
                                                      lat2: midLat,
                                                      cosLat1: cosLat)
-                    queue.push(QueueElement(dist: dist, payload: QueuePayload.point(id: item)))
+                    queue.push(QueueElement(dist: dist, payload: .point(id: item)))
 
                     let nextAxis = 1 - axis
 
