@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14A019D02363670D007FCE19 /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A019CF2363670D007FCE19 /* points.json */; };
 		161769AD45D842F7288A1AED /* Pods_BirdBush_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67802331F60746443BBD5A4B /* Pods_BirdBush_Example.framework */; };
 		4A23E43A21D2EBE6009A87BE /* all-the-cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A23E43921D2EBE6009A87BE /* all-the-cities.json */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0066DEF4DCA13E786DFCBD53 /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirdBush_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
+		14A019CF2363670D007FCE19 /* points.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
 		35BF66001B1C18EF8B00B268 /* BirdBush.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BirdBush.podspec; path = ../BirdBush.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3A54B4879CDD0EE8F688E237 /* Pods-BirdBush_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirdBush_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4A23E43921D2EBE6009A87BE /* all-the-cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "all-the-cities.json"; sourceTree = "<group>"; };
@@ -128,7 +130,6 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				4A23E43921D2EBE6009A87BE /* all-the-cities.json */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -138,6 +139,8 @@
 		607FACE91AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4A23E43921D2EBE6009A87BE /* all-the-cities.json */,
+				14A019CF2363670D007FCE19 /* points.json */,
 				607FACEA1AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -174,6 +177,7 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				4FD4C70F65CDDA1F3EB67D40 /* [CP] Embed Pods Frameworks */,
+				1437B8552362AE3F00C79A7B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -215,10 +219,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = MN96UHKWYU;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = MN96UHKWYU;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -259,6 +265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A019D02363670D007FCE19 /* points.json in Resources */,
 				4A23E43A21D2EBE6009A87BE /* all-the-cities.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +273,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1437B8552362AE3F00C79A7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  cd ../BirdBush\n#  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		14B781B5F93F53090878F0C7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +514,7 @@
 			baseConfigurationReference = 59A98FC6D1BEA8CD3A41DCD9 /* Pods-BirdBush_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MN96UHKWYU;
 				INFOPLIST_FILE = BirdBush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -505,6 +530,7 @@
 			baseConfigurationReference = 0066DEF4DCA13E786DFCBD53 /* Pods-BirdBush_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = MN96UHKWYU;
 				INFOPLIST_FILE = BirdBush/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -519,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B68C68052ECA8A841143EA4 /* Pods-BirdBush_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = MN96UHKWYU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -541,6 +568,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3A54B4879CDD0EE8F688E237 /* Pods-BirdBush_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = MN96UHKWYU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

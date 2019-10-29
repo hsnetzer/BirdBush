@@ -5,59 +5,103 @@
 //  Copyright © 2018 Harry Netzer. All rights reserved.
 //
 
-import Foundation
-
-public extension BirdBush {
-    // returns tuple of nn id and squared distance
-    func nearest(qx: Double, qy: Double) -> (U, Double) {
-        return nearestWith(qx: qx, qy: qy, left: 0, right: ids.count-1, axis: 0, bestDist: Double.infinity, bestID: ids[0])
+extension BirdBush {
+    /// Finds the nearest neighbor to a given point.
+    ///
+    /// - Parameter qx: The x coordinate of the query point.
+    /// - Parameter qy: The y coordinate of the query point.
+    ///
+    /// - Returns: A `(U, Double)` where the first element is the ID of the nearest neighbor
+    /// and the second element is the Euclidean distance to the query point.
+    ///
+    /// - Complexity: O(log *n*), where *n* is the number of points in the tree.
+    public func nearest(qx: Double, qy: Double) -> (U, Double) {
+        return nearestWith(qx: qx,
+                           qy: qy,
+                           left: 0,
+                           right: ids.count-1,
+                           axis: 0,
+                           bestDist: Double.infinity,
+                           bestID: ids[0])
     }
-    
-    private func nearestWith(qx: Double, qy: Double, left: Int, right: Int, axis: Int, bestDist: Double, bestID: U) -> (U, Double) {
+
+    private func nearestWith(qx: Double,
+                             qy: Double,
+                             left: Int,
+                             right: Int,
+                             axis: Int,
+                             bestDist: Double,
+                             bestID: U) -> (U, Double) {
         var newBest = bestID
         var newBestDist = bestDist
-        
-        if (right - left <= nodeSize) {
-            for i in left...right {
-                let thisDist = sqDist(coords[2 * i], coords[2 * i + 1], qx, qy)
-                if (thisDist < newBestDist) {
-                    newBest = ids[i]
+
+        if right - left <= nodeSize {
+            for index in left...right {
+                let thisDist = BirdBush.sqDist(coords[2 * index],
+                                               coords[2 * index + 1],
+                                               qx, qy)
+                if thisDist < newBestDist {
+                    newBest = ids[index]
                     newBestDist = thisDist
                 }
             }
             return (newBest, newBestDist)
         }
-        
+
         // otherwise find the middle index
-        let m = (left + right) >> 1
+        let mid = (left + right) >> 1
         let nextAxis = 1 - axis
-        
+
         // include the middle item if it's in range
-        let x = coords[2 * m]
-        let y = coords[2 * m + 1]
-        let dimDiff = axis == 0 ? qx - x : qy - y
-        
+        let xCoord = coords[2 * mid]
+        let yCoord = coords[2 * mid + 1]
+        let dimDiff = axis == 0 ? qx - xCoord : qy - yCoord
+
         // queue search in halves that intersect the query
         if dimDiff < 0 {
-            (newBest, newBestDist) = nearestWith(qx: qx, qy: qy, left: left, right: m-1, axis: nextAxis, bestDist: bestDist, bestID: bestID)
+            (newBest, newBestDist) = nearestWith(qx: qx,
+                                                 qy: qy,
+                                                 left: left,
+                                                 right: mid - 1,
+                                                 axis: nextAxis,
+                                                 bestDist: bestDist,
+                                                 bestID: bestID)
         } else {
-            (newBest, newBestDist) = nearestWith(qx: qx, qy: qy, left: m+1, right: right, axis: nextAxis, bestDist: bestDist, bestID: bestID)
+            (newBest, newBestDist) = nearestWith(qx: qx,
+                                                 qy: qy,
+                                                 left: mid + 1,
+                                                 right: right,
+                                                 axis: nextAxis,
+                                                 bestDist: bestDist,
+                                                 bestID: bestID)
         }
-        
+
         if newBestDist > dimDiff * dimDiff {
-            let mSqDist = sqDist(x, y, qx, qy)
+            let mSqDist = BirdBush.sqDist(xCoord, yCoord, qx, qy)
             if mSqDist < newBestDist {
-                newBest = ids[m]
+                newBest = ids[mid]
                 newBestDist = mSqDist
             }
-            
+
             if dimDiff < 0 {
-                return nearestWith(qx: qx, qy: qy, left: m+1, right: right, axis: nextAxis, bestDist: newBestDist, bestID: newBest)
+                return nearestWith(qx: qx,
+                                   qy: qy,
+                                   left: mid + 1,
+                                   right: right,
+                                   axis: nextAxis,
+                                   bestDist: newBestDist,
+                                   bestID: newBest)
             } else {
-                return nearestWith(qx: qx, qy: qy, left: left, right: m-1, axis: nextAxis, bestDist: newBestDist, bestID: newBest)
+                return nearestWith(qx: qx,
+                                   qy: qy,
+                                   left: left,
+                                   right: mid - 1,
+                                   axis: nextAxis,
+                                   bestDist: newBestDist,
+                                   bestID: newBest)
             }
         }
-        
+
         return (newBest, newBestDist)
     }
 }
