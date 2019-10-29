@@ -25,7 +25,13 @@ extension BirdBush {
                            bestID: ids[0])
     }
 
-    private func nearestWith(qx: Double, qy: Double, left: Int, right: Int, axis: Int, bestDist: Double, bestID: U) -> (U, Double) {
+    private func nearestWith(qx: Double,
+                             qy: Double,
+                             left: Int,
+                             right: Int,
+                             axis: Int,
+                             bestDist: Double,
+                             bestID: U) -> (U, Double) {
         var newBest = bestID
         var newBestDist = bestDist
 

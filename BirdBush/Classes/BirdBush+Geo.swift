@@ -51,9 +51,13 @@ extension BirdBush {
         - maxResults: The maximum number of neighbors to return.
         - maxDistance: The maximum distance of neighbors to return.
 
-     - Returns: An array of `(U, Double)` representing the ids and distances of the nearest neighbors, in ascending order of distance.
+     - Returns: An array of `(U, Double)` representing the ids and distances
+     of the nearest neighbors, in ascending order of distance.
     */
-    public func around(lon: Double, lat: Double, maxResults: Int = .max, maxDistance: Double = .greatestFiniteMagnitude) -> [(U, Double)] {
+    public func around(lon: Double,
+                       lat: Double,
+                       maxResults: Int = .max,
+                       maxDistance: Double = .greatestFiniteMagnitude) -> [(U, Double)] {
         var maxHaverSinDist = 1.0, result = [(U, Double)]()
         guard ids.count > 0 else { return result }
 
@@ -172,7 +176,13 @@ extension BirdBush {
     }
 
     // lower bound for distance from a location to points inside a bounding box
-    private static func boxDist(qLon: Double, qLat: Double, cosLat: Double, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double) -> Double {
+    private static func boxDist(qLon: Double,
+                                qLat: Double,
+                                cosLat: Double,
+                                minLon: Double,
+                                maxLon: Double,
+                                minLat: Double,
+                                maxLat: Double) -> Double {
         // query point is between minimum and maximum longitudes of the box
         if qLon >= minLon && qLon <= maxLon {
             if qLat < minLat { return hav((qLat - minLat) * .pi / 180) }
@@ -212,7 +222,10 @@ extension BirdBush {
         return sine * sine
     }
 
-    private static func haverSinDistPartial(haverSinDLon: Double, cosLat1: Double, lat1: Double, lat2: Double) -> Double {
+    private static func haverSinDistPartial(haverSinDLon: Double,
+                                            cosLat1: Double,
+                                            lat1: Double,
+                                            lat2: Double) -> Double {
         return cosLat1
             * cos(lat2 * .pi / 180)
             * haverSinDLon
@@ -227,7 +240,8 @@ extension BirdBush {
     }
 
     /**
-     Calculate the central angle in radians of a given haversine. The mathematical domain of this function is [0, 1] and the range is [0, π]. This function increases monotonically.
+     Calculate the central angle in radians of a given haversine. The mathematical domain
+     of this function is [0, 1] and the range is [0, π]. This function increases monotonically.
 
      - parameter hav: The haversine to calculate the central angle from.
     */
