@@ -120,7 +120,7 @@ class BirdBushTests: XCTestCase {
             for _ in 1...10 {
                 let randLon = Double.random(in: -180...180)
                 let randLat = Double.random(in: -90...90)
-                _ = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 1)
+                _ = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 10)
             }
         }
     }
@@ -138,7 +138,9 @@ class BirdBushTests: XCTestCase {
                     queryY: randLat,
                     index: cities,
                     getX: { return $0.lon },
-                    getY: { return $0.lat })
+                    getY: { return $0.lat },
+                    getID: { return $0.name },
+                    maxResults: 10)
             }
         }
     }
@@ -160,35 +162,37 @@ class BirdBushTests: XCTestCase {
             let randX = Double.random(in: 0...100)
             let randY = Double.random(in: 0...100)
             let nearest = bigIndex!.nearest(qx: randX, qy: randY)
-            XCTAssertEqual(
-                nearest.0,
-                bruteNN(queryX: randX,
-                        queryY: randY,
-                        index: bigArray,
-                        getX: { return $0[1] },
-                        getY: { return $0[2] }).0.first!
-            )
+            let brute = bruteNN(queryX: randX,
+                                queryY: randY,
+                                index: bigArray,
+                                getX: { return $0[1] },
+                                getY: { return $0[2] },
+                                getID: { return $0[0] })
+            XCTAssertEqual(nearest.0, brute.0)
+            XCTAssertEqual(nearest.1, brute.1)
         }
     }
 
     func test06CitiesGeoNN() {
         buildCitiesIndex()
-        for _ in 1...1000 {
+        for _ in 1...10 {
             let randLon = Double.random(in: -180...180)
             let randLat = Double.random(in: -90...90)
-            let nearest = citiesIndex?.around(lon: randLon,
+            let nearest = citiesIndex!.around(lon: randLon,
                                               lat: randLat,
-                                              maxResults: 1).first
+                                              maxResults: 10)
             let brute = bruteGeoNN(queryX: randLon,
                                    queryY: randLat,
                                    index: cities,
                                    getX: { return $0.lon },
-                                   getY: { return $0.lat })
-//            print("randLat: \(randLat), randlon: \(randLon)")
-//            print("tree dist: \(nn!.1) for \(nn!.0)")
-//            print("brute dist: \(brute.1) for \(brute.0)")
-            XCTAssertEqual(nearest!.0, brute.0.name)
-            XCTAssertEqual(nearest!.1, brute.1)
+                                   getY: { return $0.lat },
+                                   getID: { return $0.name },
+                                   maxResults: 10)
+            XCTAssertEqual(nearest.count, brute.count)
+            for ind in 0..<nearest.count {
+                XCTAssertEqual(nearest[ind].1, brute[ind].1)
+                XCTAssertEqual(nearest[ind].0, brute[ind].0)
+            }
         }
     }
 
@@ -224,14 +228,14 @@ class BirdBushTests: XCTestCase {
                 let cityGeo = cities.first(where: { $0.name == nnGeo })!
                 let cityNon = cities.first(where: { $0.name == nearest })!
 
-                let distGeo = centralAngle(cmpDist(lon1: cityGeo.lon,
-                                                   lat1: cityGeo.lat,
-                                                   lon2: randLon,
-                                                   lat2: randLat))
-                let distNN = centralAngle(cmpDist(lon1: cityNon.lon,
-                                                  lat1: cityNon.lat,
-                                                  lon2: randLon,
-                                                  lat2: randLat))
+                let distGeo = citiesIndex.centralAngle(cmpDist(lon1: cityGeo.lon,
+                                                               lat1: cityGeo.lat,
+                                                               lon2: randLon,
+                                                               lat2: randLat))
+                let distNN = citiesIndex.centralAngle(cmpDist(lon1: cityNon.lon,
+                                                              lat1: cityNon.lat,
+                                                              lon2: randLon,
+                                                              lat2: randLat))
                 stdDev += abs(distGeo - distNN)
                 count += 1
             }
@@ -267,30 +271,53 @@ class BirdBushTests: XCTestCase {
 //            getY: { return $0 })) // Buildtime err
 //    }
 
-    func bruteNN<T>(queryX: Double, queryY: Double, index: [T], getX: (T) -> Double, getY: (T) -> Double) -> (T, Double) {
-        var bestDist = Double.greatestFiniteMagnitude
-        var bestPoint = index.first!
-        for element in index {
-            let thisDist = BirdBush<Any>.sqDist(getX(element), getY(element), queryX, queryY)
-            if thisDist < bestDist {
-                bestDist = thisDist
-                bestPoint = element
-            }
+    func bruteGeoNN<T, U>(queryX: Double,
+                    queryY: Double,
+                    index: [T],
+                    getX: (T) -> Double,
+                    getY: (T) -> Double,
+                    getID: (T) -> U,
+                    maxResults: Int = .max,
+                    maxDistance: Double = .greatestFiniteMagnitude) -> [(U, Double)] {
+        let maxHav = BirdBush<Any>.hav(maxDistance / 6.371e6)
+        var filtered = maxDistance > 2e7 ? index : index.filter { element in
+            return cmpDist(lon1: getX(element), lat1: getY(element), lon2: queryX, lat2: queryY) < maxHav
         }
-        return (bestPoint, bestDist)
+
+        var ret = [(U, Double)]()
+        for neighborNum in 0..<maxResults {
+            var bestElement = filtered[neighborNum]
+            var bestDist = cmpDist(lon1: getX(bestElement),
+                                   lat1: getY(bestElement),
+                                   lon2: queryX, lat2: queryY)
+            for ind in neighborNum..<filtered.count {
+                let thisDist = cmpDist(lon1: getX(filtered[ind]), lat1: getY(filtered[ind]), lon2: queryX, lat2: queryY)
+                if thisDist < bestDist {
+                    (bestElement, bestDist) = (filtered[ind], thisDist)
+                    filtered.swapAt(ind, neighborNum)
+                }
+            }
+            ret.insert((getID(bestElement), bestDist), at: ret.firstIndex(where: { $0.1 > bestDist }) ?? ret.endIndex)
+        }
+        return ret
     }
 
-    func bruteGeoNN<T>(queryX: Double, queryY: Double, index: [T], getX: (T) -> Double, getY: (T) -> Double) -> (T, Double) {
-        var bestDist = 12.742e6 // half circumference
+    func bruteNN<T, U>(queryX: Double,
+                       queryY: Double,
+                       index: [T],
+                       getX: (T) -> Double,
+                       getY: (T) -> Double,
+                       getID: (T) -> U) -> (U, Double) {
         var bestPoint = index.first!
+        var bestDist = BirdBush<Any>.sqDist(queryX, queryY, getX(bestPoint), getY(bestPoint))
         for element in index {
-            let thisDist = cmpDist(lon1: queryX, lat1: queryY, lon2: getX(element), lat2: getY(element))
+            let thisDist = BirdBush<Any>.sqDist(queryX, queryY, getX(element), getY(element))
             if thisDist < bestDist {
                 bestDist = thisDist
                 bestPoint = element
             }
         }
-        return (bestPoint, bestDist)
+        return (getID(bestPoint), bestDist)
     }
 
     func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
@@ -299,12 +326,7 @@ class BirdBushTests: XCTestCase {
             lat1: lat1,
             lon2: lon2,
             lat2: lat2,
-            cosLat1: cos(lat1 * .pi / 180))
-    }
-
-    // returns the central angle from a partial haversine dist. domain: [0, 1] range: [0, π]
-    // monotonically increasing
-    public func centralAngle(_ hav: Double) -> Double {
-        return 2 * asin(sqrt(hav))
+            cosLat1: cos(lat1 * .pi / 180)
+        )
     }
 }

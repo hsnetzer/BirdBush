@@ -49,7 +49,7 @@ extension BirdBush {
         - lon: The longitude of the query point.
         - lat: The latitude of the query point.
         - maxResults: The maximum number of neighbors to return.
-        - maxDistance: The maximum distance of neighbors to return.
+        - maxDistance: The maximum distance in meters of neighbors to return.
 
      - Returns: An array of `(U, Double)` representing the ids and distances
      of the nearest neighbors, in ascending order of distance.
@@ -217,7 +217,7 @@ extension BirdBush {
     }
 
     // range: [0, 1]. hav(θ) = hav(-θ)
-    private static func hav(_ theta: Double) -> Double {
+    static func hav(_ theta: Double) -> Double {
         let sine = sin(theta / 2)
         return sine * sine
     }
