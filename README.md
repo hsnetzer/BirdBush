@@ -41,7 +41,7 @@ Returns the closest points to a given geographical location in order of increasi
 - `lon`: query point longitude.
 - `lat`: query point latitude.
 - `maxResults`: (optional) maximum number of points to return (`Int.max` by default).
-- `maxDistance`: (optional) maximum distance in kilometers to search within (`Double.greatestFiniteMagnitude` by default).
+- `maxDistance`: (optional) maximum distance in meters to search within (`Double.greatestFiniteMagnitude` by default).
 
 #### nearest(qx: Double, qy: Double) -> (U, Double)
 
