@@ -39,12 +39,16 @@ let bigIndex = BirdBush<Double>(locations: bigArray,
 
 #### around(lon: Double, lat: Double, maxResults: Int, maxDistance: Double) -> [(U, Double)]
 
-Returns the closest points to a given geographical location in order of increasing distance. Return type is `[(U, Double)]` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized. The second value is a stand in for distance - to convert it to the radian central angle use `centralAngle(_ h: Double)`. To convert central angle to distance, multiply by radius in units of your choosing, e.g. 6.371e6 meters. 
+Returns the closest points to a given geographical location in order of increasing distance. Return type is `[(U, Double)]` where `U` is type for the location ids, specified by `BirdBush<U>` when you initialized. The second value is the haversine between the two points - to convert it to the radian central angle use `centralAngle(_ h: Double)`. 
 
 - `lon`: query point longitude.
 - `lat`: query point latitude.
 - `maxResults`: (optional) maximum number of points to return (`Int.max` by default).
 - `maxDistance`: (optional) maximum distance in meters to search within (`Double.greatestFiniteMagnitude` by default).
+
+#### centralAngle(_ h: Double) -> Double
+
+Returns the central angle (radians) of a haversine returned by `around`. To convert central angle to distance, multiply by earth's radius in units of your choosing, e.g. 6.371e6 meters. 
 
 #### nearest(qx: Double, qy: Double) -> (U, Double)
 
