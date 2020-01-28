@@ -226,17 +226,19 @@ extension BirdBush {
                                             cosLat1: Double,
                                             lat1: Double,
                                             lat2: Double) -> Double {
-        return cosLat1
+        cosLat1
             * cos(lat2 * .pi / 180)
             * haverSinDLon
             + hav((lat1 - lat2) * .pi / 180)
     }
 
     static func haverSinDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double, cosLat1: Double) -> Double {
-        let haverSinDLon = hav((lon1 - lon2) * .pi / 180)
-        return haverSinDistPartial(haverSinDLon: haverSinDLon,
-                                   cosLat1: cosLat1,
-                                   lat1: lat1, lat2: lat2)
+        haverSinDistPartial(
+            haverSinDLon: hav((lon1 - lon2) * .pi / 180),
+            cosLat1: cosLat1,
+            lat1: lat1,
+            lat2: lat2
+        )
     }
 
     /**
@@ -246,7 +248,7 @@ extension BirdBush {
      - parameter hav: The haversine to calculate the central angle from.
     */
     public func centralAngle(_ hav: Double) -> Double {
-        return 2 * asin(sqrt(hav))
+        2 * asin(sqrt(hav))
     }
 
     private static func vertexLat(lat: Double, haverSinDLon: Double) -> Double {

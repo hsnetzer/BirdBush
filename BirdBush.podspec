@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'BirdBush'
-  s.version          = '0.5.0'
+  s.version          = '0.7.0'
   s.summary          = 'A static kd tree for geographical purposes'
 
 # This description is used to generate tags and improve search results.

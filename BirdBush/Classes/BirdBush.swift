@@ -26,8 +26,10 @@ public final class BirdBush<U> {
     var coords = [Double]()
     let nodeSize: Int
 
-    /// Builds a k-d tree from an array of `T`. The data split into a pair of arrays, one of the `Double`
+    /// Builds a k-d tree from a `Sequence`. The data split into a pair of arrays, one of the `Double`
     /// coordinates and one of the `U` IDs. Sorting is done using the Floyd-Rivest selection algorithm.
+    ///
+    /// Birdbush is codable when `U` is.
     ///
     /// - Parameter locations: The points to build the k-d tree.
     /// - Parameter nodeSize: The number of elements at which the k-d tree will cease indexing.
@@ -115,8 +117,8 @@ public final class BirdBush<U> {
 
     private func swapItem(_ i: Int, _ j: Int) {
         ids.swapAt(i, j)
-        coords.swapAt(2*i, 2*j)
-        coords.swapAt(2*i+1, 2*j+1)
+        coords.swapAt(2 * i, 2 * j)
+        coords.swapAt(2 * i + 1, 2 * j + 1)
     }
 }
 
