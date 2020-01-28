@@ -34,7 +34,7 @@ public final class BirdBush<U> {
     /// - Parameter getID: A function to get the id from a point.
     /// - Parameter getX: A function to get the x coordinate from a point.
     /// - Parameter getY: A function to get the y coordinate from a point.
-    public init<T>(locations: [T], nodeSize: Int = 64, getID: (T) -> U, getX: (T) -> Double, getY: (T) -> Double) {
+    public init<S: Sequence>(locations: S, nodeSize: Int = 64, getID: (S.Element) -> U, getX: (S.Element) -> Double, getY: (S.Element) -> Double) {
         for location in locations {
             ids.append(getID(location))
             coords.append(getX(location))

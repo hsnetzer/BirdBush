@@ -17,7 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
 
+        let _ = BirdBush<String>(locations: [1,2,2], getID: me, getX: yo, getY: yo)
+
         return true
+    }
+
+    func yo(hi: Int) -> Double {
+        return Double(hi)
+    }
+
+    func me(hi: Int) -> String {
+        return String(hi)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
