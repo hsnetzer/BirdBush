@@ -7,6 +7,8 @@
 
 Swift implementation of a k-d binary space partitioning tree. The data is stored in a pair of arrays, making serialization very straightforward. Besides the classic k-d tree queries, BirdBush also implements a geographical nearest neighbor search based on [geokdbush](https://github.com/mourner/geokdbush). 
 
+For a mutable, non-geographical k-d tree see [https://github.com/Bersaelor/KDTree]
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
