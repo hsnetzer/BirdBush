@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/cocoapods/l/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
 [![Platform](https://img.shields.io/cocoapods/p/BirdBush.svg?style=flat)](https://cocoapods.org/pods/BirdBush)
 
-Swift implementation of a k-d binary space partitioning tree. The data is stored in a pair of arrays, making serialization very straightforward. Besides the classic k-d tree queries, BirdBush also implements a geographical nearest neighbor search based on [geokdbush](https://github.com/mourner/geokdbush). 
+Swift implementation of a 2D binary space partitioning tree. The data is stored in a pair of arrays, making serialization very straightforward. Besides the classic k-d tree queries, BirdBush also implements a geographical nearest neighbor search based on [geokdbush](https://github.com/mourner/geokdbush). 
 
 For a mutable, non-geographical k-d tree see [KDTree](https://github.com/Bersaelor/KDTree).
 
