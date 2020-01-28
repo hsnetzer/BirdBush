@@ -25,7 +25,7 @@ Swift implementation of a k-d binary space partitioning tree. The data is stored
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'ISC', :file => 'LICENSE' }
   s.author           = { 'Harry Netzer' => 'hsnetzer@gmail.com' }
-  s.source           = { :git => 'https://github.com/hsnetzer/bird-bush.git', :tag => '0.5.0' }
+  s.source           = { :git => 'https://github.com/hsnetzer/bird-bush.git', :tag => '0.7.0' }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

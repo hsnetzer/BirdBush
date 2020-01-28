@@ -1,6 +1,6 @@
 {
   "name": "BirdBush",
-  "version": "0.5.0",
+  "version": "0.7.0",
   "summary": "A static kd tree for geographical purposes",
   "description": "Swift implementation of a k-d binary space partitioning tree. The data is stored in a pair of arrays, making serialization very straightforward. Besides the classic k-d tree queries, BirdBush also implements a geographical nearest neighbor search based on mourner's geokdbush.",
   "homepage": "https://github.com/hsnetzer/bird-bush",
