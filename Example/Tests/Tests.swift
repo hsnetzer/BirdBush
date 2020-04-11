@@ -213,14 +213,14 @@ class BirdBushTests: XCTestCase {
                 let cityGeo = cities.first(where: { $0.name == nnGeo })!
                 let cityNon = cities.first(where: { $0.name == nearest })!
 
-                let distGeo = citiesIndex.centralAngle(cmpDist(lon1: cityGeo.lon,
-                                                               lat1: cityGeo.lat,
-                                                               lon2: randLon,
-                                                               lat2: randLat))
-                let distNN = citiesIndex.centralAngle(cmpDist(lon1: cityNon.lon,
-                                                              lat1: cityNon.lat,
-                                                              lon2: randLon,
-                                                              lat2: randLat))
+                let distGeo = citiesIndex.centralAngle(BirdBush<Any>.cmpDist(lon1: cityGeo.lon,
+                                                                             lat1: cityGeo.lat,
+                                                                             lon2: randLon,
+                                                                             lat2: randLat))
+                let distNN = citiesIndex.centralAngle(BirdBush<Any>.cmpDist(lon1: cityNon.lon,
+                                                                            lat1: cityNon.lat,
+                                                                            lon2: randLon,
+                                                                            lat2: randLat))
                 stdDev += abs(distGeo - distNN)
                 count += 1
             }
@@ -285,18 +285,18 @@ class BirdBushTests: XCTestCase {
 
         let maxHav = BirdBush<Any>.hav(maxDistance / 6.371e6)
         var filtered = maxDistance > 2e7 ? index : index.filter { element in
-            return cmpDist(lon1: getX(element), lat1: getY(element), lon2: queryX, lat2: queryY) < maxHav
+            return BirdBush<Any>.cmpDist(lon1: getX(element), lat1: getY(element), lon2: queryX, lat2: queryY) < maxHav
         }
 
         var ret = [(U, Double)]()
         for neighborNum in 0..<maxResults {
             var bestElement = filtered[neighborNum]
-            var bestDist = cmpDist(lon1: getX(bestElement),
+            var bestDist = BirdBush<Any>.cmpDist(lon1: getX(bestElement),
                                    lat1: getY(bestElement),
                                    lon2: queryX,
                                    lat2: queryY)
             for ind in neighborNum..<filtered.count {
-                let thisDist = cmpDist(lon1: getX(filtered[ind]), lat1: getY(filtered[ind]), lon2: queryX, lat2: queryY)
+                let thisDist = BirdBush<Any>.cmpDist(lon1: getX(filtered[ind]), lat1: getY(filtered[ind]), lon2: queryX, lat2: queryY)
                 if thisDist < bestDist {
                     (bestElement, bestDist) = (filtered[ind], thisDist)
                     filtered.swapAt(ind, neighborNum)
@@ -313,6 +313,7 @@ class BirdBushTests: XCTestCase {
                        getX: (T) -> Double,
                        getY: (T) -> Double,
                        getID: (T) -> U) -> (U, Double) {
+
         var bestPoint = index.first!
         var bestDist = BirdBush<Any>.sqDist(queryX, queryY, getX(bestPoint), getY(bestPoint))
         for element in index {
@@ -323,15 +324,5 @@ class BirdBushTests: XCTestCase {
             }
         }
         return (getID(bestPoint), bestDist)
-    }
-
-    func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
-        return BirdBush<Any>.haverSinDist(
-            lon1: lon1,
-            lat1: lat1,
-            lon2: lon2,
-            lat2: lat2,
-            cosLat1: cos(lat1 * .pi / 180)
-        )
     }
 }

@@ -54,7 +54,7 @@ extension BirdBush {
             }
 
             // otherwise find the middle index
-            let mid = (left + right) >> 1
+            let mid = (left + right) / 2
 
             // include the middle item if it's in range
             let xCoord = coords[2 * mid]

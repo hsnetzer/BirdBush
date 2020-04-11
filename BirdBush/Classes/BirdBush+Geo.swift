@@ -95,7 +95,7 @@ extension BirdBush {
                     }
                 } else { // not a leaf node (has child nodes)
 
-                    let mid = (left + right) >> 1 // middle index
+                    let mid = (left + right) / 2 // middle index
                     let midLon = coords[2 * mid]
                     let midLat = coords[2 * mid + 1]
 
@@ -216,7 +216,10 @@ extension BirdBush {
         )
     }
 
-    // range: [0, 1]. hav(θ) = hav(-θ)
+    /// Sine squared of theta over 2
+    ///
+    /// - returns: Values [0, 1] inclusive
+    /// - parameter theta: Radians
     static func hav(_ theta: Double) -> Double {
         let sine = sin(theta / 2)
         return sine * sine
@@ -255,5 +258,14 @@ extension BirdBush {
         let cosDLon = 1 - 2 * haverSinDLon
         if cosDLon <= 0 { return lat > 0 ? 90 : -90 }
         return atan(tan(lat * .pi / 180) / cosDLon) * 180 / .pi
+    }
+
+    /// A fast function that increases monotonically with distance, at least locally. Useful for testing. 
+    static func cmpDist(lon1: Double, lat1: Double, lon2: Double, lat2: Double) -> Double {
+        haverSinDist(lon1: lon1,
+                     lat1: lat1,
+                     lon2: lon2,
+                     lat2: lat2,
+                     cosLat1: cos(lat1 * .pi / 180))
     }
 }

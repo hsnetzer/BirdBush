@@ -24,7 +24,7 @@
 public final class BirdBush<U> {
     var ids = [U]()
     var coords = [Double]()
-    let nodeSize: Int
+    public let nodeSize: Int
 
     /// Builds a k-d tree from a `Sequence`. The data split into a pair of arrays, one of the `Double`
     /// coordinates and one of the `U` IDs. Sorting is done using the Floyd-Rivest selection algorithm.
@@ -49,7 +49,7 @@ public final class BirdBush<U> {
     private func sortKD(left: Int, right: Int, axis: Int) {
         if right - left <= nodeSize { return }
 
-        let mid = (left + right) >> 1 // middle index
+        let mid = (left + right) / 2 // middle index
 
         // sort ids and coords around the middle index so that the halves lie
         // either left/right or top/bottom correspondingly (taking turns)

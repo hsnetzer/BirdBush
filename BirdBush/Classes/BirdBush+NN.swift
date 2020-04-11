@@ -49,7 +49,7 @@ extension BirdBush {
         }
 
         // otherwise find the middle index
-        let mid = (left + right) >> 1
+        let mid = (left + right) / 2
         let nextAxis = 1 - axis
 
         // include the middle item if it's in range
