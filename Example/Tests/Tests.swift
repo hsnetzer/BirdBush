@@ -85,21 +85,6 @@ class BirdBushTests: XCTestCase {
         ids = jsonDict["ids"] as! [Int]
     }
 
-    func buildCitiesIndex() {
-        let testBundle = Bundle(for: type(of: self))
-        let file = testBundle.url(forResource: "all-the-cities", withExtension: "json")
-        XCTAssertNotNil(file)
-        guard let data = try? Data(contentsOf: file!) else { return }
-        guard let jsonResponse = try? JSONSerialization.jsonObject(with:
-            data, options: []) as? [[String: Any]] else { return }
-        cities = jsonResponse.map(City.init)
-        citiesIndex = BirdBush<String>(
-            locations: cities,
-            getID: { $0.name },
-            getX: { $0.lon },
-            getY: { $0.lat })
-    }
-
     func test00BuildPerformance() {
         // This is an example of a performance test case.
         self.measure {
@@ -126,7 +111,7 @@ class BirdBushTests: XCTestCase {
     }
 
     func test02BruteGeoPerformance() {
-        buildCitiesIndex()
+        test09BuildCitiesIndex()
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
@@ -174,7 +159,7 @@ class BirdBushTests: XCTestCase {
     }
 
     func test06CitiesGeoNN() {
-        buildCitiesIndex()
+        test09BuildCitiesIndex()
         for _ in 1...20 {
             let randLon = Double.random(in: -180...180)
             let randLat = Double.random(in: -90...90)
@@ -197,7 +182,7 @@ class BirdBushTests: XCTestCase {
     }
 
     func test07GeoVsNon() {
-        buildCitiesIndex()
+        test09BuildCitiesIndex()
         guard let citiesIndex = citiesIndex else {
             XCTFail("No cities index")
             return
@@ -261,6 +246,23 @@ class BirdBushTests: XCTestCase {
         self.index = bush
         test03IndexRangeSearch()
         test04IndexRadiusSearch()
+    }
+
+    func test09BuildCitiesIndex() {
+        let testBundle = Bundle(for: type(of: self))
+        let file = testBundle.url(forResource: "all-the-cities", withExtension: "json")
+        XCTAssertNotNil(file)
+        guard let data = try? Data(contentsOf: file!) else { return }
+        guard let jsonResponse = try? JSONSerialization
+            .jsonObject(with: data, options: []) as? [[String: Any]] else { return }
+        cities = jsonResponse.map(City.init)
+        self.measure {
+            citiesIndex = BirdBush<String>(
+                locations: cities,
+                getID: { $0.name },
+                getX: { $0.lon },
+                getY: { $0.lat })
+        }
     }
 
 //    func nonCodableBush() {
