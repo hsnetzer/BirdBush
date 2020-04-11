@@ -27,12 +27,9 @@ import XCTest
 class BirdBushTests: XCTestCase {
     var index: BirdBush<Int>?
     var bigIndex: BirdBush<Double>?
-    var citiesIndex: BirdBush<String>?
-    
     var points = [[Int]]()
     var ids = [Int]()
     var coords = [Double]()
-    var cities = [City]()
     var bigArray = [[Double]]() // Keep for comparison to brute test
     
     struct City {
@@ -85,6 +82,24 @@ class BirdBushTests: XCTestCase {
         ids = jsonDict["ids"] as! [Int]
     }
 
+    var getCitiesData: [City]? {
+        let testBundle = Bundle(for: type(of: self))
+        let file = testBundle.url(forResource: "all-the-cities", withExtension: "json")
+        XCTAssertNotNil(file)
+        guard let data = try? Data(contentsOf: file!) else { return nil }
+        guard let jsonResponse = try? JSONSerialization
+            .jsonObject(with: data, options: []) as? [[String: Any]] else { return nil }
+        return jsonResponse.map(City.init)
+    }
+
+    func buildCitiesIndex(cities: [City]?) -> BirdBush<String>? {
+        guard let cities = cities else { return nil }
+        return BirdBush<String>(locations: cities,
+                                getID: { $0.name },
+                                getX: { $0.lon },
+                                getY: { $0.lat })
+    }
+
     func test00BuildPerformance() {
         // This is an example of a performance test case.
         self.measure {
@@ -99,20 +114,20 @@ class BirdBushTests: XCTestCase {
     }
 
     func test01SmartGeoPerformance() {
+        let citiesTree = buildCitiesIndex(cities: getCitiesData)
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
             for _ in 1...10 {
                 let randLon = Double.random(in: -180...180)
                 let randLat = Double.random(in: -90...90)
-                _ = citiesIndex?.around(lon: randLon, lat: randLat, maxResults: 10)
+                _ = citiesTree?.around(lon: randLon, lat: randLat, maxResults: 10)
             }
         }
     }
 
     func test02BruteGeoPerformance() {
-        test09BuildCitiesIndex()
-        // This is an example of a performance test case.
+        let cities = getCitiesData
         self.measure {
             // Put the code you want to measure the time of here.
             for _ in 1...10 {
@@ -121,7 +136,7 @@ class BirdBushTests: XCTestCase {
                 _ = bruteGeoNN(
                     queryX: randLon,
                     queryY: randLat,
-                    index: cities,
+                    index: cities!,
                     getX: { $0.lon },
                     getY: { $0.lat },
                     getID: { $0.name },
@@ -159,7 +174,8 @@ class BirdBushTests: XCTestCase {
     }
 
     func test06CitiesGeoNN() {
-        test09BuildCitiesIndex()
+        let cities = getCitiesData
+        let citiesIndex = buildCitiesIndex(cities: cities)
         for _ in 1...20 {
             let randLon = Double.random(in: -180...180)
             let randLat = Double.random(in: -90...90)
@@ -168,7 +184,7 @@ class BirdBushTests: XCTestCase {
                                               maxResults: 10)
             let brute = bruteGeoNN(queryX: randLon,
                                    queryY: randLat,
-                                   index: cities,
+                                   index: cities!,
                                    getX: { $0.lon },
                                    getY: { $0.lat },
                                    getID: { $0.name },
@@ -182,8 +198,8 @@ class BirdBushTests: XCTestCase {
     }
 
     func test07GeoVsNon() {
-        test09BuildCitiesIndex()
-        guard let citiesIndex = citiesIndex else {
+        let cities = getCitiesData!
+        guard let citiesIndex = buildCitiesIndex(cities: cities) else {
             XCTFail("No cities index")
             return
         }
@@ -249,20 +265,8 @@ class BirdBushTests: XCTestCase {
     }
 
     func test09BuildCitiesIndex() {
-        let testBundle = Bundle(for: type(of: self))
-        let file = testBundle.url(forResource: "all-the-cities", withExtension: "json")
-        XCTAssertNotNil(file)
-        guard let data = try? Data(contentsOf: file!) else { return }
-        guard let jsonResponse = try? JSONSerialization
-            .jsonObject(with: data, options: []) as? [[String: Any]] else { return }
-        cities = jsonResponse.map(City.init)
-        self.measure {
-            citiesIndex = BirdBush<String>(
-                locations: cities,
-                getID: { $0.name },
-                getX: { $0.lon },
-                getY: { $0.lat })
-        }
+        let cities = getCitiesData
+        measure { _ = buildCitiesIndex(cities: cities) }
     }
 
 //    func nonCodableBush() {
