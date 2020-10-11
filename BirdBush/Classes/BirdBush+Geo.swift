@@ -24,7 +24,7 @@
 import SwiftPriorityQueue
 
 extension BirdBush {
-    private struct QueueElement: Comparable {
+    struct QueueElement: Comparable {
         static func < (lhs: QueueElement, rhs: QueueElement) -> Bool {
             return lhs.dist < rhs.dist
         }
@@ -37,7 +37,7 @@ extension BirdBush {
         let payload: QueuePayload
     }
 
-    private enum QueuePayload {
+    enum QueuePayload {
         case point(id: U)
         case node(left: Int, right: Int, axis: Int, minLon: Double, maxLon: Double, minLat: Double, maxLat: Double)
     }

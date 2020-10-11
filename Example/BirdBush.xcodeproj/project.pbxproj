@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		14A019D02363670D007FCE19 /* points.json in Resources */ = {isa = PBXBuildFile; fileRef = 14A019CF2363670D007FCE19 /* points.json */; };
+		14B6AAFE253235BB00098579 /* CitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AAFD253235BB00098579 /* CitiesTests.swift */; };
+		14B6AB022532488400098579 /* BigArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B6AB012532488400098579 /* BigArrayTests.swift */; };
 		161769AD45D842F7288A1AED /* Pods_BirdBush_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67802331F60746443BBD5A4B /* Pods_BirdBush_Example.framework */; };
 		4A23E43A21D2EBE6009A87BE /* all-the-cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 4A23E43921D2EBE6009A87BE /* all-the-cities.json */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -32,6 +34,8 @@
 /* Begin PBXFileReference section */
 		0066DEF4DCA13E786DFCBD53 /* Pods-BirdBush_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirdBush_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirdBush_Example/Pods-BirdBush_Example.release.xcconfig"; sourceTree = "<group>"; };
 		14A019CF2363670D007FCE19 /* points.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = points.json; sourceTree = "<group>"; };
+		14B6AAFD253235BB00098579 /* CitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTests.swift; sourceTree = "<group>"; };
+		14B6AB012532488400098579 /* BigArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigArrayTests.swift; sourceTree = "<group>"; };
 		35BF66001B1C18EF8B00B268 /* BirdBush.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = BirdBush.podspec; path = ../BirdBush.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		3A54B4879CDD0EE8F688E237 /* Pods-BirdBush_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BirdBush_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BirdBush_Tests/Pods-BirdBush_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		4A23E43921D2EBE6009A87BE /* all-the-cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "all-the-cities.json"; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				14B6AB012532488400098579 /* BigArrayTests.swift */,
+				14B6AAFD253235BB00098579 /* CitiesTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -370,6 +376,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B6AAFE253235BB00098579 /* CitiesTests.swift in Sources */,
+				14B6AB022532488400098579 /* BigArrayTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
