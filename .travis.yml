@@ -5,10 +5,10 @@
 matrix:
   include:
     - os: osx
-      osx_image: xcode11.3
+      osx_image: xcode12
       sudo: required
       language: objective-c
       podfile: Example/Podfile
-      env: TEST_DESTINATION="OS=12.2,name=iPhone X"
+      env: TEST_DESTINATION="OS=13.0,name=iPhone X"
       script:
         - set -o pipefail && xcodebuild test -workspace Example/BirdBush.xcworkspace -scheme BirdBush-Example -destination "$TEST_DESTINATION" | xcpretty
