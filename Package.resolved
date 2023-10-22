@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-numerics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-numerics.git",
+      "state" : {
+        "revision" : "0a5bc04095a675662cf24757cc0640aa2204253b",
+        "version" : "1.0.2"
+      }
+    },
+    {
+      "identity" : "swiftpriorityqueue",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/davecom/SwiftPriorityQueue.git",
+      "state" : {
+        "revision" : "42e8789c6d2464254c2e0322bd824ec509de678b",
+        "version" : "1.4.0"
+      }
+    }
+  ],
+  "version" : 2
+}
